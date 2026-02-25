@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RegulatorPulse — Know Before They Knock</title>
+  <meta name="description" content="Weekly plain-English regulatory briefings for Texas medical spas and salons. Know what changed before your next inspection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --ink-muted: #4a5568;
+      --ink-light: #718096;
+      --surface: #ffffff;
+      --surface-2: #f7f8fa;
+      --surface-3: #edf0f4;
+      --accent: #1a56db;
+      --accent-hover: #1344b8;
+      --accent-light: #ebf0fd;
+      --red: #c53030;
+      --red-light: #fff5f5;
+      --yellow: #b7791f;
+      --yellow-light: #fffbeb;
+      --green: #276749;
+      --green-light: #f0fff4;
+      --border: #e2e8f0;
+      --radius: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+      --shadow-lg: 0 4px 6px rgba(0,0,0,.07), 0 10px 40px rgba(0,0,0,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--surface);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -.3px;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .btn-nav {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 7px;
+      font-weight: 600 !important;
+      transition: background .15s !important;
+    }
+    .btn-nav:hover { background: var(--accent-hover) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #f0f4ff 0%, #fafbff 60%, #fff 100%);
+      padding: 80px 24px 96px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.5px;
+      color: var(--ink);
+      max-width: 780px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--ink-muted);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background .15s, transform .1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink-muted);
+      padding: 14px 30px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1.5px solid var(--border);
+      transition: border-color .15s, color .15s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--ink-muted); color: var(--ink); }
+    .hero-fine { font-size: .82rem; color: var(--ink-light); }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 80px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -.3px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      max-width: 600px;
+      line-height: 1.65;
+    }
+
+    /* ── PROBLEM ── */
+    .problem { background: var(--surface-2); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .problem-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .problem-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+    }
+    .problem-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .problem-card p {
+      font-size: .9rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+    .fine-highlight {
+      display: inline-block;
+      background: var(--red-light);
+      color: var(--red);
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: .88rem;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 56px;
+      counter-reset: steps;
+    }
+    .step {
+      position: relative;
+      padding-left: 0;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      font-size: .95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: .9rem; color: var(--ink-muted); line-height: 1.6; }
+
+    /* ── SAMPLE BRIEFING ── */
+    .sample { background: var(--surface-2); }
+    .briefing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 720px;
+      margin: 48px auto 0;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .briefing-header {
+      background: var(--ink);
+      color: #fff;
+      padding: 18px 28px;
+      font-size: .88rem;
+    }
+    .briefing-header strong { font-weight: 700; }
+    .briefing-header span { opacity: .65; margin-left: 8px; }
+    .briefing-body { padding: 28px; }
+    .brief-item { margin-bottom: 28px; }
+    .brief-item:last-child { margin-bottom: 0; }
+    .brief-tier {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .tier-action { background: var(--red-light); color: var(--red); }
+    .tier-watch { background: var(--yellow-light); color: var(--yellow); }
+    .tier-info { background: var(--green-light); color: var(--green); }
+    .brief-item h4 {
+      font-size: .97rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .brief-item p {
+      font-size: .88rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .brief-action {
+      background: var(--red-light);
+      border-left: 3px solid var(--red);
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-size: .85rem;
+      color: var(--red);
+      font-weight: 600;
+    }
+    .brief-source {
+      font-size: .78rem;
+      color: var(--ink-light);
+      margin-top: 8px;
+    }
+    .brief-source a { color: var(--accent); text-decoration: none; }
+    .brief-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    /* ── VERTICALS ── */
+    .verticals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .vertical-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+    .vertical-card.featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow); }
+    .vertical-icon { font-size: 2rem; margin-bottom: 16px; }
+    .vertical-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; }
+    .vertical-card .desc { font-size: .92rem; color: var(--ink-muted); margin-bottom: 20px; line-height: 1.6; }
+    .agency-list { list-style: none; margin-bottom: 24px; }
+    .agency-list li {
+      font-size: .85rem;
+      color: var(--ink-muted);
+      padding: 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .agency-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+    .vertical-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .vertical-price span { font-size: .9rem; font-weight: 500; color: var(--ink-muted); }
+
+    /* ── WHY NOT AI ── */
+    .why-not { background: var(--surface-2); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+    @media (max-width: 700px) { .why-grid { grid-template-columns: 1fr; } }
+    .why-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .why-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: 10px; }
+    .why-card p { font-size: .88rem; color: var(--ink-muted); line-height: 1.6; }
+    .why-card.vs-them { border-top: 3px solid #e2e8f0; }
+    .why-card.vs-us { border-top: 3px solid var(--accent); }
+    .why-card.vs-them h4 { color: var(--ink-muted); }
+    .why-card.vs-us h4 { color: var(--accent); }
+
+    /* ── PRICING ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .price-card.popular {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent), var(--shadow-lg);
+      position: relative;
+    }
+    .popular-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 99px;
+    }
+    .price-tier { font-size: .8rem; font-weight: 700; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 12px; }
+    .price-amount { font-size: 2.4rem; font-weight: 800; letter-spacing: -1px; }
+    .price-amount sup { font-size: 1.2rem; font-weight: 700; vertical-align: top; margin-top: 8px; }
+    .price-per { font-size: .85rem; color: var(--ink-muted); margin-bottom: 20px; }
+    .price-desc { font-size: .88rem; color: var(--ink-muted); margin-bottom: 24px; line-height: 1.5; }
+    .price-cta {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: .92rem;
+      text-decoration: none;
+      text-align: center;
+    }
+    .price-cta-primary { background: var(--accent); color: #fff; }
+    .price-cta-secondary { background: var(--surface-3); color: var(--ink); }
+    .price-note { font-size: .78rem; color: var(--ink-light); margin-top: 8px; }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 720px; margin: 48px auto 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      font-weight: 700;
+      font-size: .97rem;
+      margin-bottom: 10px;
+    }
+    .faq-a {
+      font-size: .9rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+    .faq-a a { color: var(--accent); }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-band h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -.3px;
+      margin-bottom: 16px;
+    }
+    .cta-band p {
+      font-size: 1.05rem;
+      opacity: .75;
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+    .btn-white {
+      background: #fff;
+      color: var(--ink);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity .15s;
+    }
+    .btn-white:hover { opacity: .9; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface-2);
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-logo { font-weight: 800; font-size: 1rem; color: var(--ink); margin-bottom: 12px; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: .84rem; color: var(--ink-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-disclaimer {
+      font-size: .76rem;
+      color: var(--ink-light);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      section { padding: 60px 20px; }
+      .hero { padding: 60px 20px 72px; }
+      .nav-links { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Regulator<span>Pulse</span></a>
+    <div class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#verticals">Verticals</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#signup" class="btn-nav">Start Free Trial</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Texas Regulatory Intelligence</div>
+    <h1>Know what changed<br/><em>before they knock.</em></h1>
+    <p class="hero-sub">
+      Weekly plain-English briefings covering every regulatory change that affects your medspa or salon — before your next inspection.
+    </p>
+    <div class="hero-cta">
+      <a href="#signup" class="btn-primary">Start 30-Day Free Trial</a>
+      <a href="#sample" class="btn-secondary">See a Sample Briefing</a>
+    </div>
+    <p class="hero-fine">No credit card required. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label">The Problem</p>
+    <h2 class="section-title">You're operating blind — and inspectors know it.</h2>
+    <p class="section-sub">Texas regulators change rules constantly. Most business owners find out the hard way.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">📋</div>
+        <h3>Six agencies. Zero alerts.</h3>
+        <p>A Texas medspa faces active compliance obligations from TMB, BON, TDLR, OSHA, FDA, and DEA — none of which send useful plain-English notifications when rules change.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🔍</div>
+        <h3>TDLR doesn't warn you.</h3>
+        <p>Texas salons are inspected against rules that may have changed since your last inspection. TDLR amends Chapter 83 regularly. There is no alert system. You find out when you're cited.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">💸</div>
+        <h3>The cost of missing a change.</h3>
+        <p>TDLR Class B citation: <span class="fine-highlight">up to $3,000</span>. TMB disciplinary action: public record, license risk. OSHA violation: <span class="fine-highlight">$15,625/day</span>. One missed rule change pays for years of RegulatorPulse.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">😰</div>
+        <h3>Your current options aren't working.</h3>
+        <p>Word of mouth. Trade association newsletters. Occasionally reading raw regulatory text. Compliance attorneys at $300–$500/hour — used reactively, after something goes wrong. None of this is systematic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="container">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Continuous monitoring. Weekly delivery.<br/>Plain English. Every time.</h2>
+    <p class="section-sub">RegulatorPulse watches every relevant regulatory source — so you don't have to.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Tell us about your business</h3>
+        <p>Complete a 10-minute intake form: your services, license structure, and location. Your briefings are filtered to what actually applies to you — nothing irrelevant.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We monitor everything</h3>
+        <p>Every night, RegulatorPulse scans your relevant agencies — TMB, TDLR, BON, OSHA, FDA, DEA — and flags what changed. Primary source links included in every item.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You get Tuesday's briefing</h3>
+        <p>Every Tuesday morning, your briefing arrives. Action items at the top. Watch items next. Informational context last. Each item links to the original regulatory document.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Reply with questions</h3>
+        <p>Have a question about a briefing item? Reply to the email. We respond within 24 hours with what the rule says and where to find it. Not legal advice — clear regulatory intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE BRIEFING -->
+<section class="sample" id="sample">
+  <div class="container" style="text-align:center">
+    <p class="section-label">Sample Briefing</p>
+    <h2 class="section-title">This is what lands in your inbox.</h2>
+    <p class="section-sub" style="margin:0 auto 0">Sorted by urgency. Linked to primary sources. Specific to your practice type.</p>
+    <div class="briefing-card">
+      <div class="briefing-header">
+        <strong>RegulatorPulse</strong> — MedSpa Edition <span>Week of March 4, 2026 · Austin, TX</span>
+      </div>
+      <div class="briefing-body">
+        <div class="brief-item">
+          <span class="brief-tier tier-action">🔴 Action Required</span>
+          <h4>TMB Clarifies Medical Director Agreement Must Be On-Site</h4>
+          <p>The Texas Medical Board issued guidance on February 28 clarifying that medical director agreements must be physically present at the facility during all operating hours — not merely held off-site. Two Austin practices received deficiency letters last month over this issue.</p>
+          <div class="brief-action">Action: Print and place your medical director agreement in your on-site compliance binder. Confirm your medical director has signed the current version. Deadline: before your next operating day.</div>
+          <p class="brief-source">Source: <a href="#">Texas Medical Board Guidance Bulletin, Feb 28, 2026 ↗</a></p>
+        </div>
+        <hr class="brief-divider" />
+        <div class="brief-item">
+          <span class="brief-tier tier-watch">🟡 Watch</span>
+          <h4>BON Proposed Rule: NP Supervision Ratio Under Review</h4>
+          <p>The Texas Board of Nursing has opened a comment period on proposed amendments to NP supervision ratios in aesthetic practice settings. If adopted, the change would affect NP-led practices statewide. Comment period closes April 15.</p>
+          <p class="brief-source">Source: <a href="#">Texas Register, Vol. 51, No. 9 ↗</a></p>
+        </div>
+        <hr class="brief-divider" />
+        <div class="brief-item">
+          <span class="brief-tier tier-info">📋 Informational</span>
+          <h4>FDA Safety Alert: Dermal Filler Adverse Event Reports Up 18%</h4>
+          <p>FDA's MedWatch database shows an 18% increase in reported adverse events related to hyaluronic acid fillers in Q4 2025. No rule change — informational only. Full report linked.</p>
+          <p class="brief-source">Source: <a href="#">FDA MedWatch Quarterly Summary ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERTICALS -->
+<section id="verticals">
+  <div class="container">
+    <p class="section-label">Who We Serve</p>
+    <h2 class="section-title">Built for Texas. Personalized to your business.</h2>
+    <p class="section-sub">Two verticals. One shared mission: no more surprise citations.</p>
+    <div class="verticals-grid">
+      <div class="vertical-card featured">
+        <div class="vertical-icon">💉</div>
+        <h3>Medical Spas</h3>
+        <p class="desc">The most complex small-business regulatory environment in Texas. Six agencies. Constantly changing rules. One missed update can mean a TMB disciplinary action — a public record that follows your practice forever.</p>
+        <ul class="agency-list">
+          <li>Texas Medical Board (TMB)</li>
+          <li>Texas Board of Nursing (BON)</li>
+          <li>TX Dept. of Licensing & Regulation (TDLR)</li>
+          <li>OSHA — bloodborne pathogens, sharps</li>
+          <li>FDA — Botox, fillers, energy devices</li>
+          <li>DEA — controlled substance schedules</li>
+        </ul>
+        <div class="vertical-price">From <sup>$</sup>199<span>/month</span></div>
+      </div>
+      <div class="vertical-card">
+        <div class="vertical-icon">✂️</div>
+        <h3>Hair & Nail Salons</h3>
+        <p class="desc">TDLR inspects aggressively and cites frequently — and most owners don't know the rules changed until they fail an inspection. The 2024 HB 1560 restructuring alone created dozens of new compliance requirements many owners still haven't absorbed.</p>
+        <ul class="agency-list">
+          <li>TDLR — Barbering & Cosmetology (Ch. 83)</li>
+          <li>OSHA — HazCom, formaldehyde (keratin)</li>
+          <li>FDA — cosmetic ingredient alerts</li>
+          <li>TCEQ — chemical disposal (nail salons)</li>
+        </ul>
+        <div class="vertical-price">From <sup>$</sup>29<span>/month</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOT CHATGPT -->
+<section class="why-not">
+  <div class="container">
+    <p class="section-label">Why RegulatorPulse</p>
+    <h2 class="section-title">"Can't I just ask ChatGPT?"</h2>
+    <p class="section-sub">Fair question. Here's the honest answer.</p>
+    <div class="why-grid">
+      <div class="why-card vs-them">
+        <h4>Asking an AI chatbot</h4>
+        <p>ChatGPT and similar tools have a training cutoff — they don't know what TMB issued last Tuesday. They can't browse TDLR's rulemaking feed. They don't know your specific license structure, services, or location. And they have no memory — you'd need to re-explain your situation every single session. You'd also need to know what to ask, and when to ask it.</p>
+      </div>
+      <div class="why-card vs-us">
+        <h4>RegulatorPulse</h4>
+        <p>RegulatorPulse monitors regulatory sources every night — automatically. Your profile is always on file. We flag changes that apply to <em>you specifically</em>, based on your services and license type. You don't have to remember to check anything. Every Tuesday, a briefing arrives whether you thought to ask or not. That's the difference between a chatbot and a system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container" style="text-align:center">
+    <p class="section-label">Pricing</p>
+    <h2 class="section-title">Less than one citation. Every year.</h2>
+    <p class="section-sub" style="margin: 0 auto 0">Annual billing available — save 10%. Cancel anytime.</p>
+
+    <!-- Medspa pricing -->
+    <h3 style="margin: 48px 0 4px; font-size: .85rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--ink-muted);">Medical Spas</h3>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Solo</div>
+        <div class="price-amount"><sup>$</sup>199</div>
+        <div class="price-per">per month</div>
+        <div class="price-desc">Single location. NP or physician-led. No IV therapy or controlled substances.</div>
+        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
+      </div>
+      <div class="price-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <div class="price-tier">Standard</div>
+        <div class="price-amount"><sup>$</sup>299</div>
+        <div class="price-per">per month</div>
+        <div class="price-desc">Single location. Full-service: injectables, laser, IV therapy.</div>
+        <a href="#signup" class="price-cta price-cta-primary">Start Free Trial</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Multi-Site</div>
+        <div class="price-amount"><sup>$</sup>499</div>
+        <div class="price-per">per month</div>
+        <div class="price-desc">2–4 locations, same ownership. One briefing per location.</div>
+        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
+      </div>
+    </div>
+
+    <!-- Salon pricing -->
+    <h3 style="margin: 40px 0 4px; font-size: .85rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--ink-muted);">Hair & Nail Salons</h3>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Solo / Booth Renter</div>
+        <div class="price-amount"><sup>$</sup>29</div>
+        <div class="price-per">per month</div>
+        <div class="price-desc">Independent operators and booth renters. Individual license coverage.</div>
+        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
+      </div>
+      <div class="price-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <div class="price-tier">Standard</div>
+        <div class="price-amount"><sup>$</sup>59</div>
+        <div class="price-per">per month</div>
+        <div class="price-desc">Single-location establishment. Hair, nail, or mixed services.</div>
+        <a href="#signup" class="price-cta price-cta-primary">Start Free Trial</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Multi-Location</div>
+        <div class="price-amount"><sup>$</sup>99</div>
+        <div class="price-per">per month</div>
+        <div class="price-desc">2–5 locations, same owner. Covers all establishments.</div>
+        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
+      </div>
+    </div>
+    <p class="price-note" style="margin-top: 20px;">All plans include 30-day free trial · No credit card required · Cancel anytime</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--surface-2)">
+  <div class="container" style="text-align:center">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">Common questions.</h2>
+    <div class="faq-list" style="text-align:left">
+      <div class="faq-item">
+        <p class="faq-q">Is this legal advice?</p>
+        <p class="faq-a">No — and we're clear about that in every communication. RegulatorPulse provides informational summaries of publicly available regulatory developments. We describe what rules say and when they changed. We do not assess whether your specific establishment is in compliance, and we do not advise you what to do about your specific situation. That's the job of your compliance attorney. We make sure you know what the rule says — you and your counsel decide what to do about it.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How is this different from my AmSpa or TCA membership?</p>
+        <p class="faq-a">Association newsletters cover regulatory topics occasionally, in general terms, filtered through the association's priorities. RegulatorPulse monitors regulatory sources directly and continuously — every night — and delivers personalized briefings based on your specific services and license structure. It's the difference between a monthly newsletter and a dedicated monitoring system.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What happens if a regulatory source changes its website?</p>
+        <p class="faq-a">We monitor content, not layout. If a source changes its structure, we update the monitoring configuration. You'll never receive a week with no briefing because a government website was redesigned. We also maintain redundant source monitoring — for example, we track both the agency's website and the Texas Register's RSS feed for TDLR rule changes.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What if nothing changes in a given week?</p>
+        <p class="faq-a">You still receive a briefing — it will simply note that there were no new regulatory developments to report that week. Silence is information too: knowing that nothing changed is valuable confirmation that your current practices remain compliant with current rules.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can I have multiple locations covered?</p>
+        <p class="faq-a">Yes. The Multi-Site (medspa) and Multi-Location (salon) plans cover 2–4 or 2–5 locations respectively, with separate briefings per location if their profiles differ. Contact us for quotes on larger groups.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How do I cancel?</p>
+        <p class="faq-a">Any time, from your customer portal with one click. Cancellation takes effect at the end of your current billing period. No cancellation fees, no questions required — though we genuinely appreciate feedback if you have it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="signup">
+  <div class="container">
+    <h2>Start your free 30-day trial.</h2>
+    <p>No credit card. No commitment. Just the regulatory intelligence your business has been missing.</p>
+    <a href="https://regulatorpulse.com/signup" class="btn-white">Get Started — It's Free</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Regulator<span>Pulse</span></div>
+    <div class="footer-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:hello@regulatorpulse.com">Contact</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+    <p class="footer-disclaimer">
+      RegulatorPulse LLC · Austin, TX · RegulatorPulse provides informational summaries of publicly available regulatory developments. Content does not constitute legal or compliance advice and should not be relied upon as such. Consult qualified legal counsel before acting on any regulatory matter. © 2026 RegulatorPulse LLC. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
