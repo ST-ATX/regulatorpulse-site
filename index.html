@@ -219,9 +219,18 @@
     .problem { background: var(--surface-2); }
     .problem-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       margin-top: 48px;
+    }
+    .problem-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .problem-card {
       background: var(--surface);
@@ -234,6 +243,10 @@
     .problem-card .icon svg { width: 32px; height: 32px; stroke-width: 1.75; }
     .problem-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
     .problem-card p { font-size: .9rem; color: var(--ink-muted); line-height: 1.6; }
+    @media (max-width: 768px) {
+      .problem-grid { grid-template-columns: 1fr; }
+      .problem-grid-bottom { grid-template-columns: 1fr; max-width: 100%; }
+    }
     .fine-highlight {
       display: inline-block;
       background: var(--red-light);
@@ -605,12 +618,12 @@
         </table>
         <p style="font-size:.9rem;color:var(--ink-muted)">One missed rule change pays for years of RegulatorPulse.</p>
       </div>
+    </div>
+    <div class="problem-grid-bottom">
       <div class="problem-card">
         <div class="icon"><i data-lucide="star"></i></div>
         <h3>Bad reviews trigger inspections.</h3>
-        <p>Studies show online reviews predict health code violations with near-perfect statistical significance. RegulatorPulse turns that into two concrete tools:</p>
-        <p style="margin-top:8px"><strong>Industry Intelligence.</strong> We scan Google, Yelp, and Healthgrades across every Texas business in your vertical — thousands of reviews per week — and surface patterns that precede regulatory action. When "no doctor present" spikes 34% statewide, you know before TMB complaint filings follow.</p>
-        <p style="margin-top:8px"><strong>Ready-to-Post Responses.</strong> When your profile gets a bad review on any platform, we deliver an AI-drafted response in your voice — professional, non-defensive, legally aware — ready to approve and post in one click.</p>
+        <p>Research confirms it: online reviews predict health code violations with near-perfect statistical significance. Dissatisfied customers file regulatory complaints and leave 1-star reviews on the same day. RegulatorPulse monitors both — flagging review language that maps to known violation categories before an inspector arrives.</p>
       </div>
       <div class="problem-card">
         <div class="icon"><i data-lucide="alert-triangle"></i></div>
