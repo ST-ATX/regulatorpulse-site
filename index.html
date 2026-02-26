@@ -124,6 +124,7 @@
       color: var(--ink);
       max-width: 820px;
       margin: 0 auto 20px;
+      min-height: 2.5em;
     }
     .hero h1 em {
       font-style: normal;
@@ -135,6 +136,13 @@
       max-width: 600px;
       margin: 0 auto 40px;
       line-height: 1.65;
+      min-height: 5em;
+    }
+    .hero-slot {
+      transition: opacity 0.6s ease;
+    }
+    .hero-slot.fade-out {
+      opacity: 0;
     }
     .hero-cta {
       display: flex;
@@ -504,9 +512,9 @@
 <section class="hero">
   <div class="container">
     <div class="hero-badge">Texas Regulatory Intelligence</div>
-    <h1>Your bad reviews<br/><em>predict your next inspection.</em></h1>
-    <p class="hero-sub">
-      Research shows online reviews predict health code violations before inspectors arrive. RegulatorPulse monitors every regulatory agency <em>and</em> scans Google, Yelp, and Healthgrades across your entire industry statewide — so you see what's coming before it reaches your door. Weekly plain-English briefings. Twelve industries. Delivered every Tuesday.
+    <h1 id="hero-headline" class="hero-slot">Know before they knock.</h1>
+    <p class="hero-sub hero-slot" id="hero-sub">
+      Texas regulators change rules constantly — and they don't warn you. RegulatorPulse monitors every agency covering your industry and delivers a plain-English briefing every Tuesday, so you're always current before an inspector walks in the door.
     </p>
     <div class="hero-cta">
       <a href="#signup" class="btn-primary">Start 30-Day Free Trial</a>
@@ -515,6 +523,44 @@
     <p class="hero-fine">30-day free trial. Cancel anytime before day 30.</p>
   </div>
 </section>
+
+<script>
+  (function() {
+    var slides = [
+      {
+        headline: 'Know before they knock.',
+        sub: 'Texas regulators change rules constantly — and they don\u2019t warn you. RegulatorPulse monitors every agency covering your industry and delivers a plain-English briefing every Tuesday, so you\u2019re always current before an inspector walks in the door.'
+      },
+      {
+        headline: 'Your bad reviews<br/><em>predict your next inspection.</em>',
+        sub: 'Research shows online reviews predict health code violations before inspectors arrive. RegulatorPulse monitors every regulatory agency <em>and</em> your industry\u2019s review patterns \u2014 flagging compliance signals from both directions before they reach your door.'
+      },
+      {
+        headline: 'Stay ahead of every regulator.',
+        sub: 'A Texas small business can face active obligations from 4\u20138 agencies simultaneously \u2014 and none of them send useful alerts when rules change. RegulatorPulse tracks all of them, translates the legal language, and delivers what matters every Tuesday morning.'
+      }
+    ];
+
+    var current = 0;
+    var headlineEl = document.getElementById('hero-headline');
+    var subEl = document.getElementById('hero-sub');
+
+    function nextSlide() {
+      headlineEl.classList.add('fade-out');
+      subEl.classList.add('fade-out');
+
+      setTimeout(function() {
+        current = (current + 1) % slides.length;
+        headlineEl.innerHTML = slides[current].headline;
+        subEl.innerHTML = slides[current].sub;
+        headlineEl.classList.remove('fade-out');
+        subEl.classList.remove('fade-out');
+      }, 600);
+    }
+
+    setInterval(nextSlide, 5000);
+  })();
+</script>
 
 <!-- VERTICAL TICKER -->
 <div class="vertical-ticker">
