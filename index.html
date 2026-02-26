@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -67,15 +68,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 60px;
+      height: 88px;
     }
     .logo {
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--ink);
       text-decoration: none;
-      letter-spacing: -.3px;
+      display: flex;
+      align-items: center;
     }
+    .logo img { height: 72px; width: auto; }
     .logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a {
@@ -224,7 +224,8 @@
       padding: 28px;
       box-shadow: var(--shadow);
     }
-    .problem-card .icon { font-size: 1.6rem; margin-bottom: 14px; }
+    .problem-card .icon { margin-bottom: 14px; color: var(--accent); }
+    .problem-card .icon svg { width: 32px; height: 32px; stroke-width: 1.75; }
     .problem-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
     .problem-card p { font-size: .9rem; color: var(--ink-muted); line-height: 1.6; }
     .fine-highlight {
@@ -329,7 +330,8 @@
     }
     .vertical-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
     .vertical-card.featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow); }
-    .vertical-icon { font-size: 2rem; margin-bottom: 16px; }
+    .vertical-icon { margin-bottom: 16px; color: var(--accent); }
+    .vertical-icon svg { width: 36px; height: 36px; stroke-width: 1.5; }
     .vertical-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
     .vertical-card .desc { font-size: .9rem; color: var(--ink-muted); margin-bottom: 18px; line-height: 1.6; }
     .agency-list { list-style: none; margin-bottom: 20px; }
@@ -468,8 +470,8 @@
       text-align: center;
     }
     .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-logo { font-weight: 800; font-size: 1rem; color: var(--ink); margin-bottom: 12px; }
-    .footer-logo span { color: var(--accent); }
+    .footer-logo { margin-bottom: 12px; }
+    .footer-logo img { height: 32px; width: auto; }
     .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
     .footer-links a { font-size: .84rem; color: var(--ink-muted); text-decoration: none; }
     .footer-links a:hover { color: var(--ink); }
@@ -488,11 +490,10 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo">Regulator<span>Pulse</span></a>
+    <a href="/" class="logo"><img src="/logo-wordmark.png" alt="RegulatorPulse"></a>
     <div class="nav-links">
       <a href="#how-it-works">How It Works</a>
       <a href="#verticals">Who We Serve</a>
-      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="#signup" class="btn-nav">Start Free Trial</a>
     </div>
@@ -503,15 +504,15 @@
 <section class="hero">
   <div class="container">
     <div class="hero-badge">Texas Regulatory Intelligence</div>
-    <h1>Know what changed<br/><em>before they knock.</em></h1>
+    <h1>Your bad reviews<br/><em>predict your next inspection.</em></h1>
     <p class="hero-sub">
-      Weekly plain-English regulatory briefings for Texas small businesses. Ten industries. Every relevant agency. Delivered every Tuesday — so you're never caught off guard at your next inspection.
+      Research shows Google reviews predict health code violations before inspectors arrive. RegulatorPulse monitors every regulatory agency <em>and</em> your review patterns — alerting you to compliance risks from both directions. Weekly plain-English briefings. Twelve industries. Delivered every Tuesday.
     </p>
     <div class="hero-cta">
       <a href="#signup" class="btn-primary">Start 30-Day Free Trial</a>
       <a href="#sample" class="btn-secondary">See a Sample Briefing</a>
     </div>
-    <p class="hero-fine">No credit card required. Cancel anytime.</p>
+    <p class="hero-fine">30-day free trial. Cancel anytime before day 30.</p>
   </div>
 </section>
 
@@ -528,6 +529,8 @@
   <span>Food Trucks</span> ·
   <span>Churches & Nonprofits</span> ·
   <span>Event Venues</span>
+  <span>Physical Therapy Clinics</span>
+  <span>Veterinary Clinics</span>
 </div>
 
 <!-- PROBLEM -->
@@ -538,22 +541,33 @@
     <p class="section-sub">Texas regulators change rules constantly. Most small business owners find out the hard way — at an inspection, not before it.</p>
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="icon">📋</div>
+        <div class="icon"><i data-lucide="layers"></i></div>
         <h3>Multiple agencies. Zero alerts.</h3>
         <p>A Texas business can face active compliance obligations from 4–8 agencies simultaneously — TMB, TDLR, TABC, TCEQ, HHSC, OSHA, FDA, and more. None of them send useful plain-English notifications when rules change.</p>
       </div>
       <div class="problem-card">
-        <div class="icon">🔍</div>
+        <div class="icon"><i data-lucide="search"></i></div>
         <h3>Regulators don't warn you.</h3>
         <p>Texas agencies publish rule changes in the Texas Register and on agency websites — in legal language, without notification. You are presumed to know. The inspector cites what the rule says today, not what it said at your last inspection.</p>
       </div>
       <div class="problem-card">
-        <div class="icon">💸</div>
+        <div class="icon"><i data-lucide="trending-down"></i></div>
         <h3>The cost of missing one change.</h3>
-        <p>TDLR citation: <span class="fine-highlight">up to $3,000</span>. TABC violation: <span class="fine-highlight">suspension or cancellation</span>. TCEQ enforcement: <span class="fine-highlight">$2,500–$10,000/day</span>. OSHA serious violation: <span class="fine-highlight">$15,625/day</span>. One missed rule change pays for years of RegulatorPulse.</p>
+        <table style="border-collapse:collapse;width:100%;margin-bottom:12px;">
+          <tr><td style="padding:5px 0;color:var(--ink-muted);font-size:.9rem;width:52%">TDLR citation</td><td><span class="fine-highlight">up to $5,000</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-muted);font-size:.9rem">TABC violation</td><td><span class="fine-highlight">suspension or cancellation</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-muted);font-size:.9rem">TCEQ enforcement</td><td><span class="fine-highlight">up to $25,000/day</span></td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-muted);font-size:.9rem">OSHA serious violation</td><td><span class="fine-highlight">up to $16,550/violation</span></td></tr>
+        </table>
+        <p style="font-size:.9rem;color:var(--ink-muted)">One missed rule change pays for years of RegulatorPulse.</p>
       </div>
       <div class="problem-card">
-        <div class="icon">😰</div>
+        <div class="icon"><i data-lucide="star"></i></div>
+        <h3>Bad reviews trigger inspections.</h3>
+        <p>Studies show Google reviews predict health code violations with near-perfect statistical significance. Dissatisfied customers leave 1-star reviews and file regulatory complaints on the same day. Inspectors follow. RegulatorPulse monitors your review patterns and alerts you when the language matches known compliance risks — before the agency gets the complaint.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon"><i data-lucide="alert-triangle"></i></div>
         <h3>Your current options aren't working.</h3>
         <p>Word of mouth. Trade newsletters. Occasionally reading raw regulatory text. Compliance attorneys at $300–$500/hour — used reactively, after something goes wrong. None of this is systematic. RegulatorPulse is.</p>
       </div>
@@ -581,10 +595,15 @@
       <div class="step">
         <div class="step-num">3</div>
         <h3>Tuesday briefing arrives</h3>
-        <p>Every Tuesday morning, your briefing arrives. 🔴 Action Required at the top. 🟡 Watch items next. 📋 Informational context last. Each item links directly to the original regulatory document.</p>
+        <p>Every Tuesday morning, your briefing arrives. <strong>Action Required</strong> items at the top. <strong>Watch</strong> items next. <strong>Informational</strong> context last. Each item links directly to the original regulatory document.</p>
       </div>
       <div class="step">
         <div class="step-num">4</div>
+        <h3>Review signals flagged automatically</h3>
+        <p>RegulatorPulse scans your Google Business Profile every week. When review language matches known regulatory violation patterns — "no doctor on site," "dirty tools," "no paperwork" — you get an alert in your briefing with a self-audit checklist and an AI-drafted response, ready to approve and post.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
         <h3>Reply with questions</h3>
         <p>Have a question about a briefing item? Reply to the email. We respond within 24 hours explaining what the rule says and where to find it. Not legal advice — clear regulatory intelligence.</p>
       </div>
@@ -605,7 +624,7 @@
       <div class="briefing-body">
 
         <div class="brief-item">
-          <span class="brief-tier tier-action">🔴 Action Required</span>
+          <span class="brief-tier tier-action">Action Required</span>
           <h4>TMB: Medical Director Agreement Must Be On-Site During All Operating Hours</h4>
           <p>The Texas Medical Board clarified on February 28 that medical director agreements must be physically present at the facility during all operating hours — not merely held off-site or in a management office. Two Austin practices received deficiency letters last month over this issue.</p>
           <div class="brief-action">Action: Print and place your medical director agreement in your on-site compliance binder. Confirm your medical director has signed the current version. Deadline: before your next operating day.</div>
@@ -615,7 +634,7 @@
         <hr class="brief-divider" />
 
         <div class="brief-item">
-          <span class="brief-tier tier-watch">🟡 Watch</span>
+          <span class="brief-tier tier-watch">Watch</span>
           <h4>BON Proposed Rule: NP Supervision Ratio in Aesthetic Settings Under Review</h4>
           <p>The Texas Board of Nursing has opened a comment period on proposed amendments to NP supervision ratios in aesthetic practice settings. If adopted, the change would affect NP-led practices statewide. Comment period closes April 15, 2026.</p>
           <p class="brief-source">Source: <a href="#">Texas Register, Vol. 51, No. 9 ↗</a></p>
@@ -624,7 +643,7 @@
         <hr class="brief-divider" />
 
         <div class="brief-item">
-          <span class="brief-tier tier-info">📋 Informational</span>
+          <span class="brief-tier tier-info">Informational</span>
           <h4>FDA: Dermal Filler Adverse Event Reports Up 18% in Q4 2025</h4>
           <p>FDA's MedWatch database shows an 18% increase in adverse events related to hyaluronic acid fillers. No rule change — informational only. Full report linked.</p>
           <p class="brief-source">Source: <a href="#">FDA MedWatch Quarterly Summary ↗</a></p>
@@ -633,7 +652,7 @@
         <hr class="brief-divider" />
 
         <div class="brief-item">
-          <span class="brief-tier" style="background:#f0f4ff;color:#1a56db;">📚 Rule of the Week</span>
+          <span class="brief-tier" style="background:#f0f4ff;color:#1a56db;">Rule of the Week</span>
           <h4>Medical Director Oversight Requirements — 22 TAC §193.17</h4>
           <p>Texas law requires a physician medical director to provide active, ongoing supervision of all delegated medical procedures at a MedSpa — not merely sign a contract. "Active supervision" means the physician must be available for consultation, review adverse events, and maintain documented oversight protocols.</p>
           <p><strong>What to check:</strong> Does your medical director have a written protocol for each delegated procedure? Has it been reviewed in the past 12 months? Is your adverse event log current? These are the three items inspectors look for when evaluating delegation compliance.</p>
@@ -643,7 +662,7 @@
         <hr class="brief-divider" />
 
         <div class="brief-item">
-          <span class="brief-tier" style="background:#fff5f5;color:#c53030;">⚖️ Enforcement Spotlight</span>
+          <span class="brief-tier" style="background:#fff5f5;color:#c53030;">Enforcement Spotlight</span>
           <h4>Austin MedSpa — $4,500 Fine for Unsupervised Injectable Administration</h4>
           <p>A Travis County medical spa was fined $4,500 and placed on probation after a TMB investigation found that a licensed esthetician had administered neurotoxin injections without physician supervision present or immediately available. The medical director had signed delegation documents but had no documented supervision protocol and had not visited the facility in over 90 days.</p>
           <p><strong>Takeaway:</strong> Delegation paperwork alone is not sufficient. TMB requires evidence of active, ongoing supervision — documented site visits, consultation logs, and signed protocol reviews.</p>
@@ -653,7 +672,7 @@
         <hr class="brief-divider" />
 
         <div class="brief-item">
-          <span class="brief-tier" style="background:#f0fff4;color:#276749;">🗓️ Regulatory Calendar</span>
+          <span class="brief-tier" style="background:#f0fff4;color:#276749;">Regulatory Calendar</span>
           <h4>Next 30 Days — MedSpa</h4>
           <p style="margin-bottom:6px"><strong>March 19:</strong> TMB March 26–27 board meeting agenda posts — watch for supervision and delegation rule items.</p>
           <p style="margin-bottom:6px"><strong>March 26–27:</strong> Texas Medical Board quarterly meeting, Austin.</p>
@@ -664,7 +683,34 @@
         <hr class="brief-divider" />
 
         <div class="brief-item">
-          <span class="brief-tier" style="background:#fafbff;color:#4a5568;border:1px solid #e2e8f0;">📰 Industry News</span>
+          <span class="brief-tier" style="background:#fff8f0;color:#b7500a;border:1px solid #fbd38d;">⭐ Review Signal</span>
+          <h4>3 recent reviews contain language associated with TMB supervision complaints</h4>
+          <p>RegulatorPulse scanned your Google Business Profile this week. Three reviews posted in the last 14 days contain language that statistically correlates with regulatory complaints in your vertical:</p>
+          <ul style="font-size:.88rem;color:var(--ink-muted);line-height:1.8;margin:8px 0 12px 18px;">
+            <li><em>"I never saw a doctor the whole time I was there."</em> — posted Feb 24</li>
+            <li><em>"The person doing my injections seemed unsure of what she was doing."</em> — posted Feb 22</li>
+            <li><em>"No one checked my medical history before starting."</em> — posted Feb 19</li>
+          </ul>
+          <p>This language maps directly to TMB Rule 22 TAC §193.17 — physician supervision and pre-procedure patient evaluation requirements. Research shows Google reviews predict regulatory complaints with near-perfect statistical significance. Customers who write reviews like these file TMB complaints at elevated rates.</p>
+          <div class="brief-action">
+            <strong>Self-audit checklist before your next patient:</strong><br/>
+            ☐ Is your medical director on-site or immediately reachable during all procedures?<br/>
+            ☐ Is a physician, PA, or NP conducting pre-procedure evaluations for every injectable patient?<br/>
+            ☐ Is your medical history intake form current and signed before treatment begins?<br/>
+            ☐ Are delegation protocols documented and signed within the last 12 months?
+          </div>
+          <div style="margin-top:12px;padding:12px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;">
+            <p style="font-size:.83rem;color:var(--ink-muted);margin:0 0 8px 0;font-weight:600;">AI-DRAFTED RESPONSE — Review posted Feb 24 · 1 star</p>
+            <p style="font-size:.85rem;color:var(--ink);font-style:italic;margin:0 0 10px 0;">"Thank you for sharing your experience. We take every concern seriously. At [Practice Name], every patient receives a consultation with our licensed medical provider before any treatment begins — this is both our standard and a requirement we hold ourselves to without exception. We'd welcome the opportunity to speak with you directly to understand what fell short of that standard. Please contact us at [phone/email]."</p>
+            <a href="#" style="font-size:.82rem;font-weight:700;color:var(--accent);text-decoration:none;">Approve &amp; Copy Response →</a>
+          </div>
+          <p style="font-size:.78rem;color:var(--ink-light);margin-top:8px;">Review monitoring covers your Google Business Profile. Yelp and Healthgrades monitoring available on Professional plan.</p>
+        </div>
+
+        <hr class="brief-divider" />
+
+        <div class="brief-item">
+          <span class="brief-tier" style="background:#fafbff;color:#4a5568;border:1px solid #e2e8f0;">Industry News</span>
           <h4>AmSpa 2026 State of the Industry Report Expected This Quarter</h4>
           <p>The American Med Spa Association's annual benchmark report — the most comprehensive data on MedSpa revenue, staffing, services, and compliance trends — is expected to publish in Q1 2026. We'll summarize the compliance-relevant findings when it releases.</p>
           <p style="margin-top:8px">Texas legislature in session through June 2026. No active bills targeting MedSpa supervision have advanced out of committee this week. Monitoring continues.</p>
@@ -680,12 +726,12 @@
 <section id="verticals">
   <div class="container">
     <p class="section-label">Who We Serve</p>
-    <h2 class="section-title">Ten Texas industries.<br/>One compliance system.</h2>
+    <h2 class="section-title">Twelve Texas industries.<br/>One compliance system.</h2>
     <p class="section-sub">Every vertical gets a briefing built for its specific regulatory environment — not a generic newsletter.</p>
     <div class="verticals-grid">
 
       <div class="vertical-card featured">
-        <div class="vertical-icon">💉</div>
+        <div class="vertical-icon"><i data-lucide="heart-pulse"></i></div>
         <h3>Medical Spas</h3>
         <p class="desc">The most complex small-business regulatory environment in Texas. Six agencies. Constantly evolving rules. A single TMB disciplinary action creates a permanent public record that follows your practice.</p>
         <ul class="agency-list">
@@ -694,13 +740,15 @@
           <li>TDLR — esthetics licensing</li>
           <li>OSHA — bloodborne pathogens, sharps</li>
           <li>FDA — Botox, fillers, energy devices</li>
-          <li>DEA — controlled substance schedules</li>
+          <li>DEA — if handling controlled substances</li>
+          <li>TX State Board of Pharmacy — if dispensing medications</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>149<span>/month</span></div>
+        <a href="/medspa" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">✂️</div>
+        <div class="vertical-icon"><i data-lucide="scissors"></i></div>
         <h3>Salons & Barbershops</h3>
         <p class="desc">TDLR inspects aggressively and cites frequently — and most owners don't know the rules changed until they fail an inspection. Chapter 83 amendments, sanitation standards, and IC list requirements are updated regularly.</p>
         <ul class="agency-list">
@@ -709,11 +757,12 @@
           <li>FDA — cosmetic ingredient alerts</li>
           <li>TCEQ — chemical disposal (nail salons)</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>79<span>/month</span></div>
+        <a href="/salon" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">🍽️</div>
+        <div class="vertical-icon"><i data-lucide="utensils"></i></div>
         <h3>Bars & Restaurants</h3>
         <p class="desc">Texas food service operators face overlapping jurisdiction from DSHS, TABC, and local health departments — with rules changing at the city, county, and state level simultaneously. Most operators find out about new requirements at their next inspection.</p>
         <ul class="agency-list">
@@ -722,24 +771,26 @@
           <li>Local health departments — city/county standards</li>
           <li>OSHA — kitchen safety, chemical handling</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>79<span>/month</span></div>
+        <a href="/bar_restaurant" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">🧒</div>
+        <div class="vertical-icon"><i data-lucide="baby"></i></div>
         <h3>Childcare Centers</h3>
         <p class="desc">Texas childcare operators face some of the most consequential compliance stakes of any small business category. A single high-weight HHSC deficiency can trigger an emergency license suspension that closes the facility overnight.</p>
         <ul class="agency-list">
           <li>TX Health & Human Services — Child Care Regulation (CCR)</li>
-          <li>TX Dept. of Family & Protective Services (DFPS)</li>
+          <li>DFPS — abuse/neglect investigations (separate from CCR)</li>
           <li>Local fire marshal — facility safety standards</li>
           <li>OSHA — employee health & safety</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>99<span>/month</span></div>
+        <a href="/childcare" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">🏠</div>
+        <div class="vertical-icon"><i data-lucide="home"></i></div>
         <h3>Home Health Agencies</h3>
         <p class="desc">Home health operators face continuous HHSC oversight plus federal CMS Conditions of Participation that are actively updated — where a single compliance failure can trigger a deficiency citation or loss of Medicare certification.</p>
         <ul class="agency-list">
@@ -748,24 +799,26 @@
           <li>OIG — fraud and abuse compliance updates</li>
           <li>OSHA — home health worker safety</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>149<span>/month</span></div>
+        <a href="/home_health" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">🔧</div>
+        <div class="vertical-icon"><i data-lucide="wrench"></i></div>
         <h3>Auto Repair Shops</h3>
         <p class="desc">Texas auto repair operators navigate overlapping obligations from TxDMV, TCEQ, and OSHA — with consumer protection rules, vehicle inspection station requirements, and hazardous waste standards that change regularly and carry per-violation fines.</p>
         <ul class="agency-list">
-          <li>TX Dept. of Motor Vehicles (TxDMV)</li>
-          <li>TCEQ — used oil, waste disposal</li>
           <li>TDLR — automotive A/C certification</li>
+          <li>TCEQ — used oil, hazardous waste disposal</li>
+          <li>Texas AG Consumer Protection — repair fraud enforcement</li>
           <li>OSHA — shop safety, chemical exposure</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>59<span>/month</span></div>
+        <a href="/auto_repair" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">👔</div>
+        <div class="vertical-icon"><i data-lucide="shirt"></i></div>
         <h3>Dry Cleaners</h3>
         <p class="desc">Dry cleaners using PERC face some of the most stringent environmental compliance requirements of any small business in Texas — with TCEQ air permits, EPA MACT standards, and hazardous waste rules that are actively enforced with significant daily fines.</p>
         <ul class="agency-list">
@@ -774,11 +827,12 @@
           <li>OSHA — chemical exposure, ventilation</li>
           <li>Local fire marshal — chemical storage</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>99<span>/month</span></div>
+        <a href="/dry_cleaner" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">🚚</div>
+        <div class="vertical-icon"><i data-lucide="truck"></i></div>
         <h3>Food Trucks & Catering</h3>
         <p class="desc">Mobile food operators navigate overlapping jurisdiction from city health departments, DSHS, and TABC — with requirements that vary by county and change without notice. Most operators learn about new rules at permit renewal, not before.</p>
         <ul class="agency-list">
@@ -787,11 +841,12 @@
           <li>Texas Alcoholic Beverage Commission (TABC)</li>
           <li>Local fire marshal — propane, hood suppression</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>59<span>/month</span></div>
+        <a href="/food_truck" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">⛪</div>
+        <div class="vertical-icon"><i data-lucide="church"></i></div>
         <h3>Churches & Nonprofits</h3>
         <p class="desc">Texas churches and nonprofits face a distinct and often overlooked set of regulatory obligations — from building and fire code compliance to food service permits, childcare licensing, and employment law requirements that apply even to religious organizations.</p>
         <ul class="agency-list">
@@ -801,11 +856,12 @@
           <li>Texas Workforce Commission — employment law updates</li>
           <li>IRS — nonprofit compliance, UBIT updates</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>59<span>/month</span></div>
+        <a href="/church" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+
       </div>
 
       <div class="vertical-card">
-        <div class="vertical-icon">🎉</div>
+        <div class="vertical-icon"><i data-lucide="calendar-days"></i></div>
         <h3>Event Venues</h3>
         <p class="desc">Event venues juggle permits and inspections from multiple agencies simultaneously — fire marshal occupancy limits, TABC service rules, food handler requirements, and ADA compliance standards that can change at the city, county, and state level independently.</p>
         <ul class="agency-list">
@@ -814,7 +870,33 @@
           <li>DSHS — food service, temporary event permits</li>
           <li>Local building & zoning — use permits, ADA compliance</li>
         </ul>
-        <div class="vertical-price">From <sup>$</sup>79<span>/month</span></div>
+        <a href="/event_venue" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+      </div>
+
+      <div class="vertical-card">
+        <div class="vertical-icon"><i data-lucide="activity"></i></div>
+        <h3>Physical Therapy Clinics</h3>
+        <p class="desc">Texas PT clinics face overlapping oversight from the Texas PT Board, HHSC, CMS, and OSHA — with Medicare billing rules, direct access documentation requirements, and aide supervision standards that update regularly and carry serious enforcement consequences.</p>
+        <ul class="agency-list">
+          <li>Texas PT & OT Board — license, supervision ratios</li>
+          <li>CMS / Medicare — billing, CoP compliance</li>
+          <li>HHSC — if licensed as rehab facility</li>
+          <li>OSHA — bloodborne pathogens, workplace safety</li>
+        </ul>
+        <a href="/physical_therapy" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
+      </div>
+
+      <div class="vertical-card">
+        <div class="vertical-icon"><i data-lucide="paw-print"></i></div>
+        <h3>Veterinary Clinics</h3>
+        <p class="desc">Texas vet practices navigate the State Board of Veterinary Medical Examiners, DEA controlled substance registration, OSHA hazard communication standards, and radiation machine inspections — often without a dedicated compliance function tracking what's changed.</p>
+        <ul class="agency-list">
+          <li>Texas BVME — license, supervision, facility standards</li>
+          <li>DEA — controlled substance registration & logs</li>
+          <li>OSHA — bloodborne pathogens, hazard communication</li>
+          <li>Texas DSHS — radiation machine registration</li>
+        </ul>
+        <a href="/veterinary" style="display:inline-block;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--accent);text-decoration:none;">Get Started →</a>
       </div>
 
     </div>
@@ -840,125 +922,6 @@
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing">
-  <div class="container" style="text-align:center">
-    <p class="section-label">Pricing</p>
-    <h2 class="section-title">Less than one citation. Every year.</h2>
-    <p class="section-sub" style="margin:0 auto">All plans include 30-day free trial. No credit card required. Annual billing saves 10%.</p>
-
-    <div class="pricing-section-header" style="max-width:900px;margin-left:auto;margin-right:auto">💉 Medical Spas</div>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-tier">Solo</div>
-        <div class="price-amount"><sup>$</sup>149</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">Single location. NP or physician-led. No IV therapy or controlled substances.</div>
-        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
-      </div>
-      <div class="price-card popular">
-        <div class="popular-badge">Most Popular</div>
-        <div class="price-tier">Standard</div>
-        <div class="price-amount"><sup>$</sup>249</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">Single location. Full-service: injectables, laser, IV therapy.</div>
-        <a href="#signup" class="price-cta price-cta-primary">Start Free Trial</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Multi-Site</div>
-        <div class="price-amount"><sup>$</sup>399</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">2–4 locations, same ownership. One briefing per location.</div>
-        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
-      </div>
-    </div>
-
-    <div class="pricing-section-header" style="max-width:900px;margin-left:auto;margin-right:auto">✂️ Salons & Barbershops</div>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-tier">Solo / Booth Renter</div>
-        <div class="price-amount"><sup>$</sup>39</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">Independent operators and booth renters.</div>
-        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
-      </div>
-      <div class="price-card popular">
-        <div class="popular-badge">Most Popular</div>
-        <div class="price-tier">Standard</div>
-        <div class="price-amount"><sup>$</sup>79</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">Single-location establishment. Hair, nail, or mixed services.</div>
-        <a href="#signup" class="price-cta price-cta-primary">Start Free Trial</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Multi-Location</div>
-        <div class="price-amount"><sup>$</sup>129</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">2–5 locations, same owner.</div>
-        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
-      </div>
-    </div>
-
-    <div class="pricing-section-header" style="max-width:900px;margin-left:auto;margin-right:auto">🍽️ Bars & Restaurants &nbsp;·&nbsp; 🎉 Event Venues</div>
-    <div class="pricing-grid" style="max-width:640px">
-      <div class="price-card">
-        <div class="price-tier">Single Location</div>
-        <div class="price-amount"><sup>$</sup>79</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">One establishment. TABC + DSHS + local coverage.</div>
-        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
-      </div>
-      <div class="price-card popular">
-        <div class="popular-badge">Best Value</div>
-        <div class="price-tier">Multi-Location</div>
-        <div class="price-amount"><sup>$</sup>129</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">2–5 locations, same owner.</div>
-        <a href="#signup" class="price-cta price-cta-primary">Start Free Trial</a>
-      </div>
-    </div>
-
-    <div class="pricing-section-header" style="max-width:900px;margin-left:auto;margin-right:auto">🏠 Home Health &nbsp;·&nbsp; 🧒 Childcare &nbsp;·&nbsp; 👔 Dry Cleaners</div>
-    <div class="pricing-grid" style="max-width:640px">
-      <div class="price-card">
-        <div class="price-tier">Standard</div>
-        <div class="price-amount"><sup>$</sup>99</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">Single facility. All relevant agency monitoring included.</div>
-        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
-      </div>
-      <div class="price-card popular">
-        <div class="popular-badge">Home Health</div>
-        <div class="price-tier">Home Health</div>
-        <div class="price-amount"><sup>$</sup>149</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">HHSC + CMS CoP monitoring. Medicare/Medicaid certified agencies.</div>
-        <a href="#signup" class="price-cta price-cta-primary">Start Free Trial</a>
-      </div>
-    </div>
-
-    <div class="pricing-section-header" style="max-width:900px;margin-left:auto;margin-right:auto">🔧 Auto Repair &nbsp;·&nbsp; 🚚 Food Trucks &nbsp;·&nbsp; ⛪ Churches & Nonprofits</div>
-    <div class="pricing-grid" style="max-width:640px">
-      <div class="price-card popular">
-        <div class="popular-badge">Most Popular</div>
-        <div class="price-tier">Standard</div>
-        <div class="price-amount"><sup>$</sup>59</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">Single location or operator. All relevant agency monitoring included.</div>
-        <a href="#signup" class="price-cta price-cta-primary">Start Free Trial</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Multi-Location</div>
-        <div class="price-amount"><sup>$</sup>99</div>
-        <div class="price-per">per month</div>
-        <div class="price-desc">2–5 locations or trucks, same owner.</div>
-        <a href="#signup" class="price-cta price-cta-secondary">Start Free Trial</a>
-      </div>
-    </div>
-
-    <p style="margin-top:24px;font-size:.82rem;color:var(--ink-light)">All plans include 30-day free trial · No credit card required · Cancel anytime · Annual billing available (save 10%)</p>
-  </div>
-</section>
 
 <!-- FAQ -->
 <section id="faq" style="background: var(--surface-2)">
@@ -1002,7 +965,7 @@
 <section class="cta-band" id="signup">
   <div class="container">
     <h2>Start your free 30-day trial.</h2>
-    <p>No credit card. No commitment. Just the regulatory intelligence your Texas business has been missing.</p>
+    <p>Tell us about your business and we'll set up your briefings. Card collected on the next step.</p>
 
     <form id="signupForm" style="max-width:480px;margin:32px auto 0;text-align:left">
       <div style="display:grid;gap:14px">
@@ -1015,40 +978,33 @@
         <input type="text" id="sig-establishment" placeholder="Business name (optional)"
           style="width:100%;padding:13px 16px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-size:.95rem;font-family:inherit;outline:none"
           onfocus="this.style.borderColor='rgba(255,255,255,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.2)'" />
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-          <select id="sig-vertical" required
-            style="padding:13px 16px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);background:rgba(30,40,60,.9);color:#fff;font-size:.95rem;font-family:inherit;outline:none">
-            <option value="" disabled selected>Vertical</option>
-            <option value="medspa">Medical Spa</option>
-            <option value="salon">Salon / Barbershop</option>
-            <option value="bar_restaurant">Bar / Restaurant</option>
-            <option value="childcare">Childcare Center</option>
-            <option value="home_health">Home Health Agency</option>
-            <option value="auto_repair">Auto Repair Shop</option>
-            <option value="dry_cleaner">Dry Cleaner</option>
-            <option value="food_truck">Food Truck / Catering</option>
-            <option value="church">Church / Nonprofit</option>
-            <option value="event_venue">Event Venue</option>
-          </select>
-          <select id="sig-tier" required
-            style="padding:13px 16px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);background:rgba(30,40,60,.9);color:#fff;font-size:.95rem;font-family:inherit;outline:none">
-            <option value="" disabled selected>Plan</option>
-            <option value="solo">Solo / Standard</option>
-            <option value="standard">Standard+</option>
-            <option value="multisite">Multi-Location</option>
-          </select>
-        </div>
+        <select id="sig-vertical" required
+          style="padding:13px 16px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);background:rgba(30,40,60,.9);color:#fff;font-size:.95rem;font-family:inherit;outline:none">
+          <option value="" disabled selected>What type of business?</option>
+          <option value="medspa">Medical Spa</option>
+          <option value="salon">Salon / Barbershop</option>
+          <option value="bar_restaurant">Bar / Restaurant</option>
+          <option value="childcare">Childcare Center</option>
+          <option value="home_health">Home Health Agency</option>
+          <option value="auto_repair">Auto Repair Shop</option>
+          <option value="dry_cleaner">Dry Cleaner</option>
+          <option value="food_truck">Food Truck / Catering</option>
+          <option value="church">Church / Nonprofit</option>
+          <option value="event_venue">Event Venue</option>
+          <option value="physical_therapy">Physical Therapy Clinic</option>
+          <option value="veterinary">Veterinary Clinic</option>
+        </select>
         <input type="text" id="sig-city" placeholder="City, Texas"
           style="width:100%;padding:13px 16px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-size:.95rem;font-family:inherit;outline:none"
           onfocus="this.style.borderColor='rgba(255,255,255,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.2)'" />
         <button type="submit" id="sig-btn"
           style="width:100%;padding:14px;background:#fff;color:#0f1117;border:none;border-radius:8px;font-weight:700;font-size:1rem;font-family:inherit;cursor:pointer;transition:opacity .15s">
-          Start Free Trial — No Credit Card
+          Continue →
         </button>
       </div>
       <p id="sig-msg" style="margin-top:14px;font-size:.85rem;min-height:20px;text-align:center"></p>
     </form>
-    <p style="margin-top:16px;font-size:.8rem;opacity:.55">By signing up you agree to our <a href="/terms" style="color:rgba(255,255,255,.7)">Terms of Service</a>. Cancel anytime.</p>
+    <p style="margin-top:16px;font-size:.78rem;opacity:.45;text-align:center">By continuing you agree to our <a href="/terms" style="color:rgba(255,255,255,.6)">Terms of Service</a>. 30-day free trial. Cancel anytime.</p>
   </div>
 </section>
 
@@ -1057,7 +1013,7 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   e.preventDefault();
   const btn = document.getElementById('sig-btn');
   const msg = document.getElementById('sig-msg');
-  btn.textContent = 'Starting trial…';
+  btn.textContent = 'One moment…';
   btn.disabled = true;
   msg.style.color = 'rgba(255,255,255,.7)';
   msg.textContent = '';
@@ -1067,7 +1023,7 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     email: document.getElementById('sig-email').value.trim(),
     establishment: document.getElementById('sig-establishment').value.trim() || null,
     vertical: document.getElementById('sig-vertical').value,
-    tier: document.getElementById('sig-tier').value,
+    tier: 'standard',
     city: document.getElementById('sig-city').value.trim() || null,
   };
 
@@ -1079,17 +1035,16 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     });
     const data = await res.json();
     if (res.ok) {
-      msg.style.color = '#86efac';
-      msg.textContent = '✓ ' + data.message;
-      document.getElementById('signupForm').reset();
-      btn.textContent = 'Trial Started!';
+      // Redirect to checkout with email pre-filled
+      const params = new URLSearchParams({ email: payload.email, vertical: payload.vertical });
+      window.location.href = '/checkout?' + params.toString();
     } else {
       throw new Error(data.detail || 'Something went wrong.');
     }
   } catch(err) {
     msg.style.color = '#fca5a5';
     msg.textContent = err.message;
-    btn.textContent = 'Start Free Trial — No Credit Card';
+    btn.textContent = 'Continue →';
     btn.disabled = false;
   }
 });
@@ -1098,11 +1053,10 @@ document.getElementById('signupForm').addEventListener('submit', async function(
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Regulator<span>Pulse</span></div>
+    <div class="footer-logo"><img src="/logo-wordmark.png" alt="RegulatorPulse"></div>
     <div class="footer-links">
       <a href="#how-it-works">How It Works</a>
       <a href="#verticals">Who We Serve</a>
-      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="mailto:hello@regulatorpulse.com">Contact</a>
       <a href="/terms">Terms of Service</a>
@@ -1113,6 +1067,6 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     </p>
   </div>
 </footer>
-
+<script>lucide.createIcons();</script>
 </body>
 </html>

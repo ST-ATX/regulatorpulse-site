@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">RegulatorPulse — Texas Compliance Briefings</title>
+  <meta id="page-desc" name="description" content="Weekly regulatory briefings for Texas small businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0f1117; --ink-muted: #4a5568; --ink-light: #718096;
+      --surface: #ffffff; --surface-2: #f7f8fa; --surface-3: #edf0f4;
+      --accent: #1a56db; --accent-hover: #1344b8; --accent-light: #ebf0fd;
+      --red: #c53030; --red-light: #fff5f5;
+      --yellow: #b7791f; --yellow-light: #fffbeb;
+      --green: #276749; --green-light: #f0fff4;
+      --border: #e2e8f0; --radius: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+      --shadow-lg: 0 4px 6px rgba(0,0,0,.07), 0 10px 40px rgba(0,0,0,.10);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; font-size: 16px; line-height: 1.6; color: var(--ink); background: var(--surface); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 88px; }
+    .logo { text-decoration: none; display: flex; align-items: center; }
+    .logo img { height: 72px; width: auto; }
+    .nav-right { display: flex; gap: 20px; align-items: center; }
+    .nav-right a { font-size: .9rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; }
+    .btn-nav { background: var(--accent); color: #fff !important; padding: 8px 18px; border-radius: 7px; font-weight: 600 !important; }
+
+    /* HERO */
+    .hero { background: linear-gradient(160deg, #f0f4ff 0%, #fafbff 60%, #fff 100%); padding: 72px 24px 88px; }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--accent-light); color: var(--accent); font-size: .78rem; font-weight: 700; padding: 5px 14px; border-radius: 99px; margin-bottom: 24px; letter-spacing: .3px; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; line-height: 1.15; letter-spacing: -.4px; margin-bottom: 20px; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-sub { font-size: 1.1rem; color: var(--ink-muted); max-width: 620px; line-height: 1.7; margin-bottom: 36px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: #fff; padding: 14px 30px; border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: background .15s, transform .1s; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-ghost { color: var(--ink-muted); padding: 14px 20px; font-size: .9rem; font-weight: 600; text-decoration: none; }
+
+    /* SECTIONS */
+    section { padding: 72px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: .75rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.3px; line-height: 1.2; margin-bottom: 16px; }
+    .section-sub { font-size: 1rem; color: var(--ink-muted); line-height: 1.65; max-width: 600px; }
+
+    /* STAKES */
+    .stakes { background: var(--surface-2); }
+    .stakes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 44px; }
+    .stake-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+    .stake-card .icon { margin-bottom: 12px; color: var(--accent); }
+    .stake-card .icon svg { width: 28px; height: 28px; stroke-width: 1.75; }
+    .stake-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: 8px; }
+    .stake-card p { font-size: .875rem; color: var(--ink-muted); line-height: 1.6; }
+    .fine-tag { display: inline-block; background: var(--red-light); color: var(--red); font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: .82rem; }
+
+    /* AGENCIES */
+    .agencies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 44px; }
+    .agency-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+    .agency-card h3 { font-size: .97rem; font-weight: 800; margin-bottom: 6px; color: var(--ink); }
+    .agency-card .acronym { font-size: .78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; }
+    .agency-card p { font-size: .86rem; color: var(--ink-muted); line-height: 1.6; }
+    .agency-card .freq { margin-top: 10px; font-size: .78rem; font-weight: 600; color: var(--ink-light); }
+
+    /* SAMPLE BRIEFING */
+    .sample { background: var(--surface-2); }
+    .briefing-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); max-width: 700px; margin: 44px auto 0; box-shadow: var(--shadow-lg); overflow: hidden; }
+    .briefing-header { background: var(--ink); color: #fff; padding: 16px 26px; font-size: .86rem; }
+    .briefing-header strong { font-weight: 700; }
+    .briefing-header span { opacity: .6; margin-left: 8px; }
+    .briefing-body { padding: 26px; }
+    .brief-item { margin-bottom: 24px; }
+    .brief-item:last-child { margin-bottom: 0; }
+    .brief-tier { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 9px; }
+    .tier-action { background: var(--red-light); color: var(--red); }
+    .tier-watch { background: var(--yellow-light); color: var(--yellow); }
+    .tier-info { background: var(--green-light); color: var(--green); }
+    .brief-item h4 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+    .brief-item p { font-size: .86rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 8px; }
+    .brief-action { background: var(--red-light); border-left: 3px solid var(--red); padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: .83rem; color: var(--red); font-weight: 600; }
+    .brief-source { font-size: .76rem; color: var(--ink-light); margin-top: 8px; }
+    .brief-source a { color: var(--accent); text-decoration: none; }
+    .brief-divider { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
+
+    /* CTA BAND */
+    .cta-band { background: var(--ink); color: #fff; padding: 80px 24px; text-align: center; }
+    .cta-band h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 800; letter-spacing: -.3px; margin-bottom: 14px; }
+    .cta-band p { font-size: 1rem; opacity: .75; max-width: 480px; margin: 0 auto 36px; line-height: 1.65; }
+
+    /* FORM */
+    .signup-form { max-width: 460px; margin: 0 auto; text-align: left; }
+    .form-field { width: 100%; padding: 13px 16px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,.2); background: rgba(255,255,255,.1); color: #fff; font-size: .95rem; font-family: inherit; outline: none; margin-bottom: 14px; }
+    .form-field:focus { border-color: rgba(255,255,255,.6); }
+    .form-field option { background: #1a2035; }
+    .btn-submit { width: 100%; padding: 14px; background: #fff; color: #0f1117; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; font-family: inherit; cursor: pointer; margin-top: 4px; }
+    .form-msg { margin-top: 14px; font-size: .85rem; min-height: 20px; text-align: center; }
+
+    /* FOOTER */
+    footer { background: var(--surface-2); border-top: 1px solid var(--border); padding: 36px 24px; text-align: center; }
+    .footer-logo { margin-bottom: 10px; }
+    .footer-logo img { height: 32px; width: auto; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 16px; flex-wrap: wrap; }
+    .footer-links a { font-size: .83rem; color: var(--ink-muted); text-decoration: none; }
+    .footer-disclaimer { font-size: .74rem; color: var(--ink-light); max-width: 680px; margin: 0 auto; line-height: 1.6; }
+
+    @media (max-width: 640px) { section { padding: 52px 20px; } .hero { padding: 52px 20px 64px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src="/logo-wordmark.png" alt="RegulatorPulse"></a>
+    <div class="nav-right">
+      <a href="/">All Industries</a>
+      <a href="#signup" class="btn-nav">Start Free Trial</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge" id="hero-badge">Texas Compliance Intelligence</div>
+    <h1 id="hero-h1">Loading…</h1>
+    <p class="hero-sub" id="hero-sub"></p>
+    <div class="hero-cta">
+      <a href="#signup" class="btn-primary">Start Free 30-Day Trial →</a>
+      <a href="#sample" class="btn-ghost">See a Sample Briefing</a>
+    </div>
+  </div>
+</section>
+
+<!-- STAKES -->
+<section class="stakes">
+  <div class="container">
+    <p class="section-label">Why It Matters</p>
+    <h2 class="section-title" id="stakes-title">The cost of not knowing.</h2>
+    <p class="section-sub" id="stakes-sub"></p>
+    <div class="stakes-grid" id="stakes-grid"></div>
+  </div>
+</section>
+
+<!-- AGENCIES -->
+<section>
+  <div class="container">
+    <p class="section-label">What We Monitor</p>
+    <h2 class="section-title" id="agencies-title">Every agency. Every week.</h2>
+    <p class="section-sub" id="agencies-sub"></p>
+    <div class="agencies-grid" id="agencies-grid"></div>
+  </div>
+</section>
+
+<!-- SAMPLE BRIEFING -->
+<section class="sample" id="sample">
+  <div class="container" style="text-align:center">
+    <p class="section-label">Sample Briefing</p>
+    <h2 class="section-title">This lands in your inbox every Tuesday.</h2>
+    <p class="section-sub" style="margin:0 auto">Sorted by urgency. Linked to primary sources. Specific to your business.</p>
+    <div class="briefing-card">
+      <div class="briefing-header">
+        <strong>RegulatorPulse</strong> <span id="briefing-edition"></span>
+      </div>
+      <div class="briefing-body" id="briefing-body"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA + SIGNUP -->
+<section class="cta-band" id="signup">
+  <div class="container">
+    <h2 id="cta-h2">Start your free 30-day trial.</h2>
+    <p id="cta-p">Your first briefing arrives Tuesday. Card collected on the next step — no charge for 30 days.</p>
+
+    <form class="signup-form" id="signupForm">
+      <input type="text" id="sig-name" class="form-field" placeholder="Your name" required />
+      <input type="email" id="sig-email" class="form-field" placeholder="Email address" required />
+      <input type="text" id="sig-establishment" class="form-field" placeholder="Business name (optional)" />
+      <input type="text" id="sig-city" class="form-field" placeholder="City, Texas" />
+      <input type="hidden" id="sig-vertical" />
+      <button type="submit" id="sig-btn" class="btn-submit">Continue to Billing →</button>
+      <p class="form-msg" id="sig-msg"></p>
+    </form>
+    <p style="margin-top:14px;font-size:.76rem;opacity:.4;text-align:center">30-day free trial · Cancel anytime · By continuing you agree to our <a href="/terms" style="color:rgba(255,255,255,.5)">Terms</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="/logo-wordmark.png" alt="RegulatorPulse"></div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="#sample">Sample Briefing</a>
+      <a href="#signup">Get Started</a>
+      <a href="mailto:hello@regulatorpulse.com">Contact</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <p class="footer-disclaimer">RegulatorPulse LLC · Austin, TX · Content does not constitute legal advice. Consult qualified counsel before acting on any regulatory matter. © 2026 RegulatorPulse LLC.</p>
+  </div>
+</footer>
+
+<script>
+const VERTICALS = {
+  medspa: {
+    badge: 'Medical Spa Compliance · Texas',
+    h1: 'The compliance system built for <em>Texas MedSpas.</em>',
+    sub: 'Six agencies. Constantly evolving rules. A single TMB disciplinary action creates a permanent public record that follows your practice forever. RegulatorPulse monitors everything — so you know before they knock.',
+    stakesTitle: 'The cost of one missed rule change.',
+    stakesSub: 'Texas MedSpas face some of the highest regulatory stakes of any small business. The agencies don\'t warn you when rules change.',
+    stakes: [
+      { icon: 'landmark', title: 'TMB Disciplinary Action', body: 'A Texas Medical Board enforcement action creates a permanent public record. Prospective patients find it. Staff see it. It follows your practice indefinitely.', fine: null },
+      { icon: 'syringe', title: 'Unsupervised Procedures', body: 'Delegating aesthetic procedures without documented physician supervision can result in TMB fines, probation, and license suspension — for both the delegating physician and the practice.', fine: 'Up to $5,000/violation' },
+      { icon: 'microscope', title: 'FDA Device Violations', body: 'Using energy devices for off-label purposes, or acquiring injectables from unauthorized distributors, triggers both FDA and TMB exposure simultaneously.', fine: 'Civil + criminal penalties' },
+      { icon: 'shield-alert', title: 'OSHA Bloodborne Pathogens', body: 'Failure to maintain current exposure control plans, sharps disposal logs, and hepatitis B vaccination records is an OSHA citation waiting to happen.', fine: 'Up to $16,550/violation' },
+    ],
+    agencies: [
+      { name: 'Texas Medical Board', acronym: 'TMB', desc: 'Licenses physicians and regulates medical direction, delegation of medical acts, and physician supervision of all invasive aesthetic procedures.', freq: 'Meets quarterly · Rule changes published in Texas Register' },
+      { name: 'Texas Board of Nursing', acronym: 'BON', desc: 'Governs NP scope of practice, collaborative agreements, and delegation authority for aesthetic procedures performed by nurse practitioners.', freq: 'Active rulemaking · Comment periods open regularly' },
+      { name: 'Texas Department of Licensing & Regulation', acronym: 'TDLR', desc: 'Licenses estheticians, laser hair removal operators, and electrologists. Conducts unannounced inspections of facilities.', freq: 'Unannounced inspections · Chapter 83 amendments' },
+      { name: 'Food & Drug Administration', acronym: 'FDA', desc: 'Regulates botulinum toxin products, dermal fillers, and energy-based devices. Issues safety alerts and warning letters to unauthorized distributors.', freq: 'MedWatch alerts ongoing' },
+      { name: 'Occupational Safety & Health Administration', acronym: 'OSHA', desc: 'Enforces bloodborne pathogen standards, chemical hazard communication, and sharps disposal requirements for all healthcare-adjacent settings.', freq: 'Federal standards · Texas plan adopted' },
+      { name: 'Drug Enforcement Administration', acronym: 'DEA', desc: 'Governs registration and record-keeping for controlled substances, if your practice handles sedation, pain management, or prescription-only compounds.', freq: 'Required if handling Schedule II–V substances' },
+    ],
+    briefingEdition: '— MedSpa Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'TMB: Medical Director Agreement Must Be Physically On-Site', body: 'The Texas Medical Board clarified that medical director agreements must be physically present at the facility during all operating hours. Two Austin practices received deficiency letters last month for holding agreements off-site.', action: 'Print and file your medical director agreement in your on-site compliance binder before your next operating day.', source: 'Texas Medical Board Guidance Bulletin, Feb 28, 2026' },
+      { tier: 'watch', label: 'Watch', title: 'BON: NP Supervision Ratio in Aesthetic Settings Under Review', body: 'The Texas Board of Nursing has opened a comment period on proposed amendments to NP supervision ratios in aesthetic practice settings. Comment period closes April 15, 2026.', action: null, source: 'Texas Register, Vol. 51, No. 9' },
+      { tier: 'info', label: 'Rule of the Week', title: '22 TAC §193.17 — Delegation of Medical Acts', body: '"Active supervision" means the physician must be available for consultation, review adverse events, and maintain documented oversight protocols — not merely sign a contract. Inspectors ask for your adverse event log and protocol review dates.', action: null, source: '22 TAC §193.17 — Delegation of Medical Acts' },
+    ],
+    ctaH2: 'Know before they knock.',
+    ctaP: 'Every TMB board meeting. Every BON rulemaking. Every FDA MedWatch alert. Delivered every Tuesday in plain English. Your first briefing arrives this week.',
+  },
+
+  salon: {
+    badge: 'Salon & Barbershop Compliance · Texas',
+    h1: 'TDLR doesn\'t announce inspections. <em>We do.</em>',
+    sub: 'Texas salons and barbershops face unannounced TDLR inspections, Chapter 83 rule changes, and chemical safety requirements that update without warning. RegulatorPulse monitors it all — delivered every Tuesday.',
+    stakesTitle: 'What inspectors are checking right now.',
+    stakesSub: 'TDLR inspectors arrive unannounced. They know the current rules. Most owners don\'t.',
+    stakes: [
+      { icon: 'clipboard-list', title: 'Missing IC List', body: 'Failure to produce a current list of all independent contractors on request is one of the top 3 cited violations statewide. Inspectors ask for it on entry.', fine: 'Up to $3,500' },
+      { icon: 'badge-check', title: 'No Photo on License', body: 'Every practitioner license must display a current photo at the station. Consistently in the top 10 cited violations — and one of the easiest to fix.', fine: 'Up to $3,500' },
+      { icon: 'flask-conical', title: 'Disinfectant Failures', body: 'Disinfectant solutions must be prepared fresh daily and at proper concentration. Inspectors test on-site. A diluted or absent solution is an immediate citation.', fine: 'Up to $3,500' },
+      { icon: 'beaker', title: 'Formaldehyde (Keratin)', body: 'OSHA\'s formaldehyde standard applies to keratin treatments. Products marketed as "formaldehyde-free" often release it when heated. Employee training and SDS sheets are required.', fine: 'Up to $16,550/violation' },
+    ],
+    agencies: [
+      { name: 'Texas Department of Licensing & Regulation', acronym: 'TDLR', desc: 'Primary regulator for all Texas salons and barbershops. Enforces Chapter 83 (Barbering & Cosmetology) — covering sanitation, licensing, establishment requirements, and IC contractor rules. Conducts unannounced inspections.', freq: 'Unannounced inspections · Weekly Texas Register updates' },
+      { name: 'Occupational Safety & Health Administration', acronym: 'OSHA', desc: 'Enforces Hazard Communication (HazCom), formaldehyde exposure standards for keratin treatments, and chemical safety requirements. Applicable to all salon employees.', freq: 'Federal standards — can inspect any time' },
+      { name: 'Food & Drug Administration', acronym: 'FDA', desc: 'Issues cosmetic ingredient safety alerts and warnings on specific products. Relevant when product safety advisories affect retail or professional lines you carry.', freq: 'Ongoing safety alerts and recalls' },
+      { name: 'Texas Commission on Environmental Quality', acronym: 'TCEQ', desc: 'Governs chemical disposal for nail salons using acetone, acrylic monomers, and UV gel products. Improper disposal of salon chemicals is a TCEQ violation.', freq: 'Complaint-driven + targeted inspections' },
+    ],
+    briefingEdition: '— Salon Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Update Your IC List Before Your Next Operating Day', body: 'Failure to produce a current IC list on entry is one of the most commonly cited TDLR violations. Your list must include every independent contractor and mini-establishment licensee currently working in your shop.', action: 'Update your IC list today. Keep it at the front desk — not in a back office. Five minutes now prevents a $3,500 citation.', source: 'TDLR Rule 83.50(b)' },
+      { tier: 'watch', label: 'Watch', title: 'TDLR Proposed: Chapter 118 Laser Hair Removal Amendments', body: 'TDLR proposed amendments to 16 TAC Chapter 118 on February 20, 2026. Proposed rules publish in the Texas Register March 6. If you offer laser services, review when published.', action: null, source: 'TDLR Rulemaking Notice, Feb 20, 2026' },
+      { tier: 'info', label: 'Rule of the Week', title: 'TDLR Rule 83.101(a)(3) — Fresh Disinfectant Daily', body: 'Disinfectant solutions must be prepared fresh at the beginning of each working day, or more often if they become diluted or soiled. Inspectors test concentration levels on-site using a chemical test strip. There is no warning — it is an immediate citation.', action: null, source: 'TDLR Rule 83.101(a)(3)' },
+    ],
+    ctaH2: 'Stop finding out from inspectors.',
+    ctaP: 'Every TDLR rule change. Every inspection trend. Every compliance tip. Delivered every Tuesday so you\'re never caught off guard.',
+  },
+
+  bar_restaurant: {
+    badge: 'Bar & Restaurant Compliance · Texas',
+    h1: 'TABC doesn\'t warn you. <em>We do.</em>',
+    sub: 'Texas bars and restaurants navigate overlapping jurisdiction from TABC, DSHS, and local health departments — with rules changing at every level simultaneously. RegulatorPulse monitors everything and delivers it every Tuesday.',
+    stakesTitle: 'One violation can cost your license.',
+    stakesSub: 'TABC enforcement is swift and public. Suspension or cancellation puts you out of business. Most owners find out about rule changes at their next inspection.',
+    stakes: [
+      { icon: 'beer', title: 'Sale to Minors', body: 'TABC\'s highest enforcement priority. A single proven sale to a minor can result in license suspension or cancellation — regardless of how long you\'ve held the license.', fine: 'Suspension or cancellation' },
+      { icon: 'utensils', title: 'Food Safety Violations', body: 'DSHS and local health departments conduct unannounced inspections. Critical violations — temperature failures, cross-contamination — can trigger immediate closure orders.', fine: 'Up to $10,000 + closure' },
+      { icon: 'scroll-text', title: 'Expired Certifications', body: 'Seller/server certifications expire every 2 years. High staff turnover means expirations are common. Inspectors check certifications on entry — no warning.', fine: 'Up to $500/occurrence' },
+      { icon: 'landmark', title: 'License Posting Failures', body: 'TABC permit must be posted conspicuously at all times. Inspectors check immediately on entry. A missing or expired posted permit is an automatic citation.', fine: 'Up to $500' },
+    ],
+    agencies: [
+      { name: 'Texas Alcoholic Beverage Commission', acronym: 'TABC', desc: 'Issues and enforces all Texas liquor licenses and permits. Conducts compliance checks, responds to complaints, and pursues enforcement actions including fines, suspensions, and license cancellations.', freq: 'Ongoing enforcement · Board meets quarterly' },
+      { name: 'TX Dept. of State Health Services', acronym: 'DSHS', desc: 'Sets statewide food safety rules for Texas restaurants and food service operations. Adopts and amends the Texas Food Establishment Rules (TFER).', freq: 'Unannounced inspections · Rule updates via Texas Register' },
+      { name: 'Local Health Departments', acronym: 'City/County', desc: 'Primary inspection authority in most Texas cities. Austin, Houston, Dallas, San Antonio, and Fort Worth all have their own food safety standards that may exceed state minimums.', freq: 'Unannounced inspections · Local ordinance changes' },
+      { name: 'Occupational Safety & Health Administration', acronym: 'OSHA', desc: 'Enforces kitchen safety standards: chemical handling, slip/fall prevention, hood suppression systems, and employee injury reporting requirements.', freq: 'Complaint-driven + targeted inspections' },
+    ],
+    briefingEdition: '— Bar & Restaurant Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Audit Seller/Server Certifications Before Your Next Shift', body: 'TABC agents check seller/server certifications during compliance visits. With high staff turnover, expired certifications are the most common controllable violation. Certifications expire every 2 years.', action: 'Pull a list of all staff who handle alcohol. Check every expiration date. Any expired certification must be remedied before next operating shift.', source: 'TABC Seller/Server Training Requirements' },
+      { tier: 'watch', label: 'Watch', title: 'TABC Reviewing Sanction Schedule — Penalty Amounts May Change', body: 'TABC voted on February 20, 2026 to review Chapters 34 and 35 governing how fines and suspensions are calculated. Changes could affect penalty amounts for common violations.', action: null, source: 'TABC Code and Rules, Feb 20, 2026' },
+      { tier: 'info', label: 'Rule of the Week', title: 'Texas Alcoholic Beverage Code §11.38 — License Posting', body: 'Your TABC permit must be posted conspicuously at or near the primary public entrance at all times. "Conspicuously" means clearly visible to patrons and inspectors without asking. Inspectors check this within the first 60 seconds of any visit.', action: null, source: 'Texas Alcoholic Beverage Code §11.38' },
+    ],
+    ctaH2: 'Protect your license.',
+    ctaP: 'Every TABC rule change. Every DSHS food safety update. Every local health department notice. Delivered every Tuesday.',
+  },
+
+  childcare: {
+    badge: 'Childcare Center Compliance · Texas',
+    h1: 'One high-weight deficiency. <em>Immediate suspension.</em>',
+    sub: 'Texas childcare operators face some of the most consequential compliance stakes of any small business. HHSC posts every deficiency on your public record — and parents are checking. RegulatorPulse monitors every relevant agency so you\'re never caught off guard.',
+    stakesTitle: 'The stakes are higher than any other industry.',
+    stakesSub: 'A single high-weight HHSC deficiency can close your facility overnight. Parents check your public record before they enroll.',
+    stakes: [
+      { icon: 'siren', title: 'Emergency Suspension', body: 'HHSC can issue an emergency suspension order — closing your facility immediately — when a high-weight deficiency presents an immediate threat to child safety. No prior warning required.', fine: 'Immediate closure' },
+      { icon: 'bar-chart-2', title: 'Public Deficiency Record', body: 'Every HHSC inspection deficiency is posted on your publicly searchable record at hhs.texas.gov. Prospective parents search before they enroll. A pattern of deficiencies kills enrollment.', fine: 'Permanent public record' },
+      { icon: 'users', title: 'Ratio Violations', body: 'Staff-to-child ratio violations are among the highest-weighted deficiencies. They must be maintained at all times — including outdoor play, transitions, and nap periods.', fine: 'High-weight deficiency' },
+      { icon: 'refresh-cw', title: 'Heightened Monitoring', body: 'Facilities with deficiency patterns across 3 of the last 5 years enter HHSC\'s Heightened Monitoring program — a multi-agency oversight regime that significantly increases inspection frequency.', fine: 'Operational burden + reputational damage' },
+    ],
+    agencies: [
+      { name: 'HHSC Child Care Regulation', acronym: 'CCR', desc: 'Primary licensing and inspection authority for all Texas licensed childcare centers. Enforces Minimum Standards, conducts announced and unannounced inspections, and posts all deficiencies publicly.', freq: 'Unannounced inspections · Risk-based frequency' },
+      { name: 'TX Dept. of Family & Protective Services', acronym: 'DFPS', desc: 'Investigates abuse and neglect allegations in childcare settings. Findings can trigger CCR enforcement action and mandatory reporting obligations.', freq: 'Complaint and report-driven' },
+      { name: 'State Fire Marshal / Local Fire Marshal', acronym: 'Fire', desc: 'Inspects childcare facilities for fire safety compliance — sprinklers, egress, smoke detectors, extinguishers, and occupancy limits. Separate from CCR inspections.', freq: 'Annual inspections in most jurisdictions' },
+      { name: 'Occupational Safety & Health Administration', acronym: 'OSHA', desc: 'Governs employee health and safety requirements — chemical handling, slip/fall prevention, and bloodborne pathogen exposure for facilities serving medically complex children.', freq: 'Complaint-driven inspections' },
+    ],
+    briefingEdition: '— Childcare Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Check Your Public Deficiency Record — Parents Already Are', body: 'HHSC posts all inspection deficiencies on each facility\'s public online record, searchable at hhs.texas.gov. A pattern of deficiencies triggers Heightened Monitoring. Know what prospective parents see before they do.', action: 'Search your facility at hhs.texas.gov right now. Review every posted deficiency. Prioritize any uncorrected items in your written corrective action plan this week.', source: 'HHSC Child Care Search Tool' },
+      { tier: 'watch', label: 'Watch', title: 'Texas Legislature: Childcare Staffing Bills in Committee', body: 'Multiple bills related to childcare staffing requirements and background check standards are in committee through June 2026. Passage could affect required staff qualifications and costs.', action: null, source: 'Texas Legislature Online' },
+      { tier: 'info', label: 'Rule of the Week', title: 'Staff-to-Child Ratios — Texas Minimum Standards', body: 'Required ratios by age: Infants (0–11 mo) 1:4 · Toddlers (12–17 mo) 1:5 · Toddlers (18–23 mo) 1:9 · 2-year-olds 1:11 · 3-year-olds 1:15 · 4–8 years 1:18. These apply during ALL activities including outdoor time, transitions, and nap periods.', action: null, source: 'HHSC Minimum Standards for Licensed Child Care Centers' },
+    ],
+    ctaH2: 'Protect your license. Protect your reputation.',
+    ctaP: 'Every HHSC rule change. Every Minimum Standards update. Every legislative development. Delivered every Tuesday.',
+  },
+
+  home_health: {
+    badge: 'Home Health Agency Compliance · Texas',
+    h1: 'CMS surveys don\'t wait. <em>Neither should you.</em>',
+    sub: 'Texas home health agencies face dual oversight from HHSC and CMS — with Conditions of Participation that update annually and OASIS requirements that expanded in 2025. RegulatorPulse monitors every relevant agency and delivers your briefing every Tuesday.',
+    stakesTitle: 'The regulatory environment is more complex than any other vertical.',
+    stakesSub: 'A single CMS survey deficiency can trigger a plan of correction. Multiple deficiencies can result in termination of Medicare participation.',
+    stakes: [
+      { icon: 'hospital', title: 'Medicare Decertification', body: 'Repeated or serious CMS survey deficiencies can result in termination of Medicare certification — eliminating the majority of revenue for most home health agencies overnight.', fine: 'Loss of Medicare participation' },
+      { icon: 'clipboard-list', title: 'OASIS Submission Failures', body: 'Since January 2025, OASIS data collection expanded to all payer types. Agencies that haven\'t updated intake workflows are actively out of compliance and generating survey deficiency exposure.', fine: 'Active survey deficiency target' },
+      { icon: 'circle-dollar-sign', title: 'HHVBP Payment Reductions', body: 'The Home Health Value-Based Purchasing model ties Medicare reimbursement to quality performance. Agencies below benchmark on OASIS-based measures face payment reductions.', fine: 'Payment reductions up to 5%' },
+      { icon: 'search', title: 'OIG Fraud & Abuse', body: 'The OIG Work Plan targets home health billing patterns annually. Upcoding, inappropriate episode billing, and face-to-face documentation failures are active enforcement priorities.', fine: 'Civil + criminal exposure' },
+    ],
+    agencies: [
+      { name: 'HHSC Bureau of Home Care', acronym: 'HHSC', desc: 'Texas state licensure authority for Home and Community Support Services Agencies (HCSSAs). Conducts initial and renewal surveys, investigates complaints, and issues enforcement actions.', freq: 'Survey-based · HCSSA provider updates quarterly' },
+      { name: 'Centers for Medicare & Medicaid Services', acronym: 'CMS', desc: 'Federal authority for Medicare/Medicaid certification. Enforces Conditions of Participation via accreditation organizations (JCAHO, CHAP, ACHC) or direct CMS surveys.', freq: 'Annual CoP updates · PPS rule updates each December' },
+      { name: 'Office of Inspector General', acronym: 'OIG', desc: 'Publishes an annual Work Plan identifying home health billing patterns under active scrutiny. Issues advisory opinions and pursues False Claims Act enforcement.', freq: 'Annual Work Plan · Ongoing enforcement activity' },
+      { name: 'Occupational Safety & Health Administration', acronym: 'OSHA', desc: 'Governs worker safety for home health employees — bloodborne pathogens, ergonomics, and workplace violence prevention standards for staff entering patient homes.', freq: 'Federal standards · Complaint-driven inspections' },
+    ],
+    briefingEdition: '— Home Health Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Confirm OASIS Expanded to All Payer Types — Effective Jan 1, 2025', body: 'CMS expanded OASIS data collection requirements to all applicable patients regardless of payer effective January 1, 2025. Agencies that haven\'t updated intake workflows are out of compliance and generating active survey exposure.', action: 'Confirm with your clinical director that OASIS protocols were updated for all payer types. If not, correct immediately — this is an active surveyor target in 2026.', source: 'CMS Home Health Quality Reporting Requirements' },
+      { tier: 'watch', label: 'Watch', title: 'CY 2026 HH PPS Rule — Review Your Billing Implementation', body: 'CMS finalized the CY 2026 Home Health PPS rule in December 2025 with recalibrated case-mix weights and updated LUPA thresholds. Miscoded claims under the new grouper logic result in systematic underpayment or overpayment — both create audit exposure.', action: null, source: 'Federal Register, CY 2026 HH PPS Final Rule' },
+      { tier: 'info', label: 'Rule of the Week', title: 'CMS CoP §484.55 — Comprehensive Assessment', body: 'The comprehensive assessment must be completed within 5 calendar days of the start of care and updated as frequently as the patient\'s condition warrants — at least every 60 days. It is the most frequently cited Condition of Participation in home health surveys nationally.', action: null, source: '42 CFR §484.55 — Comprehensive Assessment of Patients' },
+    ],
+    ctaH2: 'Stay ahead of every survey.',
+    ctaP: 'Every HHSC bulletin. Every CMS CoP update. Every OIG Work Plan item. Delivered every Tuesday in plain English.',
+  },
+
+  auto_repair: {
+    badge: 'Auto Repair Shop Compliance · Texas',
+    h1: 'Consumer complaints trigger investigations. <em>Know the rules first.</em>',
+    sub: 'Texas auto repair shops face consumer protection rules from the Attorney General, chemical disposal requirements from TCEQ, and A/C certification standards from TDLR. RegulatorPulse monitors every relevant agency — delivered every Tuesday.',
+    stakesTitle: 'One complaint can trigger an investigation.',
+    stakesSub: 'The Texas AG Consumer Protection Division investigates auto repair fraud. TCEQ has authority to assess daily fines for improper chemical disposal.',
+    stakes: [
+      { icon: 'file-text', title: 'Written Estimate Violations', body: 'Texas law requires a written estimate before any repair work begins. Failure to provide one is the most common trigger for AG consumer complaints — and investigations follow every complaint.', fine: 'Up to $10,000/violation' },
+      { icon: 'biohazard', title: 'Used Oil Disposal', body: 'TCEQ governs used oil storage, labeling, and disposal. Improper disposal — including pouring oil into storm drains or dumpsters — triggers significant daily penalties.', fine: 'Up to $25,000/day' },
+      { icon: 'snowflake', title: 'A/C Certification Lapse', body: 'TDLR requires certification for automotive A/C work. Operating without a current certificate — or allowing a lapsed certificate to go unrenewed — is a citable violation.', fine: 'Up to $5,000' },
+      { icon: 'wrench', title: 'Unauthorized Additional Work', body: 'Proceeding with repair work that exceeds the authorized estimate without written customer approval is both a regulatory violation and a Deceptive Trade Practices Act exposure.', fine: 'DTPA treble damages' },
+    ],
+    agencies: [
+      { name: 'Texas Attorney General — Consumer Protection', acronym: 'TX AG', desc: 'Enforces the Texas Deceptive Trade Practices Act (DTPA) for auto repair fraud. Investigates consumer complaints about unauthorized repairs, false estimates, and parts misrepresentation.', freq: 'Complaint-driven investigations' },
+      { name: 'Texas Commission on Environmental Quality', acronym: 'TCEQ', desc: 'Regulates used oil storage, labeling, disposal, and recycling requirements. Also governs waste antifreeze, solvents, and hazardous materials generated by repair operations.', freq: 'Unannounced inspections + complaint-driven' },
+      { name: 'Texas Dept. of Licensing & Regulation', acronym: 'TDLR', desc: 'Issues and enforces automotive A/C technician certifications under the Texas Clean Air Act requirements. Certification must be current for all technicians performing A/C work.', freq: 'License renewal + complaint-driven' },
+      { name: 'Occupational Safety & Health Administration', acronym: 'OSHA', desc: 'Enforces shop safety standards — chemical exposure (solvents, brake dust), lift safety, hearing protection, and Hazard Communication requirements for all employees.', freq: 'Complaint-driven + programmed inspections' },
+    ],
+    briefingEdition: '— Auto Repair Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Audit Your Written Estimate Process This Week', body: 'The written estimate requirement is the most common trigger for Texas AG consumer complaints against auto repair shops. Every repair order must have a signed written estimate before any work begins — no exceptions.', action: 'Walk your intake process today. Every RO must have a signed estimate before work starts. Brief your service advisors on the authorization requirement for overages.', source: 'Texas Occupations Code Ch. 2301' },
+      { tier: 'watch', label: 'Watch', title: 'TCEQ: Used Oil Generator Requirements Under Review', body: 'TCEQ is reviewing used oil generator record-keeping requirements as part of a broader environmental rules update. Changes could affect storage, labeling, and manifesting requirements for shops generating used oil.', action: null, source: 'TCEQ Environmental Rules Update' },
+      { tier: 'info', label: 'Rule of the Week', title: 'Texas Occupations Code §2301 — Parts Return Rights', body: 'Texas customers have the right to request return of replaced parts at the time they authorize repair work. Shops must honor this request unless the parts must be returned to a manufacturer under a warranty or core program. Failure to return parts on request is a citable DTPA violation.', action: null, source: 'Texas Occupations Code §2301.456' },
+    ],
+    ctaH2: 'Know the rules before the complaint.',
+    ctaP: 'Every AG consumer protection update. Every TCEQ chemical disposal rule change. Every TDLR certification requirement. Delivered every Tuesday.',
+  },
+
+  dry_cleaner: {
+    badge: 'Dry Cleaner Compliance · Texas',
+    h1: 'TCEQ and EPA are watching. <em>Are you ready?</em>',
+    sub: 'Texas dry cleaners using PERC face some of the most stringent environmental compliance requirements of any small business — with TCEQ air permits, EPA MACT standards enforced by Region 6, and daily fine exposure that can exceed $25,000. RegulatorPulse monitors every requirement and delivers your briefing every Tuesday.',
+    stakesTitle: 'PERC violations carry some of the highest fines in small business.',
+    stakesSub: 'TCEQ and EPA Region 6 conduct coordinated inspections of dry cleaning facilities. Documentation gaps are the most common enforcement trigger.',
+    stakes: [
+      { icon: 'biohazard', title: 'PERC Leak Violations', body: 'Federal MACT standards require biweekly visual leak inspections and monthly detector-based inspections. Missing inspection logs — even when no leak exists — is a citable violation.', fine: 'Up to $25,000/day' },
+      { icon: 'clipboard-list', title: 'Documentation Failures', body: 'TCEQ and EPA inspectors review your inspection logs on arrival. Gaps, unsigned entries, or missing dates are independent violations separate from any actual emission issue.', fine: 'Per occurrence' },
+      { icon: 'factory', title: 'Non-Compliant Equipment', body: 'Any machine installed after December 21, 2005 must be non-venting with a refrigerated condenser and secondary carbon adsorber. Non-compliant equipment cannot be grandfathered.', fine: 'Up to $25,000/day per unit' },
+      { icon: 'droplets', title: 'Remediation Fund Registration', body: 'Texas dry cleaners must maintain current TCEQ registration and pay annual fees into the Dry Cleaner Remediation Fund. Operating on an expired registration is a separate citable violation.', fine: 'Up to $10,000' },
+    ],
+    agencies: [
+      { name: 'Texas Commission on Environmental Quality', acronym: 'TCEQ', desc: 'Primary state environmental regulator for dry cleaners. Issues PERC air permits, administers the Dry Cleaner Remediation Fund, and conducts facility inspections for compliance with state environmental rules.', freq: 'Annual registration · Unannounced inspections' },
+      { name: 'EPA Region 6 (Dallas)', acronym: 'EPA', desc: 'Enforces federal MACT standards (40 CFR Part 63, Subpart M) for dry cleaning facilities using perchloroethylene. Conducts coordinated inspections with TCEQ and accepts citizen complaints.', freq: 'Coordinated inspections with TCEQ' },
+      { name: 'Occupational Safety & Health Administration', acronym: 'OSHA', desc: 'Enforces chemical exposure limits (PEL) for PERC, ventilation requirements, employee training, and personal protective equipment standards for dry cleaning workers.', freq: 'Complaint-driven + targeted campaigns' },
+      { name: 'Local Fire Marshal', acronym: 'Fire', desc: 'Inspects chemical storage, secondary containment, and fire suppression systems for facilities handling perchloroethylene and other regulated solvents.', freq: 'Annual inspections in most jurisdictions' },
+    ],
+    briefingEdition: '— Dry Cleaner Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Pull Last 60 Days of PERC Inspection Logs — Now', body: 'TCEQ and EPA inspectors request your inspection logs immediately on entry. Federal MACT standards require biweekly visual inspections and monthly detector-based inspections. Any gap — even if no leak occurred — is an independent violation.', action: 'Pull your last 60 days of inspection logs today. Confirm every entry is complete, dated, and signed. Any gap: reconstruct what you can and establish a going-forward schedule immediately.', source: '40 CFR Part 63, Subpart M — National Emission Standards for Perchloroethylene Dry Cleaning' },
+      { tier: 'watch', label: 'Watch', title: 'DFW Area: Hydrocarbon Solvent Weekly Log Requirements', body: 'Facilities in Collin, Dallas, Denton, and Tarrant counties using hydrocarbon solvents must maintain weekly leak inspection logs under 30 TAC Chapter 115. TCEQ conducts targeted inspections in DFW non-attainment zones.', action: null, source: '30 TAC Chapter 115, Subchapter F' },
+      { tier: 'info', label: 'Rule of the Week', title: 'MACT Standards — New Machine Requirements (Post-2005)', body: 'Any dry cleaning machine installed after December 21, 2005 must be: (1) non-venting, (2) equipped with a refrigerated condenser, and (3) equipped with a secondary carbon adsorber. All three are required — there are no exceptions and no grandfathering for newer machines.', action: null, source: '40 CFR §63.322 — Standards for dry cleaning systems' },
+    ],
+    ctaH2: 'Know before TCEQ arrives.',
+    ctaP: 'Every TCEQ permit update. Every EPA MACT enforcement alert. Every inspection log requirement change. Delivered every Tuesday.',
+  },
+
+  food_truck: {
+    badge: 'Food Truck & Catering Compliance · Texas',
+    h1: 'Inspectors probe temperatures on arrival. <em>No warning.</em>',
+    sub: 'Texas food truck operators navigate overlapping rules from city health departments, DSHS, and — if you serve alcohol — TABC. With HB 2844 implementation underway and local ordinances changing, staying current is harder than ever. RegulatorPulse tracks every requirement.',
+    stakesTitle: 'A failed inspection shuts you down on the spot.',
+    stakesSub: 'Food truck inspectors arrive unannounced. Critical violations — temperature failures, missing CPF agreement — result in immediate permit suspension.',
+    stakes: [
+      { icon: 'thermometer', title: 'Temperature Control Failures', body: 'Hot foods below 135°F or cold foods above 41°F are immediate critical violations. Inspectors probe food temperatures within the first minutes of any inspection. There is no warning period.', fine: 'Immediate shutdown' },
+      { icon: 'file-text', title: 'Expired CPF Agreement', body: 'Texas requires all food trucks to operate from a licensed Central Preparation Facility. An expired or missing CPF agreement is grounds for immediate permit suspension.', fine: 'Immediate suspension' },
+      { icon: 'tent', title: 'Missing Event Permits', body: 'Operating at a festival, farmers market, or private event often requires a separate Temporary Food Establishment permit. Most operators don\'t know — and find out when an inspector arrives.', fine: 'Up to $1,000 + shutdown' },
+      { icon: '👨‍🍳', title: 'Lapsed Food Manager Cert', body: 'Texas requires at least one certified food manager (ServSafe or equivalent) per operation. With seasonal staffing changes, certifications lapse frequently. No active certificate = citation.', fine: 'Up to $500' },
+    ],
+    agencies: [
+      { name: 'TX Dept. of State Health Services', acronym: 'DSHS', desc: 'Sets statewide baseline rules for mobile food units (Title 25, Chapter 226). Currently implementing HB 2844 with draft rules open for informal comment — transition date July 1, 2026.', freq: 'Rule updates via Texas Register · HB 2844 implementation active' },
+      { name: 'Local Health Departments', acronym: 'City/County', desc: 'Primary permitting and inspection authority in most Texas cities. Requirements vary significantly — Austin, Houston, Dallas, and San Antonio each have their own mobile food vendor standards.', freq: 'Unannounced inspections · Local ordinance changes' },
+      { name: 'Texas Alcoholic Beverage Commission', acronym: 'TABC', desc: 'Required if you serve alcohol at events or catering functions. Mobile alcohol service requires specific TABC permits separate from your mobile food unit permit.', freq: 'Compliance checks at events' },
+      { name: 'Local Fire Marshal', acronym: 'Fire', desc: 'Inspects propane systems, hood suppression, and fire extinguisher requirements for food trucks. Typically required for permit renewal and event participation.', freq: 'Annual + event-based inspections' },
+    ],
+    briefingEdition: '— Food Truck Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Confirm Your CPF Agreement Is Current and On-Site', body: 'DSHS requires all mobile food units to operate from a licensed Central Preparation Facility. Your CPF agreement must be current and available for inspection at all times. Inspectors check on entry — an expired agreement is grounds for immediate permit suspension.', action: 'Pull your CPF agreement today. Confirm it is signed, current, and in your truck. If it has expired or the facility changed, update before your next operating day.', source: 'DSHS Title 25, Chapter 226 — Mobile Food Units' },
+      { tier: 'watch', label: 'Watch', title: 'HB 2844 Draft Rules — Informal Comment Period Open', body: 'DSHS has published draft rules under HB 2844 for informal public comment — the step before formal Texas Register publication. These rules will establish new statewide mobile food vendor standards. Current local procedures remain in place until July 1, 2026.', action: null, source: 'DSHS Mobile Food Vendor Draft Rules (HB 2844)' },
+      { tier: 'info', label: 'Rule of the Week', title: 'Temporary Food Establishment Permits — Plan 2 Weeks Ahead', body: 'Operating at a festival, farmers market, or private event typically requires a separate Temporary Food Establishment permit from the local health department. Requirements and lead times vary by city — Austin requires 10 business days, Houston requires 5. Apply early. A missing permit at a high-revenue event is a costly mistake.', action: null, source: 'Austin Public Health — Temporary Food Establishment Permits' },
+    ],
+    ctaH2: 'Know before they show up.',
+    ctaP: 'Every DSHS rule change. Every HB 2844 update. Every local health department notice. Delivered every Tuesday.',
+  },
+
+  church: {
+    badge: 'Church & Nonprofit Compliance · Texas',
+    h1: 'Religious exemptions don\'t cover everything. <em>Know what they don\'t.</em>',
+    sub: 'Texas churches and nonprofits face a distinct set of regulatory obligations — fire code, food safety, childcare licensing, and employment law requirements that apply regardless of tax-exempt status. RegulatorPulse monitors every relevant agency and delivers your briefing every Tuesday.',
+    stakesTitle: 'Religious exemptions have real limits.',
+    stakesSub: 'Churches are not exempt from fire code, food safety, or employment law. Most find out about compliance requirements when an inspector arrives.',
+    stakes: [
+      { icon: 'flame', title: 'Fire Code Violations', body: 'Churches are subject to the same fire code occupancy limits, egress requirements, and suppression standards as any other place of public assembly. Overcrowding a sanctuary for a special event is a fire marshal violation.', fine: 'Up to $1,000/day + closure' },
+      { icon: 'utensils', title: 'Food Safety — Church Kitchens', body: 'Churches serving food to the public — including fundraiser meals, community dinners, and food pantries — typically require a DSHS or local health department permit. Many operate without one.', fine: 'Up to $1,000 + closure' },
+      { icon: 'baby', title: 'Childcare Licensing', body: 'Churches operating childcare programs — including preschool, Mother\'s Day Out, or after-school care — must hold a full HHSC CCR license. Religious exemption does not apply to programs serving the general public for compensation.', fine: 'Up to $2,000/day operating unlicensed' },
+      { icon: 'briefcase', title: 'Employment Law', body: 'Churches with employees are subject to Texas Workforce Commission rules, OSHA worker safety standards, and most federal employment laws — including FMLA, ADA, and FLSA — with limited ministerial exceptions.', fine: 'Per violation + back pay' },
+    ],
+    agencies: [
+      { name: 'State & Local Fire Marshal', acronym: 'Fire', desc: 'Enforces building and fire code compliance for places of public assembly — including churches, sanctuaries, fellowship halls, and event spaces. Inspects occupancy limits, egress, alarms, suppression, and emergency lighting.', freq: 'Annual inspections · Post-complaint visits' },
+      { name: 'TX Dept. of State Health Services', acronym: 'DSHS', desc: 'Regulates food service at church kitchens, fellowship halls, and food pantries serving the public. Temporary event permits required for fundraiser meals open to the community.', freq: 'Complaint-driven + event-based' },
+      { name: 'HHSC Child Care Regulation', acronym: 'CCR', desc: 'Licenses and inspects childcare programs operated by churches that serve the general public. Mother\'s Day Out, preschool, and after-school programs typically require full CCR licensing.', freq: 'Unannounced inspections for licensed programs' },
+      { name: 'Texas Workforce Commission', acronym: 'TWC', desc: 'Governs unemployment insurance, employment practices, and wage/hour rules for church employees. IRS updates to nonprofit compliance and UBIT rules are also monitored.', freq: 'Rule updates + complaint-driven audits' },
+    ],
+    briefingEdition: '— Church & Nonprofit Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Confirm Food Service Permits Before Spring Events', body: 'Spring fundraiser dinners, Easter meals, and community events that serve food to the public typically require a Temporary Food Establishment permit from your local health department. Many churches operate these events without one — and inspectors respond to complaints at public events.', action: 'If your church has a food-serving event in the next 60 days, contact your city or county health department now. Lead times are 5–10 business days depending on jurisdiction.', source: 'DSHS Retail Food Establishments — Temporary Events' },
+      { tier: 'watch', label: 'Watch', title: 'Texas Legislature: Childcare Bills May Affect Church Programs', body: 'Multiple bills related to childcare minimum standards and staffing requirements are in committee through June 2026. If passed, changes could affect Mother\'s Day Out and preschool programs operated by churches.', action: null, source: 'Texas Legislature Online' },
+      { tier: 'info', label: 'Rule of the Week', title: 'Fire Code Occupancy Limits — Special Events', body: 'Your fire marshal-posted occupancy limit applies at all times — including Christmas Eve services, special speakers, and community events that draw larger-than-usual crowds. Exceeding the posted limit is a fire code violation regardless of the reason for the gathering. Know your number before every special event.', action: null, source: 'Texas State Fire Marshal — Places of Public Assembly' },
+    ],
+    ctaH2: 'Protect your congregation. Protect your mission.',
+    ctaP: 'Every fire code update. Every DSHS food safety requirement. Every childcare licensing change. Delivered every Tuesday.',
+  },
+
+  event_venue: {
+    badge: 'Event Venue Compliance · Texas',
+    h1: 'Every event. Every agency. <em>One briefing.</em>',
+    sub: 'Texas event venues juggle fire marshal occupancy limits, TABC service rules, food handler requirements, and ADA compliance — with standards that change at the city, county, and state level independently. RegulatorPulse monitors every relevant agency and delivers your briefing every Tuesday.',
+    stakesTitle: 'One violation can shut down your event — or your venue.',
+    stakesSub: 'Fire marshal, TABC, and health department inspectors all have authority to shut down an active event. Most violations are preventable with the right information.',
+    stakes: [
+      { icon: 'door-open', title: 'Occupancy Violations', body: 'Exceeding fire marshal-posted occupancy limits during an event is an immediate violation. Inspectors respond to crowded venue complaints and can shut down an active event with no advance warning.', fine: 'Immediate shutdown + up to $1,000/day' },
+      { icon: 'wine', title: 'TABC Violations', body: 'Serving alcohol without the appropriate TABC permit for the specific event type — or serving after hours — can result in citation, permit suspension, or cancellation.', fine: 'Suspension or cancellation' },
+      { icon: 'utensils', title: 'Temporary Food Permits', body: 'Events with food service require a Temporary Food Establishment permit separate from any permanent kitchen permit. Caterers operating at your venue may need their own permit — and it\'s your venue on the line if they don\'t have one.', fine: 'Up to $1,000 + closure' },
+      { icon: 'accessibility', title: 'ADA Compliance', body: 'Local building and zoning inspections increasingly include ADA accessibility review — parking, entrance, restrooms, and event space accessibility. Complaints trigger formal investigations.', fine: 'Federal civil penalties + remediation costs' },
+    ],
+    agencies: [
+      { name: 'State & Local Fire Marshal', acronym: 'Fire', desc: 'Sets and enforces occupancy limits, egress requirements, fire suppression standards, and emergency lighting requirements for all Texas event venues. Responds to complaints and conducts event-night inspections.', freq: 'Annual inspections + event-night visits' },
+      { name: 'Texas Alcoholic Beverage Commission', acronym: 'TABC', desc: 'Issues venue and event-specific alcohol permits. Different permit types apply depending on whether your venue has a standing bar, rents to private events, or hosts ticketed events with alcohol sales.', freq: 'Compliance checks at events · Permit renewals' },
+      { name: 'TX Dept. of State Health Services / Local Health Dept.', acronym: 'DSHS', desc: 'Requires Temporary Food Establishment permits for events with food service. Caterers, food trucks, and in-house kitchens serving event guests may each need separate permits.', freq: 'Event-based inspections · Complaint-driven' },
+      { name: 'Local Building & Zoning', acronym: 'City/County', desc: 'Governs use permits, ADA compliance, parking, and occupancy classification for venue spaces. Changes to event programming (adding a stage, converting a space) may require a new use permit or inspection.', freq: 'Permit-triggered + complaint-driven' },
+    ],
+    briefingEdition: '— Event Venue Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Confirm Caterer Permits Before Your Next Event', body: 'If a caterer is serving food at your venue, they need their own Temporary Food Establishment permit from the local health department — separate from any permit you hold. If they don\'t have one and an inspector shows up, it is your venue on the line.', action: 'Add a permit verification step to your vendor contract process. Require caterers to provide a copy of their TFE permit before the event. Keep it on file.', source: 'DSHS Retail Food Establishments — Temporary Events' },
+      { tier: 'watch', label: 'Watch', title: 'Austin Mobile Vendor Ordinance Under Review', body: 'Austin City Council is reviewing proposed updates to mobile food vendor ordinances that may affect food truck participation at venue events. No vote scheduled as of this week.', action: null, source: 'Austin City Council — Mobile Vendor Ordinance' },
+      { tier: 'info', label: 'Rule of the Week', title: 'TABC Permit Types — Know Which One You Need', body: 'The most common TABC mistake for event venues: using the wrong permit type for the event. A Mixed Beverage Permit (MB) covers your house bar; a Private Club Registration Permit (N) covers private events; a Temporary Event Permit (TE) covers one-time public events. Using an MB permit to cover a private event with paid admission is a TABC violation. Know your permit type before every event.', action: null, source: 'TABC License and Permit Types' },
+    ],
+    ctaH2: 'Every event. Fully covered.',
+    ctaP: 'Every fire code update. Every TABC permit change. Every local health department ordinance. Delivered every Tuesday.',
+  },
+
+  physical_therapy: {
+    badge: 'Physical Therapy Clinic Compliance · Texas',
+    h1: 'Six agencies. One briefing. <em>Zero surprises.</em>',
+    sub: 'Texas PT clinics face overlapping oversight from the Texas PT Board, CMS, HHSC, and OSHA — with Medicare billing rules, direct access documentation requirements, and aide supervision standards that update regularly and carry serious enforcement consequences. RegulatorPulse monitors every relevant agency and delivers your briefing every Tuesday.',
+    stakesTitle: 'Billing errors and supervision gaps are the top two enforcement triggers.',
+    stakesSub: 'Medicare audits, PT Board investigations, and OSHA citations all carry consequences that go well beyond the initial fine. The right information — in advance — is the only defense.',
+    stakes: [
+      { icon: 'activity', title: 'Medicare Billing Violations', body: 'CMS and OIG audit PT claims for medical necessity, documentation sufficiency, and cap exceptions. A single overpayment determination triggers a repayment demand — plus potential exclusion from Medicare.', fine: 'Repayment + up to $11,000/claim' },
+      { icon: 'users', title: 'Aide Supervision Failures', body: 'Texas PT aides may only perform tasks under direct supervision of a licensed PT or PTA. Unsupervised aide work is a PT Board violation and a Medicare coverage exclusion — and inspectors specifically look for it.', fine: 'License action + claim denial' },
+      { icon: 'clipboard-list', title: 'Documentation Gaps', body: 'CMS requires a plan of care signed by a physician or NPP, functional outcome reporting every 10 visits, and progress notes that support medical necessity. Missing any element voids the claim.', fine: 'Full claim recoupment' },
+      { icon: 'shield-alert', title: 'OSHA Bloodborne Pathogens', body: 'Exposure control plans, sharps disposal logs, and hepatitis B vaccination records must be current. OSHA inspects PT clinics under the same bloodborne pathogen standard as medical offices.', fine: 'Up to $16,550/violation' },
+    ],
+    agencies: [
+      { name: 'Texas PT & OT Board', acronym: 'TPTOT', desc: 'Licenses PTs, PTAs, and OTs in Texas. Governs supervision ratios, aide task delegation, direct access documentation requirements, and advertising rules. Complaint-driven investigations can result in license suspension.', freq: 'Complaint-driven · License renewal' },
+      { name: 'Centers for Medicare & Medicaid Services', acronym: 'CMS', desc: 'Sets documentation, billing, and Conditions of Participation standards for Medicare-participating PT providers. Contractor audits (RAC, MAC) are active and ongoing.', freq: 'Continuous billing review · Annual CoP audits' },
+      { name: 'Texas HHSC', acronym: 'HHSC', desc: 'Governs outpatient rehab facilities licensed under Texas Health & Safety Code. Facility licensure requirements, staffing ratios, and patient rights standards are enforced through unannounced inspections.', freq: 'Annual + complaint-driven inspections' },
+      { name: 'OSHA', acronym: 'OSHA', desc: 'Enforces bloodborne pathogen standards, hazard communication, and general workplace safety in clinical settings. PT clinics are subject to the same standards as any healthcare employer.', freq: 'Complaint-driven + programmed inspections' },
+    ],
+    briefingEdition: '— Physical Therapy Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Audit Functional Outcome Reports Before Your Next CMS Review', body: 'CMS requires functional outcome reporting using standardized tools (FOTO, OPTIMAL, or equivalent) every 10 visits for Medicare Part B PT claims. Missing or incomplete reports are among the top reasons for post-payment audit recoupment.', action: 'Pull your Medicare claims from the past 90 days. Verify each 10-visit threshold has a corresponding functional outcome report in the record. Correct any gaps before your next MAC review.', source: 'CMS Medicare Benefit Policy Manual, Ch. 15, §220' },
+      { tier: 'watch', label: 'Watch', title: 'Texas PT Board: Direct Access Documentation Guidance Under Review', body: 'The Texas PT Board is reviewing its guidance on direct access episode documentation requirements following increased complaint activity related to physician referral handoffs. Updated guidance expected Q2 2026.', action: null, source: 'Texas PT Board Rulemaking Activity, Feb 2026' },
+      { tier: 'info', label: 'Rule of the Week', title: 'Texas PT Board Rule 322.6 — Supervision of PT Aides', body: 'PT aides may only perform non-skilled tasks specifically assigned by a supervising PT or PTA. Direct supervision means the supervising clinician must be physically present in the facility and immediately available — not merely accessible by phone. Any skilled PT task performed by an aide without direct supervision is a Rule 322.6 violation and a potential Medicare coverage exclusion.', action: null, source: '22 TAC §322.6 — Supervision of Physical Therapy Aides' },
+    ],
+    ctaH2: 'Every billing update. Every PT Board change. Covered.',
+    ctaP: 'Every CMS documentation rule. Every aide supervision update. Every OSHA standard change. Delivered every Tuesday.',
+  },
+
+  veterinary: {
+    badge: 'Veterinary Clinic Compliance · Texas',
+    h1: 'DEA. OSHA. BVME. <em>One briefing covers all three.</em>',
+    sub: 'Texas vet practices navigate the State Board of Veterinary Medical Examiners, DEA controlled substance registration, OSHA hazard communication standards, and radiation machine inspections — often without a dedicated compliance function tracking what\'s changed. RegulatorPulse monitors every relevant agency and delivers your briefing every Tuesday.',
+    stakesTitle: 'DEA audits and BVME investigations can end a practice overnight.',
+    stakesSub: 'Controlled substance log gaps, expired DEA registration, and unsupervised technician work are the three most common triggers for enforcement action in Texas vet clinics.',
+    stakes: [
+      { icon: 'pill', title: 'DEA Controlled Substance Violations', body: 'DEA requires accurate dispensing logs for all Schedule II–V substances, biennial inventory, and secure storage. A single discrepancy in a ketamine or controlled opioid log triggers a full DEA investigation.', fine: 'Registration revocation + criminal referral' },
+      { icon: 'shield-alert', title: 'BVME Supervision Failures', body: 'Texas vet technicians must work under direct or indirect supervision of a licensed DVM depending on the task. Unsupervised tech work — including prescription drug dispensing — is a BVME violation and a DEA exposure.', fine: 'License probation or suspension' },
+      { icon: 'radiation', title: 'Radiation Machine Violations', body: 'Texas DSHS requires registration of all veterinary X-ray equipment and compliance with radiation safety standards including shielding, dosimetry, and log maintenance. Unregistered equipment is an immediate violation.', fine: 'Up to $25,000/day' },
+      { icon: 'biohazard', title: 'OSHA Hazard Communication', body: 'Vet clinics using anesthetic gases, disinfectants, and chemotherapy drugs must maintain current SDS files, conduct annual hazcom training, and label all chemical containers. OSHA inspects on complaint.', fine: 'Up to $16,550/violation' },
+    ],
+    agencies: [
+      { name: 'Texas Board of Veterinary Medical Examiners', acronym: 'TBVME', desc: 'Licenses DVMs and vet technicians in Texas. Governs supervision requirements, prescription drug dispensing rules, client communication standards, and facility requirements. Complaint-driven investigations are public record.', freq: 'Complaint-driven · License renewal' },
+      { name: 'Drug Enforcement Administration', acronym: 'DEA', desc: 'Requires DEA registration for any practice dispensing controlled substances. Governs log requirements, storage standards, biennial inventory, and employee access controls. Conducts unannounced audits.', freq: 'Unannounced audits · Biennial inventory' },
+      { name: 'Texas DSHS — Radiation Control', acronym: 'DSHS', desc: 'Registers all X-ray machines in Texas veterinary facilities. Requires shielding surveys, dosimetry badge programs, and radiation safety officer designation. Conducts periodic compliance inspections.', freq: 'Periodic inspections · Registration renewal' },
+      { name: 'OSHA', acronym: 'OSHA', desc: 'Enforces hazard communication, bloodborne pathogen, and anesthetic gas exposure standards in vet clinics. Complaint-driven inspections are common in practices with staff turnover or safety complaints.', freq: 'Complaint-driven inspections' },
+    ],
+    briefingEdition: '— Veterinary Clinic Edition · Week of March 4, 2026 · Austin, TX',
+    briefing: [
+      { tier: 'action', label: 'Action Required', title: 'Verify DEA Registration Expiration Before April 30', body: 'DEA veterinary registrations issued in Texas expire on a rolling basis. An expired DEA registration means you cannot legally dispense any Schedule II–V controlled substance — including ketamine, butorphanol, and controlled seizure medications — until renewal is confirmed. DEA auditors check expiration dates on arrival.', action: 'Check your DEA registration expiration date at deadiversion.usdoj.gov right now. If it expires within 60 days, renew immediately. Post the updated registration in your controlled substance storage area.', source: 'DEA Diversion Control Division — Registration Renewal' },
+      { tier: 'watch', label: 'Watch', title: 'TBVME: Proposed Amendments to Vet Tech Supervision Rules', body: 'The Texas BVME has published proposed amendments to 22 TAC Chapter 571 governing veterinary technician supervision ratios and task delegation. Comment period open through March 28, 2026.', action: null, source: 'Texas Register, Vol. 51 — TBVME Proposed Rules' },
+      { tier: 'info', label: 'Rule of the Week', title: 'DEA Rule 21 CFR 1304.22 — Controlled Substance Dispensing Logs', body: 'Every controlled substance dispensed or administered in your practice must be logged with: date, patient name/species, drug name, strength, quantity, and administering DVM. Logs must be maintained for 2 years and available for DEA inspection on demand. A missing entry — even for a single dose of ketamine — is a discrepancy that triggers a full audit of your entire log.', action: null, source: '21 CFR §1304.22 — Records for Dispensing Practitioners' },
+    ],
+    ctaH2: 'DEA. BVME. DSHS. All covered.',
+    ctaP: 'Every DEA rule update. Every TBVME supervision change. Every DSHS radiation standard. Delivered every Tuesday.',
+  },
+};
+
+// ── RENDER PAGE ──
+function renderBriefingItem(item) {
+  const tierClass = item.tier === 'action' ? 'tier-action' : item.tier === 'watch' ? 'tier-watch' : 'tier-info';
+  const actionHtml = item.action ? `<div class="brief-action">${item.action}</div>` : '';
+  return `
+    <div class="brief-item">
+      <span class="brief-tier ${tierClass}">${item.label}</span>
+      <h4>${item.title}</h4>
+      <p>${item.body}</p>
+      ${actionHtml}
+      <p class="brief-source">Source: ${item.source}</p>
+    </div>`;
+}
+
+function render(slug) {
+  const v = VERTICALS[slug];
+  if (!v) { window.location.href = '/'; return; }
+
+  document.getElementById('page-title').textContent = `RegulatorPulse — ${v.badge}`;
+  document.getElementById('page-desc').content = v.sub;
+  document.getElementById('hero-badge').textContent = v.badge;
+  document.getElementById('hero-h1').innerHTML = v.h1;
+  document.getElementById('hero-sub').textContent = v.sub;
+  document.getElementById('stakes-title').textContent = v.stakesTitle;
+  document.getElementById('stakes-sub').textContent = v.stakesSub;
+
+  const stakeCards = v.stakes.map(s => `
+    <div class="stake-card">
+      <div class="icon"><i data-lucide="${s.icon}"></i></div>
+      <h3>${s.title}</h3>
+      <p>${s.body}</p>
+      ${s.fine ? `<p style="margin-top:10px"><span class="fine-tag">${s.fine}</span></p>` : ''}
+    </div>`).join('');
+  document.getElementById('stakes-grid').innerHTML = stakeCards;
+
+  const agencyCards = v.agencies.map(a => `
+    <div class="agency-card">
+      <div class="acronym">${a.acronym}</div>
+      <h3>${a.name}</h3>
+      <p>${a.desc}</p>
+      <p class="freq">${a.freq}</p>
+    </div>`).join('');
+  document.getElementById('agencies-grid').innerHTML = agencyCards;
+
+  document.getElementById('briefing-edition').textContent = v.briefingEdition;
+  const briefingItems = v.briefing.map((item, i) =>
+    (i > 0 ? '<hr class="brief-divider">' : '') + renderBriefingItem(item)
+  ).join('');
+  document.getElementById('briefing-body').innerHTML = briefingItems;
+
+  document.getElementById('cta-h2').textContent = v.ctaH2;
+  document.getElementById('cta-p').textContent = v.ctaP;
+  document.getElementById('sig-vertical').value = slug;
+}
+
+// Determine slug from URL
+const slug = window.location.pathname.replace('/', '').replace('.html', '') || 'medspa';
+render(slug);
+lucide.createIcons();
+
+// Form submission
+document.getElementById('signupForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('sig-btn');
+  const msg = document.getElementById('sig-msg');
+  btn.textContent = 'One moment…';
+  btn.disabled = true;
+  msg.style.color = 'rgba(255,255,255,.7)';
+  msg.textContent = '';
+
+  const payload = {
+    name: document.getElementById('sig-name').value.trim(),
+    email: document.getElementById('sig-email').value.trim(),
+    establishment: document.getElementById('sig-establishment').value.trim() || null,
+    vertical: document.getElementById('sig-vertical').value,
+    tier: 'standard',
+    city: document.getElementById('sig-city').value.trim() || null,
+  };
+
+  try {
+    const res = await fetch('https://api.regulatorpulse.com/api/signup', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      const params = new URLSearchParams({ email: payload.email, vertical: payload.vertical });
+      window.location.href = '/checkout?' + params.toString();
+    } else {
+      throw new Error(data.detail || 'Something went wrong.');
+    }
+  } catch(err) {
+    msg.style.color = '#fca5a5';
+    msg.textContent = err.message;
+    btn.textContent = 'Continue to Billing →';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
