@@ -260,9 +260,18 @@
     /* ── HOW IT WORKS ── */
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
       margin-top: 56px;
+    }
+    .steps-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 32px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .step { position: relative; }
     .step-num {
@@ -280,6 +289,10 @@
     }
     .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
     .step p { font-size: .9rem; color: var(--ink-muted); line-height: 1.6; }
+    @media (max-width: 768px) {
+      .steps { grid-template-columns: 1fr; }
+      .steps-bottom { grid-template-columns: 1fr; max-width: 100%; }
+    }
 
     /* ── SAMPLE BRIEFING ── */
     .sample { background: var(--surface-2); }
@@ -656,10 +669,12 @@
         <h3>Tuesday briefing arrives</h3>
         <p>Every Tuesday morning, your briefing arrives. <strong>Action Required</strong> items at the top. <strong>Watch</strong> items next. <strong>Informational</strong> context last. Each item links directly to the original regulatory document.</p>
       </div>
+    </div>
+    <div class="steps-bottom">
       <div class="step">
         <div class="step-num">4</div>
-        <h3>Review intelligence — industry-wide and yours</h3>
-        <p>Every week, RegulatorPulse scans thousands of Google, Yelp, and Healthgrades reviews across all Texas businesses in your vertical. Two things come out of that scan: <strong>(1) Industry patterns</strong> — when review language statewide signals rising regulatory pressure, you're alerted before it hits your door. <strong>(2) Your profiles</strong> — if your own reviews on any platform contain flagged language, you get a self-audit checklist and an AI-drafted response ready to approve and post in one click.</p>
+        <h3>Review intelligence included</h3>
+        <p>Every week we scan thousands of Google, Yelp, and Healthgrades reviews across your vertical — flagging industry-wide patterns that precede regulatory action, and alerting you when your own profiles contain violation-language before an inspector does.</p>
       </div>
       <div class="step">
         <div class="step-num">5</div>
