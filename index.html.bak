@@ -655,7 +655,7 @@
       <div class="step">
         <div class="step-num">1</div>
         <h3>Tell us about your business</h3>
-        <p>Tell us your industry, your state, and your services. Your briefings are filtered to what actually applies to your specific business — nothing irrelevant.</p>
+        <p>Tell us your vertical, your state, and your services. Your briefings are filtered to what actually applies to your specific business — nothing irrelevant.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
@@ -778,7 +778,7 @@
             <p style="font-size:.85rem;color:var(--ink);font-style:italic;margin:0 0 10px 0;">"Thank you for sharing your experience. We take every concern seriously. At [Practice Name], every patient receives a consultation with our licensed medical provider before any treatment begins — this is both our standard and a requirement we hold ourselves to without exception. We'd welcome the opportunity to speak with you directly to understand what fell short of that standard. Please contact us at [phone/email]."</p>
             <a href="#" style="font-size:.82rem;font-weight:700;color:var(--accent);text-decoration:none;">Approve &amp; Copy Response →</a>
           </div>
-          <p style="font-size:.78rem;color:var(--ink-light);margin-top:8px;">Industry pattern data is drawn from all businesses in your industry — thousands of reviews per week, not just yours. The more subscribers in an industry, the sharper the signal.</p>
+          <p style="font-size:.78rem;color:var(--ink-light);margin-top:8px;">Industry pattern data is drawn from all Texas businesses in your vertical — thousands of reviews per week, not just yours. The more subscribers in a vertical, the sharper the signal.</p>
         </div>
 
         <hr class="brief-divider" />
@@ -1034,7 +1034,7 @@
       </div>
       <div class="faq-item">
         <p class="faq-q">Can I have multiple locations covered?</p>
-        <p class="faq-a">Yes. Multi-location plans are available for every industry. Contact us for quotes on larger groups (5+ locations).</p>
+        <p class="faq-a">Yes. Multi-location plans are available for every vertical. Contact us for quotes on larger groups (5+ locations).</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">How do I cancel?</p>
