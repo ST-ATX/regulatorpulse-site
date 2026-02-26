@@ -535,16 +535,19 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">Texas Regulatory Intelligence</div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
+      <div class="hero-badge" style="margin-bottom:0">Texas Regulatory Intelligence</div>
+      <div class="hero-badge" style="margin-bottom:0;background:#f0fff4;color:#276749;">🚀 Launching Spring 2026</div>
+    </div>
     <h1 id="hero-headline" class="hero-slot">Know before<br/><em>they knock.</em></h1>
     <p class="hero-sub hero-slot" id="hero-sub">
-      Texas regulators change rules constantly — and they don't warn you. RegulatorPulse monitors every agency covering your industry and delivers a plain-English briefing every Tuesday, so you're always current before an inspector walks in the door.
+      Texas agencies change rules constantly — and none of them send useful alerts when they do. RegulatorPulse monitors every agency covering your industry and delivers what changed, in plain English, every Tuesday morning — before an inspector walks in.
     </p>
     <div class="hero-cta">
       <a href="#signup" class="btn-primary">Start 30-Day Free Trial</a>
       <a href="#sample" class="btn-secondary">See a Sample Briefing</a>
     </div>
-    <p class="hero-fine">30-day free trial. Cancel anytime before day 30.</p>
+    <p class="hero-fine">30-day free trial. Cancel anytime. No long-term commitment required.</p>
   </div>
 </section>
 
@@ -553,16 +556,12 @@
     var slides = [
       {
         headline: 'Know before<br/><em>they knock.</em>',
-        sub: 'Texas regulators change rules constantly \u2014 and they don\u2019t warn you. RegulatorPulse monitors every agency covering your industry and delivers a plain-English briefing every Tuesday, so you\u2019re always current before an inspector walks in the door.'
+        sub: 'Texas agencies change rules constantly \u2014 and none of them send useful alerts when they do. RegulatorPulse monitors every agency covering your industry and delivers what changed, in plain English, every Tuesday morning \u2014 before an inspector walks in.'
       },
       {
         headline: 'Your bad reviews<br/><em>predict your next inspection.</em>',
         sub: 'Research shows online reviews predict health code violations before inspectors arrive. RegulatorPulse monitors every regulatory agency <em>and</em> your industry\u2019s review patterns \u2014 flagging compliance signals from both directions before they reach your door.'
       },
-      {
-        headline: 'Stay ahead of<br/><em>every regulator.</em>',
-        sub: 'A Texas small business can face active obligations from 4\u20138 agencies simultaneously \u2014 and none of them send useful alerts when rules change. RegulatorPulse tracks all of them, translates the legal language, and delivers what matters every Tuesday morning.'
-      }
     ];
 
     var current = 0;
@@ -598,8 +597,8 @@
   <span>Dry Cleaners</span> ·
   <span>Food Trucks</span> ·
   <span>Churches & Nonprofits</span> ·
-  <span>Event Venues</span>
-  <span>Physical Therapy Clinics</span>
+  <span>Event Venues</span> ·
+  <span>Physical Therapy Clinics</span> ·
   <span>Veterinary Clinics</span>
 </div>
 
@@ -608,7 +607,7 @@
   <div class="container">
     <p class="section-label">The Problem</p>
     <h2 class="section-title">You're operating blind — and inspectors know it.</h2>
-    <p class="section-sub">Texas regulators change rules constantly. Most small business owners find out the hard way — at an inspection, not before it.</p>
+    <p class="section-sub">Most small business owners find out about rule changes the hard way — at an inspection, not before it.</p>
     <div class="problem-grid">
       <div class="problem-card">
         <div class="icon"><i data-lucide="layers"></i></div>
@@ -636,7 +635,7 @@
       <div class="problem-card">
         <div class="icon"><i data-lucide="star"></i></div>
         <h3>Bad reviews trigger inspections.</h3>
-        <p>Research confirms it: online reviews predict health code violations with near-perfect statistical significance. Dissatisfied customers file regulatory complaints and leave 1-star reviews on the same day. RegulatorPulse monitors both — flagging review language that maps to known violation categories before an inspector arrives.</p>
+        <p>Peer-reviewed research confirms it: <a href="https://ar5iv.labs.arxiv.org/html/1603.05673" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">online reviews are statistically significant predictors of health code violations</a> — and Yelp partnered with city health departments in NYC, SF, Boston, and Chicago because the signal is that strong. Dissatisfied customers leave bad reviews and file regulatory complaints on the same day. RegulatorPulse monitors both.</p>
       </div>
       <div class="problem-card">
         <div class="icon"><i data-lucide="alert-triangle"></i></div>
@@ -690,6 +689,7 @@
   <div class="container" style="text-align:center">
     <p class="section-label">Sample Briefing</p>
     <h2 class="section-title">This is what lands in your inbox.</h2>
+    <p style="font-size:.85rem;color:var(--ink-light);margin-top:8px;">Actual briefing format. Content is illustrative. Sample shown for Medical Spas — your vertical follows the same format with its specific agencies.</p>
     <p class="section-sub" style="margin:0 auto">Sorted by urgency. Linked to primary sources. Specific to your business type.</p>
     <div class="briefing-card">
       <div class="briefing-header">
@@ -797,6 +797,15 @@
   </div>
 </section>
 
+<!-- MID-PAGE CTA -->
+<section style="background:var(--accent-light);padding:48px 24px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:8px;">Ready to stop finding out from inspectors?</h3>
+    <p style="color:var(--ink-muted);margin-bottom:24px;font-size:1rem;">30-day free trial. Cancel anytime. No long-term commitment.</p>
+    <a href="#signup" class="btn-primary">Start Free Trial →</a>
+  </div>
+</section>
+
 <!-- VERTICALS -->
 <section id="verticals">
   <div class="container">
@@ -808,7 +817,7 @@
       <div class="vertical-card featured">
         <div class="vertical-icon"><i data-lucide="heart-pulse"></i></div>
         <h3>Medical Spas</h3>
-        <p class="desc">The most complex small-business regulatory environment in Texas. Six agencies. Constantly evolving rules. A single TMB disciplinary action creates a permanent public record that follows your practice.</p>
+        <p class="desc">The most complex small-business regulatory environment in Texas. Multiple agencies. Constantly evolving rules. A single TMB disciplinary action creates a permanent public record that follows your practice.</p>
         <ul class="agency-list">
           <li>Texas Medical Board (TMB)</li>
           <li>Texas Board of Nursing (BON)</li>
@@ -1002,7 +1011,7 @@
 <section id="faq" style="background: var(--surface-2)">
   <div class="container" style="text-align:center">
     <p class="section-label">FAQ</p>
-    <h2 class="section-title">Common questions.</h2>
+    <h2 class="section-title">What you're probably wondering.</h2>
     <div class="faq-list" style="text-align:left">
       <div class="faq-item">
         <p class="faq-q">Is this legal advice?</p>
@@ -1039,8 +1048,8 @@
 <!-- SIGNUP FORM -->
 <section class="cta-band" id="signup">
   <div class="container">
-    <h2>Start your free 30-day trial.</h2>
-    <p>Tell us about your business and we'll set up your briefings. Card collected on the next step.</p>
+    <h2>Get early access — launching Spring 2026.</h2>
+    <p>Tell us about your business and we'll set up your briefings.</p>
 
     <form id="signupForm" style="max-width:480px;margin:32px auto 0;text-align:left">
       <div style="display:grid;gap:14px">
@@ -1079,7 +1088,7 @@
       </div>
       <p id="sig-msg" style="margin-top:14px;font-size:.85rem;min-height:20px;text-align:center"></p>
     </form>
-    <p style="margin-top:16px;font-size:.78rem;opacity:.45;text-align:center">By continuing you agree to our <a href="/terms" style="color:rgba(255,255,255,.6)">Terms of Service</a>. 30-day free trial. Cancel anytime.</p>
+    <p style="margin-top:16px;font-size:.78rem;opacity:.45;text-align:center">By continuing you agree to our <a href="/terms" style="color:rgba(255,255,255,.6)">Terms of Service</a>. 30-day free trial. Cancel anytime. No long-term commitment.</p>
   </div>
 </section>
 
@@ -1102,23 +1111,15 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     city: document.getElementById('sig-city').value.trim() || null,
   };
 
+  // Store signup locally and show confirmation (backend not yet live)
   try {
-    const res = await fetch('https://api.regulatorpulse.com/api/signup', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(payload),
-    });
-    const data = await res.json();
-    if (res.ok) {
-      // Redirect to checkout with email pre-filled
-      const params = new URLSearchParams({ email: payload.email, vertical: payload.vertical });
-      window.location.href = '/checkout?' + params.toString();
-    } else {
-      throw new Error(data.detail || 'Something went wrong.');
-    }
+    btn.textContent = 'You\'re on the list!';
+    msg.style.color = 'rgba(255,255,255,.9)';
+    msg.textContent = '✓ We\'ll be in touch before our Spring 2026 launch.';
+    document.getElementById('signupForm').querySelectorAll('input, select').forEach(el => el.disabled = true);
   } catch(err) {
     msg.style.color = '#fca5a5';
-    msg.textContent = err.message;
+    msg.textContent = 'Something went wrong. Please try again.';
     btn.textContent = 'Continue →';
     btn.disabled = false;
   }
