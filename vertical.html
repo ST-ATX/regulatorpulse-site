@@ -142,7 +142,7 @@
     <a href="/" class="logo"><img src="/logo-wordmark.png" alt="RegulatorPulse"></a>
     <div class="nav-right">
       <a href="/">All Industries</a>
-      <a href="#signup" class="btn-nav">Start Free Trial</a>
+      <a href="#signup" class="btn-nav">Get Early Access</a>
     </div>
   </div>
 </nav>
@@ -154,7 +154,7 @@
     <h1 id="hero-h1">Loading…</h1>
     <p class="hero-sub" id="hero-sub"></p>
     <div class="hero-cta">
-      <a href="#signup" class="btn-primary">Start Free 30-Day Trial →</a>
+      <a href="#signup" class="btn-primary">Get Early Access →</a>
       <a href="#sample" class="btn-ghost">See a Sample Briefing</a>
     </div>
   </div>
@@ -198,8 +198,8 @@
 <!-- CLOSING CTA + SIGNUP -->
 <section class="cta-band" id="signup">
   <div class="container">
-    <h2 id="cta-h2">Start your free 30-day trial.</h2>
-    <p id="cta-p">Your first briefing arrives Tuesday. Card collected on the next step — no charge for 30 days.</p>
+    <h2 id="cta-h2">Launching Spring 2026. Get notified first.</h2>
+    <p id="cta-p">We'll reach out the moment we go live — before the public announcement. No credit card. No commitment.</p>
 
     <form class="signup-form" id="signupForm">
       <input type="text" id="sig-name" class="form-field" placeholder="Your name" required />
@@ -207,10 +207,10 @@
       <input type="text" id="sig-establishment" class="form-field" placeholder="Business name (optional)" />
       <input type="text" id="sig-city" class="form-field" placeholder="City, Texas" />
       <input type="hidden" id="sig-vertical" />
-      <button type="submit" id="sig-btn" class="btn-submit">Continue to Billing →</button>
+      <button type="submit" id="sig-btn" class="btn-submit">Notify Me When You Launch →</button>
       <p class="form-msg" id="sig-msg"></p>
     </form>
-    <p style="margin-top:14px;font-size:.76rem;opacity:.4;text-align:center">30-day free trial · Cancel anytime · By continuing you agree to our <a href="/terms" style="color:rgba(255,255,255,.5)">Terms</a></p>
+    <p style="margin-top:14px;font-size:.76rem;opacity:.4;text-align:center">No credit card. No commitment. Just early access.</p>
   </div>
 </section>
 
@@ -663,27 +663,28 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     email: document.getElementById('sig-email').value.trim(),
     establishment: document.getElementById('sig-establishment').value.trim() || null,
     vertical: document.getElementById('sig-vertical').value,
-    tier: 'standard',
     city: document.getElementById('sig-city').value.trim() || null,
   };
 
   try {
-    const res = await fetch('https://api.regulatorpulse.com/api/signup', {
+    const res = await fetch('https://api.regulatorpulse.com/api/waitlist', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(payload),
     });
     const data = await res.json();
     if (res.ok) {
-      const params = new URLSearchParams({ email: payload.email, vertical: payload.vertical });
-      window.location.href = '/checkout?' + params.toString();
+      btn.textContent = 'You\'re on the list!';
+      msg.style.color = 'rgba(255,255,255,.9)';
+      msg.textContent = '✓ We\'ll notify you when we launch.';
+      document.getElementById('signupForm').querySelectorAll('input').forEach(el => el.disabled = true);
     } else {
       throw new Error(data.detail || 'Something went wrong.');
     }
   } catch(err) {
     msg.style.color = '#fca5a5';
-    msg.textContent = err.message;
-    btn.textContent = 'Continue to Billing →';
+    msg.textContent = 'Something went wrong. Please try again.';
+    btn.textContent = 'Notify Me When You Launch →';
     btn.disabled = false;
   }
 });

@@ -552,7 +552,7 @@
       <a href="#how-it-works">How It Works</a>
       <a href="#verticals">Who We Serve</a>
       <a href="#faq">FAQ</a>
-      <a href="#signup" class="btn-nav">Start Free Trial</a>
+      <a href="#signup" class="btn-nav">Get Early Access</a>
     </div>
   </div>
 </nav>
@@ -568,7 +568,7 @@
       Regulatory agencies change rules constantly — and none of them send useful alerts when they do. RegulatorPulse monitors every agency covering your industry and delivers what changed, in plain English, every Tuesday morning — before an inspector walks in.
     </p>
     <div class="hero-cta">
-      <a href="#signup" class="btn-primary">Start 30-Day Free Trial</a>
+      <a href="#signup" class="btn-primary">Get Early Access</a>
       <a href="#sample" class="btn-secondary">See a Sample Briefing</a>
     </div>
     <p class="hero-fine">30-day free trial. Cancel anytime. No long-term commitment required.</p>
@@ -826,7 +826,7 @@
   <div class="container">
     <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:8px;">Ready to stop finding out from inspectors?</h3>
     <p style="color:var(--ink-muted);margin-bottom:24px;font-size:1rem;">30-day free trial. Cancel anytime. No long-term commitment.</p>
-    <a href="#signup" class="btn-primary">Start Free Trial →</a>
+    <a href="#signup" class="btn-primary">Get Early Access →</a>
   </div>
 </section>
 
@@ -1072,8 +1072,8 @@
 <!-- SIGNUP FORM -->
 <section class="cta-band" id="signup">
   <div class="container">
-    <h2>Get early access — launching Spring 2026.</h2>
-    <p>Tell us about your business and we'll set up your briefings.</p>
+    <h2>We're launching Spring 2026. Get notified first.</h2>
+    <p>Tell us about your business and we'll reach out the moment we go live — before the public announcement.</p>
 
     <form id="signupForm" style="max-width:480px;margin:32px auto 0;text-align:left">
       <div style="display:grid;gap:14px">
@@ -1107,12 +1107,12 @@
           onfocus="this.style.borderColor='rgba(255,255,255,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.2)'" />
         <button type="submit" id="sig-btn"
           style="width:100%;padding:14px;background:#fff;color:#0f1117;border:none;border-radius:8px;font-weight:700;font-size:1rem;font-family:inherit;cursor:pointer;transition:opacity .15s">
-          Continue →
+          Notify Me When You Launch →
         </button>
       </div>
       <p id="sig-msg" style="margin-top:14px;font-size:.85rem;min-height:20px;text-align:center"></p>
     </form>
-    <p style="margin-top:16px;font-size:.78rem;opacity:.45;text-align:center">By continuing you agree to our <a href="/terms" style="color:rgba(255,255,255,.6)">Terms of Service</a>. 30-day free trial. Cancel anytime. No long-term commitment.</p>
+    <p style="margin-top:16px;font-size:.78rem;opacity:.45;text-align:center">No credit card. No commitment. Just early access.</p>
   </div>
 </section>
 
@@ -1131,16 +1131,24 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     email: document.getElementById('sig-email').value.trim(),
     establishment: document.getElementById('sig-establishment').value.trim() || null,
     vertical: document.getElementById('sig-vertical').value,
-    tier: 'standard',
     city: document.getElementById('sig-city').value.trim() || null,
   };
 
-  // Store signup locally and show confirmation (backend not yet live)
   try {
-    btn.textContent = 'You\'re on the list!';
-    msg.style.color = 'rgba(255,255,255,.9)';
-    msg.textContent = '✓ We\'ll be in touch before our Spring 2026 launch.';
-    document.getElementById('signupForm').querySelectorAll('input, select').forEach(el => el.disabled = true);
+    const res = await fetch('https://api.regulatorpulse.com/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (res.ok) {
+      btn.textContent = 'You\'re on the list!';
+      msg.style.color = 'rgba(255,255,255,.9)';
+      msg.textContent = '✓ We\'ll notify you when we launch.';
+      document.getElementById('signupForm').querySelectorAll('input, select').forEach(el => el.disabled = true);
+    } else {
+      throw new Error(data.detail || 'Signup failed');
+    }
   } catch(err) {
     msg.style.color = '#fca5a5';
     msg.textContent = 'Something went wrong. Please try again.';
