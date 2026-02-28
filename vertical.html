@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title id="page-title">RegulatorPulse — Texas Compliance Briefings</title>
   <meta id="page-desc" name="description" content="Weekly regulatory briefings for Texas small businesses." />
+  <link id="page-canonical" rel="canonical" href="https://www.regulatorpulse.com/" />
+  <meta id="og-title" property="og:title" content="RegulatorPulse — Texas Compliance Briefings" />
+  <meta id="og-desc" property="og:description" content="Weekly regulatory briefings for Texas small businesses." />
+  <meta id="og-url" property="og:url" content="https://www.regulatorpulse.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.regulatorpulse.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta id="twitter-title" name="twitter:title" content="RegulatorPulse — Texas Compliance Briefings" />
+  <meta id="twitter-desc" name="twitter:description" content="Weekly regulatory briefings for Texas small businesses." />
+  <meta name="twitter:image" content="https://www.regulatorpulse.com/og-image.png" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <script id="page-jsonld" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "RegulatorPulse",
+    "url": "https://www.regulatorpulse.com",
+    "description": "Weekly plain-English regulatory compliance briefings for Texas small businesses."
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -568,8 +588,26 @@ function render(slug) {
   const v = VERTICALS[slug];
   if (!v) { window.location.href = '/'; return; }
 
-  document.getElementById('page-title').textContent = `RegulatorPulse — ${v.badge}`;
+  document.getElementById('page-title').textContent = `RegulatorPulse — ${v.badge} Compliance Briefings | Texas`;
   document.getElementById('page-desc').content = v.sub;
+  // Update OG / Twitter / canonical dynamically
+  const pageUrl = `https://www.regulatorpulse.com/${slug}`;
+  document.getElementById('page-canonical').href = pageUrl;
+  document.getElementById('og-title').content = `RegulatorPulse — ${v.badge} Compliance Briefings | Texas`;
+  document.getElementById('og-desc').content = v.sub;
+  document.getElementById('og-url').content = pageUrl;
+  document.getElementById('twitter-title').content = `RegulatorPulse — ${v.badge} Compliance Briefings | Texas`;
+  document.getElementById('twitter-desc').content = v.sub;
+  // Update JSON-LD
+  document.getElementById('page-jsonld').textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `RegulatorPulse — ${v.badge} Compliance Briefings`,
+    "url": pageUrl,
+    "description": v.sub,
+    "areaServed": { "@type": "State", "name": "Texas" },
+    "provider": { "@type": "Organization", "name": "RegulatorPulse", "url": "https://www.regulatorpulse.com" }
+  });
   document.getElementById('hero-badge').textContent = v.badge;
   document.getElementById('hero-h1').innerHTML = v.h1;
   document.getElementById('hero-sub').textContent = v.sub;
