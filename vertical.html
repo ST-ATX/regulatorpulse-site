@@ -667,7 +667,7 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   };
 
   try {
-    const res = await fetch('https://api.regulatorpulse.com/api/waitlist', {
+    const res = await fetch('https://regulatorpulse-waitlist.raspy-fog-79e7.workers.dev/api/waitlist', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(payload),
