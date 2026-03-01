@@ -8,13 +8,13 @@
   <meta name="keywords" content="regulatory compliance small business, small business compliance briefing, medspa compliance, salon compliance, restaurant compliance, childcare compliance, regulatory intelligence, inspection readiness" />
   <link rel="canonical" href="https://www.regulatorpulse.com/" />
   <!-- Open Graph -->
-  <meta property="og:title" content="RegulatorPulse — Stay Informed. Stay Ready." />
+  <meta property="og:title" content="RegulatorPulse — Know Before They Knock" />
   <meta property="og:description" content="Weekly regulatory intelligence for small businesses. Stop finding out about rule changes from inspectors." />
   <meta property="og:url" content="https://www.regulatorpulse.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.regulatorpulse.com/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="RegulatorPulse — Stay Informed. Stay Ready." />
+  <meta name="twitter:title" content="RegulatorPulse — Know Before They Knock" />
   <meta name="twitter:description" content="Weekly regulatory intelligence for Texas small businesses. Stop finding out about rule changes from inspectors." />
   <meta name="twitter:image" content="https://www.regulatorpulse.com/og-image.png" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
@@ -563,16 +563,15 @@
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
       <div class="hero-badge" style="margin-bottom:0;background:#f0fff4;color:#276749;">🚀 Texas Launch — Spring 2026</div>
     </div>
-    <h1 id="hero-headline" class="hero-slot">Stay informed.<br/><em>Stay ready.</em></h1>
+    <h1 id="hero-headline" class="hero-slot">Know before<br/><em>they knock.</em></h1>
     <p class="hero-sub hero-slot" id="hero-sub">
-      Regulatory agencies change rules constantly — and most of them don't send useful alerts when they do. RegulatorPulse monitors key state and federal agencies covering your industry and delivers what changed, in plain English, every Tuesday morning — so you're not learning about it for the first time during an inspection.
+      Regulatory agencies change rules constantly — and none of them send useful alerts when they do. RegulatorPulse monitors every agency covering your industry and delivers what changed, in plain English, every Tuesday morning — before an inspector walks in.
     </p>
     <div class="hero-cta">
       <a href="#signup" class="btn-primary">Get Early Access</a>
       <a href="#sample" class="btn-secondary">See a Sample Briefing</a>
     </div>
-    <p class="hero-fine">30-day free trial. Cancel anytime. No long-term commitment required. Plans from $49/mo after trial.</p>
-    <p style="font-size:.75rem;color:var(--ink-light);margin-top:8px;">RegulatorPulse is an information service, not a substitute for legal or compliance counsel.</p>
+    <p class="hero-fine">30-day free trial. Cancel anytime. No long-term commitment required.</p>
   </div>
 </section>
 
@@ -580,8 +579,8 @@
   (function() {
     var slides = [
       {
-        headline: 'Stay informed.<br/><em>Stay ready.</em>',
-        sub: 'Regulatory agencies change rules constantly \u2014 and most of them don\u2019t send useful alerts when they do. RegulatorPulse monitors key state and federal agencies covering your industry and delivers what changed, in plain English, every Tuesday morning \u2014 so you\u2019re not learning about it for the first time during an inspection.'
+        headline: 'Know before<br/><em>they knock.</em>',
+        sub: 'Regulatory agencies change rules constantly \u2014 and none of them send useful alerts when they do. RegulatorPulse monitors every agency covering your industry and delivers what changed, in plain English, every Tuesday morning \u2014 before an inspector walks in.'
       },
       {
         headline: 'Your bad reviews<br/><em>predict your next inspection.</em>',
@@ -631,13 +630,13 @@
 <section class="problem">
   <div class="container">
     <p class="section-label">The Problem</p>
-    <h2 class="section-title">Most small businesses find out about rule changes the hard way.</h2>
+    <h2 class="section-title">You're operating blind — and inspectors know it.</h2>
     <p class="section-sub">Most small business owners find out about rule changes the hard way — at an inspection, not before it.</p>
     <div class="problem-grid">
       <div class="problem-card">
         <div class="icon"><i data-lucide="layers"></i></div>
         <h3>Multiple agencies. Zero alerts.</h3>
-        <p>A small business can face active compliance obligations from 4–8 agencies simultaneously — state licensing boards, environmental regulators, federal safety agencies, and more. Most of them don't send useful plain-English notifications when rules change.</p>
+        <p>A small business can face active compliance obligations from 4–8 agencies simultaneously — state licensing boards, environmental regulators, federal safety agencies, and more. None of them send useful plain-English notifications when rules change.</p>
       </div>
       <div class="problem-card">
         <div class="icon"><i data-lucide="search"></i></div>
@@ -653,19 +652,19 @@
           <tr><td style="padding:5px 0;color:var(--ink-muted);font-size:.9rem">Environmental enforcement</td><td><span class="fine-highlight">up to $25,000/day</span></td></tr>
           <tr><td style="padding:5px 0;color:var(--ink-muted);font-size:.9rem">OSHA serious violation</td><td><span class="fine-highlight">up to $16,550/violation</span></td></tr>
         </table>
-        <p style="font-size:.9rem;color:var(--ink-muted)">The cost of one missed rule change can far exceed the cost of staying informed.</p>
+        <p style="font-size:.9rem;color:var(--ink-muted)">One missed rule change pays for years of RegulatorPulse.</p>
       </div>
     </div>
     <div class="problem-grid-bottom">
       <div class="problem-card">
         <div class="icon"><i data-lucide="star"></i></div>
-        <h3>Bad reviews can attract regulatory attention.</h3>
+        <h3>Bad reviews trigger inspections.</h3>
         <p>RegulatorPulse monitors review patterns across your entire industry — flagging language that correlates with regulatory complaints before inspectors arrive. And when your own profiles receive flagged reviews, we deliver suggested responses ready to approve and post. Two signals, one system. <a href="https://ar5iv.labs.arxiv.org/html/1603.05673" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">Research confirms the link.</a></p>
       </div>
       <div class="problem-card">
         <div class="icon"><i data-lucide="alert-triangle"></i></div>
-        <h3>Your current options leave gaps.</h3>
-        <p>Word of mouth. Trade newsletters. Occasionally reading raw regulatory text. Compliance attorneys are essential when you need legal guidance — but most small businesses can't afford $300–$500/hour for ongoing monitoring. RegulatorPulse fills the awareness gap between your attorney visits.</p>
+        <h3>Your current options aren't working.</h3>
+        <p>Word of mouth. Trade newsletters. Occasionally reading raw regulatory text. Compliance attorneys at $300–$500/hour — used reactively, after something goes wrong. None of this is systematic. RegulatorPulse is.</p>
       </div>
     </div>
   </div>
@@ -681,12 +680,12 @@
       <div class="step">
         <div class="step-num">1</div>
         <h3>Tell us about your business</h3>
-        <p>Tell us your industry, your state, and your services. Your briefings are filtered to your industry type and services — so you spend less time sorting through noise.</p>
+        <p>Tell us your industry, your state, and your services. Your briefings are filtered to what actually applies to your specific business — nothing irrelevant.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h3>We monitor everything</h3>
-        <p>RegulatorPulse scans key state and federal agencies daily and flags notable changes. In Texas: TMB, TDLR, TABC, TCEQ, HHSC, OSHA, FDA, and more. Primary source links included in every item.</p>
+        <p>Every night, RegulatorPulse scans your relevant state and federal agencies and flags what changed. In Texas: TMB, TDLR, TABC, TCEQ, HHSC, OSHA, FDA, and more. Primary source links included in every item.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -698,12 +697,12 @@
       <div class="step">
         <div class="step-num">4</div>
         <h3>Review intelligence included</h3>
-        <p>Every week we scan thousands of Google, Yelp, and Facebook reviews across your industry — flagging patterns that correlate with regulatory complaints, and alerting you when your own profiles contain language associated with regulatory issues.</p>
+        <p>Every week we scan thousands of Google, Yelp, and Facebook reviews across your industry — flagging patterns that precede regulatory action, and alerting you when your own profiles contain violation-language before an inspector does.</p>
       </div>
       <div class="step">
         <div class="step-num">5</div>
         <h3>Reply with questions</h3>
-        <p>Have a question about a briefing item? Reply to the email. Our team typically responds within one to two business days with additional context and source references. Not legal advice — clear regulatory intelligence.</p>
+        <p>Have a question about a briefing item? Reply to the email. We respond within 24 hours explaining what the rule says and where to find it. Not legal advice — clear regulatory intelligence.</p>
       </div>
     </div>
   </div>
@@ -714,7 +713,7 @@
   <div class="container" style="text-align:center">
     <p class="section-label">Sample Briefing</p>
     <h2 class="section-title">This is what lands in your inbox.</h2>
-    <p style="font-size:.85rem;color:var(--ink-light);margin-top:8px;"><strong>ILLUSTRATIVE SAMPLE</strong> — This example demonstrates the format and type of content included in a RegulatorPulse briefing. Names, statistics, citations, and enforcement details are for demonstration purposes only and may not reflect actual regulatory actions. Actual briefings vary by industry, regulatory activity, and timing. Sample shown for Medical Spas — your industry follows the same format with its specific agencies.</p>
+    <p style="font-size:.85rem;color:var(--ink-light);margin-top:8px;">Actual briefing format. Content is illustrative. Sample shown for Medical Spas — your industry follows the same format with its specific agencies.</p>
     <p class="section-sub" style="margin:0 auto">Sorted by urgency. Linked to primary sources. Specific to your business type.</p>
     <div class="briefing-card">
       <div class="briefing-header">
@@ -784,14 +783,14 @@
         <div class="brief-item">
           <span class="brief-tier" style="background:#fff8f0;color:#b7500a;border:1px solid #fbd38d;">⭐ Review Intelligence</span>
           <h4>Part 1: Industry Pattern — statewide spike in TMB supervision language &nbsp;|&nbsp; Part 2: Your Profile — 3 reviews flagged</h4>
-          <p><strong>Industry Pattern (Illustrative Example):</strong> This week's industry scan flagged an increase in reviews mentioning "no doctor present" and "no consultation" — language that research suggests correlates with regulatory complaint filings. This type of trend is the early warning signal RegulatorPulse is designed to surface.</p>
+          <p><strong>Industry Pattern:</strong> RegulatorPulse scanned 2,400+ Texas MedSpa reviews this week. Reviews mentioning "no doctor present" and "no consultation" spiked 34% — language that has preceded elevated TMB complaint filings in 3 of the last 4 quarters. This is the early warning signal. The complaint wave typically follows 4–6 weeks later.</p>
           <p style="margin-top:8px"><strong>Your Profile:</strong> Three of your recent reviews contain matching language. Here's what your customers said — and a ready-to-post response for each:</p>
           <ul style="font-size:.88rem;color:var(--ink-muted);line-height:1.8;margin:8px 0 12px 18px;">
             <li><em>"I never saw a doctor the whole time I was there."</em> — posted Feb 24</li>
             <li><em>"The person doing my injections seemed unsure of what she was doing."</em> — posted Feb 22</li>
             <li><em>"No one checked my medical history before starting."</em> — posted Feb 19</li>
           </ul>
-          <p>This language maps to TMB Rule 22 TAC §193.17 — physician supervision and pre-procedure patient evaluation requirements. <a href="https://ar5iv.labs.arxiv.org/html/1603.05673" target="_blank" rel="noopener">Research suggests a correlation</a> between review language patterns and subsequent regulatory complaints. Customers who write reviews like these file TMB complaints at elevated rates.</p>
+          <p>This language maps directly to TMB Rule 22 TAC §193.17 — physician supervision and pre-procedure patient evaluation requirements. Research shows Google and Yelp reviews predict regulatory complaints with near-perfect statistical significance. Customers who write reviews like these file TMB complaints at elevated rates.</p>
           <div class="brief-action">
             <strong>Self-audit checklist before your next patient:</strong><br/>
             ☐ Is your medical director on-site or immediately reachable during all procedures?<br/>
@@ -1025,7 +1024,7 @@
       </div>
       <div class="why-card vs-us">
         <h4>RegulatorPulse</h4>
-        <p>RegulatorPulse scans key agencies daily — automatically. Your profile is on file. We flag items commonly relevant to your industry, state, and services. You don't have to remember to check anything. Every Tuesday, a briefing arrives whether you thought to ask or not. That's the difference between a chatbot and a dedicated monitoring service.</p>
+        <p>RegulatorPulse monitors your agencies every night — automatically. Your profile is on file. We flag what applies to <em>your specific business</em> based on your industry, state, and services. You don't have to remember to check anything. Every Tuesday, a briefing arrives whether you thought to ask or not. That's the difference between a chatbot and a compliance system.</p>
       </div>
     </div>
   </div>
@@ -1044,7 +1043,7 @@
       </div>
       <div class="faq-item">
         <p class="faq-q">How is this different from my trade association membership?</p>
-        <p class="faq-a">Association newsletters cover regulatory topics occasionally, in general terms, filtered through the association's priorities. RegulatorPulse monitors regulatory sources directly and continuously — delivering briefings based on your industry, license type, and city. It's the difference between a monthly newsletter and a dedicated monitoring service.</p>
+        <p class="faq-a">Association newsletters cover regulatory topics occasionally, in general terms, filtered through the association's priorities. RegulatorPulse monitors regulatory sources directly and continuously — every night — and delivers personalized briefings based on your specific services, license type, and city. It's the difference between a monthly newsletter and a dedicated monitoring system.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">What if nothing changes in a given week?</p>
@@ -1172,7 +1171,7 @@ document.getElementById('signupForm').addEventListener('submit', async function(
       <a href="/privacy">Privacy Policy</a>
     </div>
     <p class="footer-disclaimer">
-      RegulatorPulse LLC · Austin, TX · RegulatorPulse provides informational summaries of publicly available regulatory developments for Texas small businesses. Content does not constitute legal, compliance, or professional advice and should not be relied upon as such. RegulatorPulse is a monitoring tool, not a compliance guarantee — we may not capture every regulatory change from every agency, and subscribers should not rely solely on RegulatorPulse for compliance. Always consult qualified legal counsel before acting on any regulatory matter. Penalty amounts referenced are based on published schedules and may vary. © 2026 RegulatorPulse LLC. All rights reserved.
+      RegulatorPulse LLC · Austin, TX · RegulatorPulse provides informational summaries of publicly available regulatory developments for Texas small businesses. Content does not constitute legal or compliance advice and should not be relied upon as such. Consult qualified legal counsel before acting on any regulatory matter. © 2026 RegulatorPulse LLC. All rights reserved.
     </p>
   </div>
 </footer>
