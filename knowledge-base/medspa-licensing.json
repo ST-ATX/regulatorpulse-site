@@ -1,0 +1,66 @@
+{
+  "topic": "Medspa Licensing",
+  "lastUpdated": "2026-03-20",
+  "entries": [
+    {
+      "q": "What licenses do I need to open a medspa in Texas?",
+      "a": "In Texas, a medspa requires several layers of licensing. You'll need a business license from the Secretary of State, an assumed name (DBA) certificate if operating under a trade name, and a health spa registration from DSHS if you accept prepaid membership fees. More critically: any medical procedures (injections, laser treatments, IV therapy) require a licensed physician, PA, or NP to supervise, and a formal Medical Director Agreement. Cosmetic-only services performed by licensed estheticians fall under TDLR (Texas Department of Licensing and Regulation). Your estheticians must hold a current TDLR cosmetology/esthetics license. Your facility may also need a health permit from your local county health department.",
+      "tags": ["medspa", "texas", "licensing", "medical-director"],
+      "source": "TDLR / DSHS"
+    },
+    {
+      "q": "What does a medical director need to do at a medspa?",
+      "a": "A medical director at a medspa must: (1) Be actively licensed in your state as an MD or DO, (2) Have a written supervisory agreement with your facility specifying their duties and compensation, (3) Be available during all hours that medical-grade procedures are performed, either on-site or by telehealth in states that allow it, (4) Review and approve all clinical protocols annually, (5) Maintain their own malpractice insurance, (6) Provide oversight for any NPs, PAs, or RNs performing procedures at your facility. The medical director is legally responsible for the clinical safety of your medspa. A nominal or 'paper' medical director who never shows up exposes both of you to serious liability.",
+      "tags": ["medspa", "medical-director", "licensing", "supervision"],
+      "source": "State Medical Boards"
+    },
+    {
+      "q": "Can a nurse practitioner own a medspa?",
+      "a": "It depends on your state. Some states (like Texas) have the corporate practice of medicine doctrine, which generally requires a physician to own or control the medical side of a medspa. In these states, an NP can own the business entity but must hire a physician medical director. Other states (like California) have more flexibility but still have supervision requirements. In 'full practice authority' states, NPs can own and operate medspas independently. Before structuring your ownership, consult with a healthcare attorney in your state.",
+      "tags": ["medspa", "ownership", "nurse-practitioner", "corporate-practice"],
+      "source": "State Medical Boards / AANP"
+    },
+    {
+      "q": "What laser and energy-based device regulations apply to medspas?",
+      "a": "Laser and IPL regulations vary significantly by state. Texas requires that laser procedures be performed or directly supervised by a licensed physician. California requires physician supervision but allows trained RNs and NPs to perform certain procedures. Florida requires a licensed practitioner to operate devices or directly supervise operators. Most states require the facility to register devices with the state radiation control program. Before using any laser, IPL, or radiofrequency device, contact both your state's medical board and radiation control office.",
+      "tags": ["medspa", "laser", "IPL", "devices", "licensing"],
+      "source": "FDA / State Radiation Control Programs"
+    },
+    {
+      "q": "Do medspas need HIPAA compliance?",
+      "a": "Yes, if you provide medical services. Any medspa offering injectables, laser treatments, IV therapy, prescription-grade treatments, or maintaining medical records is likely a covered entity or business associate under HIPAA. Required actions: (1) Use HIPAA-compliant intake forms and store them securely (paper or HIPAA-compliant EHR), (2) Have a signed Notice of Privacy Practices for each client, (3) Train all staff on PHI (protected health information) handling annually and document that training, (4) Report any data breaches within 60 days to affected individuals and HHS. Fines start at $100 per violation and can exceed $50,000 per incident for willful neglect.",
+      "tags": ["medspa", "HIPAA", "privacy", "compliance"],
+      "source": "HHS / OCR"
+    },
+    {
+      "q": "What's the difference between a medspa and a day spa for licensing purposes?",
+      "a": "A day spa provides cosmetic services within the scope of cosmetology and esthetics licenses: facials, waxing, massage, basic skin care. A medspa crosses into medical territory by offering procedures that require medical oversight: injectables, chemical peels above certain strengths, laser treatments, IV therapy, PRP, microneedling at medical depths. The key question is whether any procedure requires a prescription, a medical assessment, or could cause a medical complication. If yes, you're operating as a medspa under state medical board jurisdiction, not just a cosmetology establishment.",
+      "tags": ["medspa", "day-spa", "scope-of-practice", "licensing"],
+      "source": "State Medical Boards / Cosmetology Boards"
+    },
+    {
+      "q": "How do I structure a medspa to protect my assets from liability?",
+      "a": "Common structures: (1) A business entity (LLC or PC) owns the spa/business operations. (2) A separate professional entity (PLLC or PC) owned by the physician handles the medical side. (3) A management services agreement (MSA) governs the relationship between the two entities. This 'friendly PC' model helps navigate corporate practice of medicine laws. You should also carry: professional liability (malpractice) insurance for each clinical provider, general liability for the facility, and an umbrella policy. Consult a healthcare attorney before finalizing your structure.",
+      "tags": ["medspa", "business-structure", "liability", "asset-protection"],
+      "source": "RP Compliance Team"
+    },
+    {
+      "q": "What are the IV therapy licensing requirements for medspas?",
+      "a": "IV therapy at medspas must be ordered by a licensed physician, PA, or NP (depending on state scope of practice laws). The infusion must be administered by a licensed RN or in some states an LPN. The medical director must have IV therapy protocols on file, and each client should have a clinical assessment before their first infusion. Some states (including Texas) have been actively citing medspas for unlicensed IV therapy. Never allow a licensed esthetician or unlicensed staff to administer IV infusions.",
+      "tags": ["medspa", "IV-therapy", "licensing", "nursing"],
+      "source": "State Nursing Boards / Medical Boards"
+    },
+    {
+      "q": "What is the informed consent requirement for medspa procedures?",
+      "a": "For every medical-grade procedure, you need a written informed consent form that: (1) Describes the procedure in plain, understandable language, (2) Discloses material risks, benefits, and side effects, (3) Lists alternatives, (4) Documents that the client had the opportunity to ask questions, (5) Is signed before the procedure, not after, (6) Is dated and retained for at least 5–7 years (check your state). A generic consent form covering all services is not sufficient. Each procedure category (injectables, lasers, chemical peels) should have its own consent.",
+      "tags": ["medspa", "informed-consent", "documentation", "legal"],
+      "source": "State Medical Boards"
+    },
+    {
+      "q": "How do I handle a client adverse reaction at my medspa?",
+      "a": "Every medspa should have a written adverse event protocol posted in treatment rooms. If a client has a reaction: (1) Stop the procedure immediately, (2) Assess severity. Call 911 if there's any sign of anaphylaxis, severe allergic reaction, or cardiovascular event, (3) Contact your medical director, (4) Document everything: what was used, the timeline, symptoms, and actions taken, (5) Follow up with the client within 24 hours, (6) Review your protocol for improvements. Keep an adverse event log. In some states, certain events must be reported to the licensing board.",
+      "tags": ["medspa", "adverse-events", "safety", "protocol"],
+      "source": "State Medical Boards"
+    }
+  ]
+}

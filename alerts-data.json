@@ -1,0 +1,125 @@
+{
+  "lastUpdated": "2026-03-20",
+  "alerts": [
+    {
+      "id": "rp-001",
+      "title": "Texas DSHS Updates Medspa Supervision Requirements",
+      "summary": "Texas DSHS issued revised guidance requiring all medical spas to have a licensed physician or licensed physician assistant serving as medical director on-site or available by telehealth for all non-surgical cosmetic procedures. The new rules also require documentation of the medical director's availability and response protocols. Effective April 1, 2026.",
+      "category": "licensing",
+      "vertical": "medspa",
+      "state": "TX",
+      "severity": "high",
+      "date": "2026-03-18",
+      "source": "Texas DSHS",
+      "sourceUrl": "https://www.dshs.texas.gov"
+    },
+    {
+      "id": "rp-002",
+      "title": "California Cosmetology Board Adds Infection Control Hours to License Renewal",
+      "summary": "The California Board of Barbering and Cosmetology now requires 2 hours of infection control and sanitation continuing education for all license renewals effective June 1, 2026. This applies to cosmetologists, estheticians, and barbers. Renewal applications submitted without the new CE hours will be held pending completion.",
+      "category": "licensing",
+      "vertical": "salon",
+      "state": "CA",
+      "severity": "high",
+      "date": "2026-03-15",
+      "source": "California Board of Barbering and Cosmetology",
+      "sourceUrl": "https://www.barbercosmo.ca.gov"
+    },
+    {
+      "id": "rp-003",
+      "title": "FTC Issues Guidance on Before/After Photos in Wellness Advertising",
+      "summary": "The FTC clarified that before/after photos used in medspa, salon, and wellness advertising must be representative of typical results, not outliers. Testimonials must now include a disclaimer if results are atypical. Failure to comply may result in civil penalties up to $51,744 per violation. Review all marketing materials immediately.",
+      "category": "advertising",
+      "vertical": "medspa",
+      "state": null,
+      "severity": "high",
+      "date": "2026-03-14",
+      "source": "FTC",
+      "sourceUrl": "https://www.ftc.gov"
+    },
+    {
+      "id": "rp-004",
+      "title": "Florida Enacts New Gym Liability Waiver Statute",
+      "summary": "Florida HB 1423 creates a statutory safe harbor for fitness facilities that use compliant liability waivers. To qualify, waivers must be on a standalone document (not buried in membership agreements), use 14-point font minimum, and include specific language about inherent risks. Waivers that do not meet the new standard may be unenforceable. Review and update your waivers before July 1, 2026.",
+      "category": "insurance",
+      "vertical": "gym",
+      "state": "FL",
+      "severity": "high",
+      "date": "2026-03-12",
+      "source": "Florida Legislature",
+      "sourceUrl": "https://www.flsenate.gov"
+    },
+    {
+      "id": "rp-005",
+      "title": "Colorado Expands Booth Rental Rules for Salons",
+      "summary": "Colorado DORA clarified that salon owners who rent chairs or stations to independent contractors must provide a written booth rental agreement, maintain separate booking and payment systems, and cannot control the contractor's hours or pricing. Misclassified booth renters may trigger back taxes, penalties, and loss of deductions. A compliance checklist is available from DORA.",
+      "category": "employment",
+      "vertical": "salon",
+      "state": "CO",
+      "severity": "medium",
+      "date": "2026-03-10",
+      "source": "Colorado DORA",
+      "sourceUrl": "https://dora.colorado.gov"
+    },
+    {
+      "id": "rp-006",
+      "title": "New York City Adds Gyms to Local Law 97 Carbon Reporting",
+      "summary": "NYC Local Law 97 now includes fitness studios and gyms over 25,000 sq ft in its annual carbon emission reporting requirements starting with fiscal year 2026 reports. Penalties for non-compliance begin at $268 per ton of excess emissions. Smaller facilities under 25,000 sq ft are exempt but should document their square footage in case of audit.",
+      "category": "health-safety",
+      "vertical": "gym",
+      "state": "NY",
+      "severity": "medium",
+      "date": "2026-03-08",
+      "source": "NYC Department of Buildings",
+      "sourceUrl": "https://www.nyc.gov/buildings"
+    },
+    {
+      "id": "rp-007",
+      "title": "Texas TDLR Issues Cease and Desist Warning to Medspa Owners Offering Unlicensed IV Therapy",
+      "summary": "TDLR has issued warning letters to multiple Texas medspas offering IV vitamin therapy without a licensed healthcare provider administering the infusions. IV therapy must be ordered and supervised by a physician, PA, or NP. Facilities without compliant protocols face license revocation and fines up to $5,000 per violation. TDLR is actively investigating consumer complaints.",
+      "category": "licensing",
+      "vertical": "medspa",
+      "state": "TX",
+      "severity": "high",
+      "date": "2026-03-07",
+      "source": "Texas TDLR",
+      "sourceUrl": "https://www.tdlr.texas.gov"
+    },
+    {
+      "id": "rp-008",
+      "title": "California AB 1820: Gyms Must Post AED Location and Staff CPR Certification",
+      "summary": "California AB 1820, effective January 1, 2027, requires all fitness facilities to post the location of automated external defibrillators (AEDs) at all entrances and to ensure at least one staff member on each shift is CPR/AED certified. Gyms with fewer than 3 employees are exempt. Begin scheduling CPR certification for your team now.",
+      "category": "health-safety",
+      "vertical": "gym",
+      "state": "CA",
+      "severity": "medium",
+      "date": "2026-03-05",
+      "source": "California Legislature",
+      "sourceUrl": "https://leginfo.legislature.ca.gov"
+    },
+    {
+      "id": "rp-009",
+      "title": "DOL Increases Salary Threshold for Exempt Employees: Impact on Service Businesses",
+      "summary": "The Department of Labor's updated salary threshold for overtime exemption under the FLSA rises to $1,128/week ($58,656/year) effective January 1, 2027. Employees earning below this threshold must receive overtime pay for hours over 40 per week regardless of job duties. Many salon managers, spa coordinators, and fitness directors will lose exempt status. Audit your payroll now.",
+      "category": "employment",
+      "vertical": null,
+      "state": null,
+      "severity": "high",
+      "date": "2026-03-03",
+      "source": "U.S. Department of Labor",
+      "sourceUrl": "https://www.dol.gov"
+    },
+    {
+      "id": "rp-010",
+      "title": "Florida Health Department Updates Sanitation Rules for Esthetic Services",
+      "summary": "Florida's Division of Hotels and Restaurants updated sanitation protocols for esthetic service areas, including requirements for single-use implements, covered waste containers, and documented cleaning logs. Inspectors will begin checking for compliance on all routine inspections starting May 1, 2026. Failure to maintain logs can result in fines of $250–$2,500 per violation.",
+      "category": "health-safety",
+      "vertical": "medspa",
+      "state": "FL",
+      "severity": "medium",
+      "date": "2026-03-01",
+      "source": "Florida Division of Hotels and Restaurants",
+      "sourceUrl": "https://www.myfloridalicense.com"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "topic": "Advertising Rules for Wellness and Personal Service Businesses",
+  "lastUpdated": "2026-03-20",
+  "entries": [
+    {
+      "q": "What are the FTC rules for before and after photos?",
+      "a": "Before/after photos must represent typical results, not best-case outcomes. If your photos show above-average results, you must include a clear disclosure like 'Results may vary' or 'Results not typical.' The FTC's 2023 updated guidance requires disclosures to be prominent and close to the image, not buried in fine print. Endorsement results must include the typical outcome a consumer can expect. Civil penalties for violations can reach $51,744 per occurrence.",
+      "tags": ["FTC", "before-after", "photos", "advertising"],
+      "source": "FTC 16 CFR Part 255; FTC Guides Concerning Endorsements and Testimonials"
+    },
+    {
+      "q": "Can I use the word 'medical' to describe my spa services?",
+      "a": "Using 'medical' in your business name or service descriptions signals that your services involve medical diagnosis or treatment. If you are not properly licensed as a medical facility, this can trigger enforcement from your state medical board, TDLR, or health department. 'Medspa' and 'medical spa' are generally acceptable if you have a licensed medical director and proper oversight. Avoid terms like 'medical-grade results' or 'clinical treatment' for unlicensed services.",
+      "tags": ["medical-claims", "scope-of-practice", "medspa"],
+      "source": "State medical board guidelines; FTC Act Section 5"
+    },
+    {
+      "q": "What health claims can I legally make about my services?",
+      "a": "Health claims for cosmetic and personal care services are regulated by the FTC. You can describe what a service does (removes hair, reduces fine lines, tones muscle) but cannot claim to treat, cure, or prevent any medical condition unless you have clinical evidence. Terms like 'FDA-cleared device' are acceptable if accurate. 'Treats' or 'cures' disease-related claims require FDA approval, which cosmetic services do not have. Stick to appearance-based, cosmetic claims.",
+      "tags": ["health-claims", "FTC", "FDA"],
+      "source": "FTC Act Section 5; FDA cosmetic vs. drug distinction"
+    },
+    {
+      "q": "How do I properly disclose paid partnerships or influencer posts?",
+      "a": "Any material connection between your business and someone promoting it must be clearly disclosed. This includes free services, commission, free products, or any other compensation. The disclosure must appear at the start of the post, not at the end or in hashtags. '#ad', '#sponsored', or 'Paid partnership with [Business]' are acceptable. FTC enforcement has increased significantly. Even gifted services without payment require disclosure. Train any influencers or brand ambassadors you work with.",
+      "tags": ["influencer", "disclosure", "FTC", "social-media"],
+      "source": "FTC Endorsement Guides; FTC .com Disclosures guidance"
+    },
+    {
+      "q": "What are the rules for advertising prices and promotions?",
+      "a": "Advertised prices must be the actual price charged. 'Regular price' comparisons are only valid if you actually charged that higher price for a substantial period. 'Free' offers must fully disclose any conditions. Discounts on services cannot be used to compensate for unlicensed scope of practice. State consumer protection laws also govern deceptive pricing, and many states are stricter than federal standards. Keep records of original prices used in comparative ads.",
+      "tags": ["pricing", "promotions", "consumer-protection"],
+      "source": "FTC Act Section 5; State DTPA statutes"
+    },
+    {
+      "q": "Can I use client testimonials in my advertising?",
+      "a": "Yes, with proper disclosures. Under the FTC's updated 2023 rules, testimonials must reflect the typical experience, not an outlier. If a testimonial describes an atypical result, you must clearly state what results consumers generally achieve. You cannot pay for positive reviews without disclosure. Reviews on Google, Yelp, or your website must be genuine. Never create fake reviews or incentivize reviews without disclosure. Keep written records of any testimonials you receive.",
+      "tags": ["testimonials", "reviews", "FTC"],
+      "source": "FTC Guides Concerning Endorsements and Testimonials (2023 update)"
+    },
+    {
+      "q": "Are there specific rules for advertising laser or energy-based device services?",
+      "a": "Yes. State regulations on who can advertise and perform laser, IPL, and energy-based services vary widely. Some states restrict advertising these services entirely to licensed medical providers. Others require the ad to disclose who will perform the service (licensed practitioner vs. non-clinical staff). Do not advertise procedures that are outside your licensed scope. Advertising a service you are not licensed to perform can trigger a complaint even before you perform it.",
+      "tags": ["laser", "energy-devices", "advertising", "medspa"],
+      "source": "State medical board and TDLR regulations"
+    },
+    {
+      "q": "What are the rules around email marketing and SMS promotions?",
+      "a": "Email marketing is governed by the CAN-SPAM Act: every commercial email must include your physical address, a functioning opt-out mechanism, and must honor opt-outs within 10 business days. Subject lines cannot be deceptive. SMS marketing is governed by the TCPA: you must have express written consent before sending promotional text messages. Never purchase phone number lists for SMS campaigns. Fines for TCPA violations can reach $500-$1,500 per message.",
+      "tags": ["email-marketing", "SMS", "CAN-SPAM", "TCPA"],
+      "source": "CAN-SPAM Act; TCPA 47 U.S.C. Section 227"
+    },
+    {
+      "q": "Do I need to keep records of my advertising materials?",
+      "a": "Yes. Keep copies of all ads, promotions, before/after photos, testimonials, and influencer posts for at least 3 years. If you are ever the subject of an FTC or state AG investigation, you will need to produce these records. Also document the substantiation for any claims you make: if you say a treatment 'reduces wrinkles by 40%,' you need the data that supports it. Records also protect you if a competitor or client challenges a claim.",
+      "tags": ["recordkeeping", "documentation", "FTC"],
+      "source": "FTC Act Section 5; General best practices"
+    },
+    {
+      "q": "What are the rules for advertising services on social media platforms?",
+      "a": "Platform-specific rules apply in addition to FTC rules. Meta, TikTok, and Google restrict health and wellness advertising, particularly for before/after content, weight loss claims, and anything suggesting medical treatment. Ads that Meta's algorithm classifies as involving 'personal attributes' (health conditions, appearance) face higher scrutiny and may be disapproved. Review each platform's advertising policies before running paid campaigns, and retain a backup creative in case your primary ad is rejected.",
+      "tags": ["social-media", "advertising", "platforms"],
+      "source": "Meta Advertising Policies; Google Ads Healthcare Policy; FTC"
+    }
+  ]
+}

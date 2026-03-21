@@ -1,0 +1,66 @@
+{
+  "topic": "Salon & Barbershop Licensing",
+  "lastUpdated": "2026-03-20",
+  "entries": [
+    {
+      "q": "What licenses does a salon owner need?",
+      "a": "A salon owner typically needs: (1) A cosmetology establishment license from your state licensing board (this is a facility license separate from your personal operator license), (2) A personal cosmetology/esthetics/barbering license if you also perform services, (3) A business license from your city or county, (4) A health department permit in many states, (5) An employer identification number (EIN) from the IRS if you have employees. The establishment license and personal license are separate. You cannot operate a facility on a personal license alone.",
+      "tags": ["salon", "licensing", "establishment-license"],
+      "source": "State Cosmetology Boards"
+    },
+    {
+      "q": "My salon employee's cosmetology license expired. What do I do?",
+      "a": "First, the employee must immediately stop performing any licensed services. They cannot legally practice with an expired license. Then: (1) Have them contact your state's cosmetology board immediately for reinstatement procedures, (2) Check if there's a grace period (some states allow 30–90 day reinstatement windows), (3) Determine if they owe back renewal fees or need to complete CE hours, (4) If the license has been expired for more than 1–2 years, they may need to retest. While their license is expired, do not let them work. This violates your establishment license and could put YOUR facility license at risk. The establishment license holder (you) can be cited for allowing unlicensed practice.",
+      "tags": ["salon", "license-renewal", "expired-license", "compliance"],
+      "source": "State Cosmetology Boards"
+    },
+    {
+      "q": "What are the rules for booth rental in my salon?",
+      "a": "Booth rental (also called chair rental) allows independent stylists to lease space in your salon rather than work as employees. Key rules: (1) You must have a written lease agreement with a fixed rental rate, (2) The renter sets their own hours, prices, and client list, (3) You cannot require them to use your products or attend mandatory meetings, (4) They are responsible for their own taxes and should be issued a 1099-NEC if you pay them anything (unlikely in a true rental), (5) They need their own professional liability insurance. Failure to maintain this separation can reclassify them as employees, triggering back payroll taxes and benefits obligations.",
+      "tags": ["salon", "booth-rental", "independent-contractor", "employment"],
+      "source": "IRS / DORA / State Cosmetology Boards"
+    },
+    {
+      "q": "How often do I need to renew my salon establishment license?",
+      "a": "Salon establishment license renewal periods vary by state: most are annual or biennial (every 2 years). Your state cosmetology board will send renewal notices, but do not rely on them. Set your own reminders 90 days before expiration. Operating with an expired establishment license is a violation in every state and can result in fines, forced closure, and difficulty reinstating. Check your board's website for your exact renewal date and requirements.",
+      "tags": ["salon", "license-renewal", "establishment-license"],
+      "source": "State Cosmetology Boards"
+    },
+    {
+      "q": "What sanitation requirements apply to my salon?",
+      "a": "Key sanitation requirements for salons: (1) All tools (combs, scissors, clippers) must be disinfected with an EPA-registered disinfectant between every client, (2) Single-use items (emery boards, neck strips, wax sticks) must be discarded after each use. No double-dipping, (3) Shampoo bowls must be cleaned and disinfected between clients, (4) Soiled towels and linens must be stored in a closed container, (5) A fresh set of clean towels and linens is required for each client, (6) All implements must be stored in a clean, closed container after disinfection. Keep a disinfection log. Inspectors ask for these.",
+      "tags": ["salon", "sanitation", "health-safety", "inspections"],
+      "source": "State Cosmetology Boards / Health Departments"
+    },
+    {
+      "q": "Can I operate a salon out of my home?",
+      "a": "Home-based salons are legal in many states but require additional compliance steps: (1) A home occupation permit from your city or county (check local zoning rules), (2) A cosmetology establishment license for the home location, (3) Separate client entrance in most jurisdictions, (4) Health department permit, (5) Compliance with state sanitation requirements (dedicated sink, proper plumbing), (6) Homeowners insurance endorsement or separate commercial policy. Some HOAs and lease agreements prohibit home businesses. Check yours before investing in a home salon build-out.",
+      "tags": ["salon", "home-salon", "zoning", "licensing"],
+      "source": "State Cosmetology Boards / Local Zoning"
+    },
+    {
+      "q": "What are barbershop licensing requirements?",
+      "a": "Barbershop licensing typically requires: (1) Barber establishment license from your state barber board, (2) Individual barber licenses for all operators, (3) In some states, the owner must also be a licensed barber, (4) Health department permit, (5) Business license. Note: some states have merged cosmetology and barber boards; others maintain them separately. Barbers cannot generally perform cosmetic services outside their licensed scope (e.g., facials, certain chemical services) without also holding a cosmetology license.",
+      "tags": ["barbershop", "barber-license", "licensing"],
+      "source": "State Barber Boards"
+    },
+    {
+      "q": "What continuing education do I need to renew my cosmetology license?",
+      "a": "CE requirements for cosmetology license renewal vary significantly by state. Typical requirements: 4–16 hours per renewal period, covering topics like infection control, chemical safety, updated state laws, and business practices. Some states have moved to online CE options. Always verify your CE hours with your state board before submitting your renewal. CE from unaccredited providers may not be accepted. Keep certificates of completion on file for at least 3 years.",
+      "tags": ["salon", "continuing-education", "license-renewal"],
+      "source": "State Cosmetology Boards"
+    },
+    {
+      "q": "What do I need to post in my salon for compliance?",
+      "a": "Required postings in most states: (1) Salon/establishment license (framed and visible), (2) Each operator's individual license, (3) Health department permit, (4) Shampoo bowl sanitation procedures, (5) If you have employees: federal EEOC, DOL, and OSHA required posters, your state's minimum wage poster, workers' comp notice. Inspectors check for these during routine visits. Missing required postings is typically a fine-able offense. Review every 6 months.",
+      "tags": ["salon", "required-postings", "compliance", "inspections"],
+      "source": "State Cosmetology Boards / DOL"
+    },
+    {
+      "q": "How should I handle chemical services for clients with sensitivities or allergies?",
+      "a": "Best practices for chemical services: (1) Perform a patch test 24–48 hours before any color, relaxer, or chemical service for new clients and clients returning after a significant gap, (2) Document the patch test result, (3) Have clients complete a health history form asking about known allergies, (4) Keep SDS (Safety Data Sheets) for all chemical products accessible to staff, (5) If a client has a reaction during a service, stop immediately, rinse thoroughly, and have an adverse reaction protocol ready. Failure to perform patch tests when a reaction occurs is a common basis for licensing complaints.",
+      "tags": ["salon", "chemical-services", "allergy", "liability"],
+      "source": "State Cosmetology Boards"
+    }
+  ]
+}

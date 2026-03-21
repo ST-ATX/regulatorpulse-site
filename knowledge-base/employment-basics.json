@@ -1,0 +1,66 @@
+{
+  "topic": "Employment Law Basics for Service Businesses",
+  "lastUpdated": "2026-03-20",
+  "entries": [
+    {
+      "q": "What is the current federal minimum wage?",
+      "a": "The federal minimum wage is $7.25/hour. However, most states and many cities have higher minimums that override the federal floor. Always check your state and local minimum wage rates, which can change annually. If you have employees in multiple states, apply the higher rate in each location. For tipped employees, you may pay a lower cash wage if tips bring the total to the applicable minimum.",
+      "tags": ["wage", "minimum-wage", "FLSA"],
+      "source": "U.S. Department of Labor, FLSA"
+    },
+    {
+      "q": "When do I have to pay overtime?",
+      "a": "Non-exempt employees must receive 1.5x their regular rate for all hours over 40 in a workweek under federal law. Some states (California, Nevada) require daily overtime. The salary threshold for overtime exemptions (effective January 2027) is $1,128/week ($58,656/year). Employees earning below that threshold must receive overtime regardless of their job duties. Review your salaried staff now to identify anyone who will lose exempt status.",
+      "tags": ["overtime", "FLSA", "exempt"],
+      "source": "U.S. Department of Labor, FLSA; 2024 DOL Final Rule"
+    },
+    {
+      "q": "How do I know if a worker is an employee or independent contractor?",
+      "a": "The IRS uses a common law test based on behavioral control (do you control how the work is done?), financial control (do you control the business aspects of their work?), and the type of relationship. The DOL uses the economic reality test for FLSA purposes. Many states have their own stricter tests. When in doubt, classify as an employee. Misclassification carries back taxes, penalties, and potential workers' comp exposure. Get legal advice before using contractors.",
+      "tags": ["independent-contractor", "classification", "IRS"],
+      "source": "IRS Publication 15-A; DOL FLSA guidance"
+    },
+    {
+      "q": "What is an I-9 form and when do I need it?",
+      "a": "Form I-9 verifies that every employee you hire is legally authorized to work in the United States. You must complete it for every new hire within 3 days of their start date. Employees provide acceptable documents (passport, driver's license plus Social Security card, etc.) and you verify them. Keep I-9s for 3 years after hire or 1 year after termination, whichever is later. Store them separately from personnel files. ICE audits are real: fines start at $272 per violation.",
+      "tags": ["I-9", "immigration", "hiring"],
+      "source": "USCIS Form I-9 Instructions"
+    },
+    {
+      "q": "What are tip pool rules for salon or spa employees?",
+      "a": "Under the FLSA, tips belong to the employees who receive them. Tip pools (sharing among tipped workers) are permitted. Since 2018, employers who do not take a tip credit can include back-of-house workers (like shampoo assistants) in tip pools. Managers and owners can never participate in a tip pool. If you take a tip credit to pay below minimum wage, the pool can only include employees who customarily receive tips. Follow state rules, which may be stricter than federal.",
+      "tags": ["tips", "tip-pool", "FLSA"],
+      "source": "FLSA Section 3(m); DOL Tip Regulations"
+    },
+    {
+      "q": "What OSHA requirements apply to my salon, spa, or gym?",
+      "a": "All employers, regardless of size, must provide a safe workplace under OSHA's general duty clause. Specific requirements include: posting the OSHA poster (free from dol.gov), providing safety data sheets (SDS) for all chemical products, training employees on hazard communication, and recording work-related injuries on OSHA Form 300 if you have 10 or more employees. Salons and spas should pay particular attention to chemical exposure (perms, dyes, disinfectants) and ergonomic risks.",
+      "tags": ["OSHA", "safety", "workplace"],
+      "source": "OSHA 29 CFR Part 1904; OSHA Hazard Communication Standard"
+    },
+    {
+      "q": "What labor law posters do I have to display?",
+      "a": "Federal law requires: OSHA poster, FLSA minimum wage poster, FMLA poster (if you have 50+ employees), EEOC poster, and USERRA poster. Most states add their own required posters covering state minimum wage, workers' comp, unemployment insurance, and anti-discrimination laws. Download free federal posters from dol.gov. Check your state DOL site for state posters. Post them where all employees can see them. Update when laws change.",
+      "tags": ["posters", "labor-law", "compliance"],
+      "source": "U.S. Department of Labor; State labor departments"
+    },
+    {
+      "q": "When am I required to offer FMLA leave?",
+      "a": "FMLA applies if you have 50 or more employees within 75 miles. Eligible employees (12 months of service, 1,250 hours worked) can take up to 12 weeks of unpaid leave for qualifying reasons: serious health condition, birth/adoption of a child, or care for a close family member with a serious condition. During leave, you must maintain their health insurance and restore them to the same or equivalent position. Many states have their own family leave laws with lower thresholds.",
+      "tags": ["FMLA", "leave", "employment"],
+      "source": "FMLA 29 CFR Part 825"
+    },
+    {
+      "q": "What is workers' compensation and when do I need it?",
+      "a": "Workers' compensation insurance covers medical expenses and lost wages when an employee is injured on the job. Most states require it as soon as you hire your first employee (some states have a threshold of 2-5 employees). Coverage is mandatory, not optional. Premiums are based on your payroll and industry risk classification. Operating without required workers' comp exposes you to fines, stop-work orders, and direct liability for injured employees' costs.",
+      "tags": ["workers-compensation", "insurance", "employment"],
+      "source": "State workers' compensation statutes"
+    },
+    {
+      "q": "How should I handle an employee complaint about harassment?",
+      "a": "Take every complaint seriously and in writing. Conduct a prompt, thorough, and impartial investigation. Do not retaliate against the complainant. Document every step. If the complaint involves a supervisor, loop in an HR professional or employment attorney. If the conduct is severe, separate the parties immediately during the investigation. Keep records for at least 4 years. Having a written anti-harassment policy and annual training significantly reduces liability.",
+      "tags": ["harassment", "HR", "employment-law"],
+      "source": "Title VII; EEOC guidance on harassment"
+    }
+  ]
+}

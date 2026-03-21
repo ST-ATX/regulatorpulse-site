@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - RegulatorPulse</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/rp-style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     PASSWORD GATE
+     ============================================================ -->
+<div id="rp-gate">
+  <div class="rp-gate-box">
+    <div class="rp-gate-logo">
+      <img src="logo-wordmark.png" alt="RegulatorPulse">
+    </div>
+    <h2>Member Access</h2>
+    <p>Enter your passphrase to access your compliance dashboard.</p>
+    <input
+      type="password"
+      id="rp-gate-input"
+      class="rp-gate-input"
+      placeholder="Enter passphrase"
+      autocomplete="current-password"
+    >
+    <button id="rp-gate-btn" class="rp-gate-btn">Access Dashboard</button>
+    <div id="rp-gate-error" class="rp-gate-error"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     ONBOARDING MODAL
+     ============================================================ -->
+<div id="rp-onboarding-overlay" class="hidden">
+  <div class="rp-onboarding-modal">
+    <h2>Welcome to RegulatorPulse</h2>
+    <p>Tell us about your business so we can filter compliance alerts and tips for your industry.</p>
+
+    <div class="rp-form-group">
+      <label class="rp-form-label" for="rp-onboard-name">Business name</label>
+      <input type="text" id="rp-onboard-name" class="rp-form-input" placeholder="e.g. Radiance Medical Spa" autocomplete="off">
+    </div>
+
+    <div class="rp-form-group">
+      <label class="rp-form-label" for="rp-onboard-vertical">Industry</label>
+      <div class="rp-form-select-wrap">
+        <select id="rp-onboard-vertical" class="rp-form-select">
+          <option value="Medical Spa">Medical Spa</option>
+          <option value="Salon &amp; Barbershop">Salon &amp; Barbershop</option>
+          <option value="Gym &amp; Fitness Studio">Gym &amp; Fitness Studio</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="rp-form-group">
+      <label class="rp-form-label" for="rp-onboard-state">State</label>
+      <div class="rp-form-select-wrap">
+        <select id="rp-onboard-state" class="rp-form-select">
+          <!-- Populated by rp-app.js -->
+        </select>
+      </div>
+    </div>
+
+    <button id="rp-onboard-submit" class="rp-btn-primary">Get Started</button>
+  </div>
+</div>
+
+<!-- Mobile sidebar overlay -->
+<div id="rp-sidebar-overlay" class="hidden" style="position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:99;"></div>
+
+<!-- ============================================================
+     APP SHELL
+     ============================================================ -->
+<div id="rp-app" class="hidden">
+
+  <!-- ── Sidebar ── -->
+  <nav class="rp-sidebar" id="rp-sidebar" role="navigation" aria-label="Main navigation">
+    <div class="rp-sidebar-header">
+      <div class="rp-sidebar-logo">
+        <img src="logo-icon.png" alt="RP">
+        <span class="rp-sidebar-logo-text">RegulatorPulse</span>
+      </div>
+      <button class="rp-sidebar-toggle" id="rp-sidebar-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="rp-sidebar-nav">
+      <div class="rp-nav-section">Main</div>
+
+      <a class="rp-nav-item active" data-section="dashboard" href="dashboard.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+
+      <a class="rp-nav-item" data-section="alerts" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        Alerts
+        <span class="rp-nav-badge">3</span>
+      </a>
+
+      <a class="rp-nav-item" data-section="briefings" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Briefings
+      </a>
+
+      <a class="rp-nav-item" data-section="documents" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        Documents
+      </a>
+
+      <a class="rp-nav-item" data-section="calendar" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Calendar
+      </a>
+
+      <div class="rp-nav-section">Account</div>
+
+      <a class="rp-nav-item" data-section="settings" href="#" id="rp-nav-settings">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        Settings
+      </a>
+    </div>
+
+    <div class="rp-sidebar-footer">
+      <div id="rp-sidebar-business" style="font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.25rem;font-size:.8rem;"></div>
+      <a href="index.html">Marketing Site</a>
+    </div>
+  </nav>
+
+  <!-- ── Main ── -->
+  <div class="rp-main">
+
+    <!-- Topbar -->
+    <header class="rp-topbar">
+      <div class="rp-topbar-left">
+        <button class="rp-mobile-menu-btn" id="rp-mobile-menu-btn" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <span class="rp-topbar-title" id="rp-topbar-business">Dashboard</span>
+      </div>
+      <div class="rp-topbar-right">
+        <div class="rp-topbar-badge">
+          <span class="dot"></span>
+          Live
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="rp-content" id="rp-dashboard-content">
+
+      <!-- Welcome Banner -->
+      <div class="rp-welcome">
+        <div class="rp-welcome-text">
+          <h1 id="rp-greeting">Good morning</h1>
+          <p id="rp-greeting-sub">Your compliance dashboard. Stay ahead of regulations that affect your business.</p>
+        </div>
+        <div class="rp-welcome-icon">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+      </div>
+
+      <!-- Chat stream widget injected here by rp-chat-stream.js -->
+
+      <!-- Stats Row -->
+      <div class="rp-stats-row">
+        <div class="rp-stat-card">
+          <div class="rp-stat-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Compliance Score
+          </div>
+          <div class="rp-stat-value green" id="rp-stat-score">87%</div>
+          <div class="rp-stat-sub">Good standing</div>
+        </div>
+
+        <div class="rp-stat-card">
+          <div class="rp-stat-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Pending Items
+          </div>
+          <div class="rp-stat-value amber" id="rp-stat-pending">3</div>
+          <div class="rp-stat-sub">Need attention</div>
+        </div>
+
+        <div class="rp-stat-card">
+          <div class="rp-stat-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Recent Alerts
+          </div>
+          <div class="rp-stat-value blue" id="rp-stat-alerts">6</div>
+          <div class="rp-stat-sub">This month</div>
+        </div>
+
+        <div class="rp-stat-card">
+          <div class="rp-stat-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Last Updated
+          </div>
+          <div class="rp-stat-value text" style="font-size:1.1rem;padding-top:.15rem;" id="rp-stat-updated">Today</div>
+          <div class="rp-stat-sub">Mar 20, 2026</div>
+        </div>
+      </div>
+
+      <!-- Daily Tip -->
+      <div class="rp-tip-card">
+        <div class="rp-tip-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="rp-tip-content">
+          <div class="rp-tip-label" id="rp-tip-label">Daily Compliance Tip</div>
+          <div class="rp-tip-title" id="rp-tip-title">Loading tip...</div>
+          <div class="rp-tip-body" id="rp-tip-body"></div>
+          <div class="rp-tip-source" id="rp-tip-source"></div>
+        </div>
+      </div>
+
+      <!-- Two-Column Grid -->
+      <div class="rp-grid">
+
+        <!-- Left: Compliance Alerts -->
+        <div class="rp-card">
+          <div class="rp-card-header">
+            <div class="rp-card-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Latest Compliance Alerts
+            </div>
+            <a class="rp-card-action" href="#">View all</a>
+          </div>
+          <div id="rp-alert-list" class="rp-alert-list">
+            <div class="rp-alert-empty">Loading alerts...</div>
+          </div>
+        </div>
+
+        <!-- Right: Intelligence + News -->
+        <div class="rp-card" style="display:flex;flex-direction:column;">
+
+          <!-- Industry Intelligence -->
+          <div class="rp-intel-header">
+            <span class="rp-intel-title">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:.35rem;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Industry Intelligence
+            </span>
+            <a class="rp-card-action" href="#">More</a>
+          </div>
+
+          <div style="padding:.5rem 0 0;border-bottom:1px solid var(--border);">
+            <ul class="rp-headline-list" style="border:none;" id="rp-intel-list">
+              <!-- Populated by rp-app.js (first 4 headlines) -->
+            </ul>
+          </div>
+
+          <!-- Market News -->
+          <div class="rp-intel-header" style="margin-top:0;">
+            <span class="rp-intel-title">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:.35rem;"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg>
+              Market News
+            </span>
+            <a class="rp-card-action" href="#">More</a>
+          </div>
+
+          <div id="rp-headline-list">
+            <!-- Populated by rp-app.js (next 4 headlines) -->
+          </div>
+
+        </div>
+      </div>
+      <!-- /rp-grid -->
+
+    </div>
+    <!-- /rp-content -->
+  </div>
+  <!-- /rp-main -->
+</div>
+<!-- /rp-app -->
+
+<!-- Scripts -->
+<script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+<script src="assets/rp-app.js"></script>
+<script src="assets/rp-chat-stream.js"></script>
+
+<script>
+  // Settings link: reset profile for demo/testing
+  document.addEventListener('DOMContentLoaded', function () {
+    var settingsLink = document.getElementById('rp-nav-settings');
+    if (settingsLink) {
+      settingsLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (confirm('Reset your business profile? You will be prompted to re-enter your business details.')) {
+          localStorage.removeItem('rp_profile');
+          location.reload();
+        }
+      });
+    }
+  });
+</script>
+
+<script src="assets/rp-analytics.js"></script>
+</body>
+</html>

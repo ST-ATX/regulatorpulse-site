@@ -1,0 +1,66 @@
+{
+  "topic": "Gym & Fitness Studio Compliance",
+  "lastUpdated": "2026-03-20",
+  "entries": [
+    {
+      "q": "What should my liability waiver include to be enforceable?",
+      "a": "A valid gym waiver should be a standalone document (not buried in your membership agreement), written in plain language, and signed before any use of the facility. It must specifically name the risks involved in gym activities. Some states require minimum font sizes (Florida now requires 14-point) and specific wording about inherent risks. Have an attorney review your waiver against current state law when you open, and after any major legislation changes.",
+      "tags": ["liability", "waiver", "membership"],
+      "source": "State-specific gym liability statutes"
+    },
+    {
+      "q": "How often does my AED need to be inspected?",
+      "a": "AEDs need monthly visual inspections and annual professional service. Check the indicator light (green means ready), verify the battery has not expired, confirm the pads are sealed and within their expiration date, and log every check. Keep a written log showing date, inspector's name, and status. A non-functional AED in a cardiac emergency creates both a tragedy and significant legal exposure.",
+      "tags": ["AED", "health-safety", "equipment"],
+      "source": "AHA AED Guidelines; State gym safety regulations"
+    },
+    {
+      "q": "Does my gym need to comply with the ADA?",
+      "a": "Yes. Fitness facilities open to the public are covered by the ADA. Requirements include accessible parking, ramps or elevators if you have multiple floors, accessible restrooms and locker rooms, and at least some accessible exercise equipment. Courts have increasingly scrutinized fitness studios for accessibility failures. Review your facility against ADA Standards for Accessible Design, and consult an ADA compliance specialist if you're planning a build-out or renovation.",
+      "tags": ["ADA", "accessibility", "disability"],
+      "source": "ADA Title III; ADA Standards for Accessible Design"
+    },
+    {
+      "q": "What health department permits do I need to operate a gym?",
+      "a": "Most jurisdictions require a general business license and a certificate of occupancy. If you have a juice bar, smoothie station, or sell packaged food, you will need a food handler's permit and may face health department inspections. Pool and sauna areas require separate permits. Contact your city or county health department before opening, as requirements vary by location.",
+      "tags": ["permits", "health-department", "licensing"],
+      "source": "Local and county health department regulations"
+    },
+    {
+      "q": "Can I classify personal trainers as independent contractors?",
+      "a": "Only if the arrangement meets the legal test. Trainers who work exclusively at your facility, use your equipment, follow your scheduling, and cannot work for competitors are likely employees under IRS and most state standards. Misclassification exposes you to back payroll taxes, workers' comp liability if a trainer is injured on the job, and potential penalties. Use a written independent contractor agreement and have an employment attorney review it.",
+      "tags": ["employment", "independent-contractor", "personal-trainer"],
+      "source": "IRS Common Law Test; DOL FLSA guidance"
+    },
+    {
+      "q": "What safety equipment am I required to have?",
+      "a": "At minimum: first aid kit, AED (required by statute in many states, strongly recommended everywhere), posted emergency procedures, and clearly marked exits. If you have a pool, a life ring and reaching pole are required. Some states require at least one staff member CPR/AED certified on every shift. Post emergency contact numbers, including the nearest hospital, in visible locations throughout the facility.",
+      "tags": ["safety", "equipment", "emergency"],
+      "source": "OSHA general duty clause; State gym safety statutes"
+    },
+    {
+      "q": "How should I handle a member injury at my facility?",
+      "a": "Render first aid or call 911 as needed. Document the incident in writing the same day: what happened, who was involved, witnesses, the member's condition, and what first aid was provided. Notify your insurance carrier promptly. Do not admit liability or make settlement offers. Keep incident reports in a secure file. A signed liability waiver helps but does not eliminate all claims, so document thoroughly.",
+      "tags": ["injury", "incident-report", "liability"],
+      "source": "General risk management best practices"
+    },
+    {
+      "q": "What are my obligations under OSHA for gym employees?",
+      "a": "You must provide a safe work environment, training on equipment operation, and access to safety data sheets for any cleaning chemicals. Post the OSHA workplace poster where employees can see it. Report any fatality or hospitalization of an employee to OSHA within 8 hours. Gyms with 10 or more employees must maintain injury and illness records (Form 300). Gyms with fewer than 10 employees are partially exempt from recordkeeping but still subject to inspections.",
+      "tags": ["OSHA", "employment", "workplace-safety"],
+      "source": "OSHA 29 CFR Part 1904; OSHA general duty clause"
+    },
+    {
+      "q": "Do I need special insurance beyond general liability?",
+      "a": "General liability covers third-party bodily injury and property damage, but most gyms also need: professional liability (for personal training services), commercial property insurance, workers' compensation (required by law in most states once you have any employees), and possibly an umbrella policy. If you offer group fitness classes, confirm your general liability policy covers instructors. Review coverage annually as your services expand.",
+      "tags": ["insurance", "liability", "coverage"],
+      "source": "General insurance best practices; State workers' comp statutes"
+    },
+    {
+      "q": "What are the rules for membership cancellation and refunds?",
+      "a": "Most states regulate gym membership contracts directly. Common requirements include: a 3-day right to cancel without penalty, written cancellation procedures, refund of prepaid fees if the gym closes or moves more than a set distance, and restrictions on auto-renewal terms. Post your cancellation policy clearly and include it in your membership agreement. Check your state's health club statutes for specific requirements.",
+      "tags": ["membership", "cancellation", "consumer-protection"],
+      "source": "State health club statutes; FTC rule on negative option marketing"
+    }
+  ]
+}
